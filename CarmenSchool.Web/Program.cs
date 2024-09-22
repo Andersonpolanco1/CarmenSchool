@@ -1,6 +1,18 @@
+using CarmenSchool.Core.Interfaces;
+using CarmenSchool.Infrastructure.AppDbContext;
+using CarmenSchool.Infrastructure.Repositories;
+using CarmenSchool.Services.Internal;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddScoped<IStudentRepository,StudentRepository>();
+builder.Services.AddScoped<IStudentService, StudentService>();
+
+builder.Services.AddDbContext<AplicationDbContext>(options =>
+  options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
+);
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

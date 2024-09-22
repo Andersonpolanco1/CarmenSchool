@@ -1,56 +1,78 @@
-﻿using CarmenSchool.Core.DTOs.Student;
+﻿using CarmenSchool.Core.DTOs.StudentDTO;
 using CarmenSchool.Core.Interfaces;
 using CarmenSchool.Core.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Linq.Expressions;
 
 namespace CarmenSchool.Services.Internal
 {
-    public class StudentService(IStudentRepository studentRepository)
+  public class StudentService(IStudentRepository studentRepository) : IStudentService
+  {
+    public async Task<StudentReadDto> AddAsync(StudentCreateRequest request)
     {
-        public async Task<Student> AddAsync(StudentCreateRequest entity)
-        {
-            var student = studentRepository.GetByIdAsync
+      var student = await FindAsync(s => s.DNI == request.DNI || s.Email == request.Email);
 
-            await context.AddAsync(entity);
-            await context.SaveChangesAsync();
-            return entity;
-        }
+      if (student != null && student.Any())
+      {
+        var existingEmail = student.FirstOrDefault(s => s.Email.ToUpper() == request.Email.ToUpper());
+        var existingDNI = student.FirstOrDefault(s => s.DNI.ToUpper() == request.DNI.ToUpper());
 
-        public async Task<bool> DeleteAsync(Student entity)
-        {
-            try
-            {
-                context.Students.Remove(entity);
-                var affectedRows = await context.SaveChangesAsync();
-                return affectedRows > 0;
+        if (existingEmail != null)
+          throw new InvalidOperationException($"Ya existe un estudiante registrado con el Email {request.Email}");
 
-            }
-            catch (Exception ex)
-            {
-                logger.LogError(message: ex.Message);
-                return false;
-            }
-        }
+        if (existingDNI != null)
+          throw new InvalidOperationException($"Ya existe un estudiante registrado con el DNI {request.DNI}");
+      }
 
-        public async Task<IEnumerable<Student>> GetAllAsync()
-        {
-            return await context.Students.AsNoTracking().ToListAsync();
-        }
-
-        public async Task<Student?> GetByIdAsync(int id)
-        {
-            return await context.Students.FirstOrDefaultAsync(s => s.Id == id);
-        }
-
-        public async Task<bool> UpdateAsync(Student entity)
-        {
-            context.Students.Update(entity);
-            var affectedRows = await context.SaveChangesAsync();
-            return affectedRows > 0;
-        }
+      var newStudent = request.ToEntity();
+      newStudent.CreatedDate = DateTime.Now;
+      await studentRepository.AddAsync(newStudent);
+      return newStudent.ToStudentReadDto();
     }
+
+
+    public async Task<bool> DeleteByIdAsync(int id)
+    {
+      var studentDb = await studentRepository.GetByIdAsync(id);
+      return studentDb == null
+            ? throw new InvalidOperationException("El registro que desea eliminar no existe")
+            : await studentRepository.DeleteAsync(studentDb);
+    }
+
+    public async Task<IEnumerable<StudentReadDto>> GetAllAsync()
+    {
+      var students = await studentRepository.GetAllAsync();
+      return students is null ?
+        [] :  students.Select(s => s.ToStudentReadDto()).ToList();
+    }
+
+    public async Task<StudentReadDto?> GetByIdAsync(int id)
+    {
+      var student = await studentRepository.GetByIdAsync(id);
+      return student?.ToStudentReadDto() ?? null;
+    }
+
+    public async Task<StudentReadDto?> GetByDNIAsync(string dni)
+    {
+      var student = await studentRepository.GetByDNIAsync(dni);
+      return student?.ToStudentReadDto() ?? null;
+    }
+
+    public async Task<bool> UpdateAsync(int id,StudentUpdateRequest request)
+    {
+      var studentDb = await studentRepository.GetByIdAsync(id);
+
+      if (studentDb == null) throw new InvalidOperationException("No se encontro el registro a actualizar");
+
+      studentDb.Email = request.Email.ToLower();
+      studentDb.PhoneNumber = request.PhoneNumber;
+
+      return await studentRepository.UpdateAsync(studentDb);
+    }
+
+    public async Task<IEnumerable<StudentReadDto>> FindAsync(Expression<Func<Student, bool>> expression)
+    {
+      var students = await studentRepository.FindAsync(expression);
+      return students.Select(s => s.ToStudentReadDto());
+    }
+  }
 }

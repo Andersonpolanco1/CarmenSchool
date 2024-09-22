@@ -1,18 +1,22 @@
 ﻿using CarmenSchool.Core.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace CarmenSchool.Infrastructure.AppDbContext
 {
-    public class AplicationDbContext(DbContextOptions<AplicationDbContext> options) : DbContext(options)
+  public class AplicationDbContext(DbContextOptions<AplicationDbContext> options) : DbContext(options)
+  {
+    public DbSet<Student> Students { get; set; }
+    public DbSet<Course> Courses { get; set; }
+    public DbSet<Enrollment> Enrollments { get; set; }
+    public DbSet<Period> Periods { get; set; }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        public DbSet<Student> Students { get; set; }
-        public DbSet<Course> Courses{ get; set; }
-        public DbSet<Enrollment> Enrollments { get; set; }
-        public DbSet<Period> Periods { get; set; }
+      modelBuilder.ApplyConfiguration(new CourseConfiguration());
+      modelBuilder.ApplyConfiguration(new StudentConfiguration());
+      modelBuilder.ApplyConfiguration(new EnrollmentConfiguration());
+      modelBuilder.ApplyConfiguration(new PeriodConfiguration());
     }
+  }
 }

@@ -1,4 +1,6 @@
-﻿namespace CarmenSchool.Core.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace CarmenSchool.Core.Models
 {
     public class Course
     {

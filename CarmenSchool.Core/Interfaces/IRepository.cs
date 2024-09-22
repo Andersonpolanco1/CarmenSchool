@@ -1,4 +1,4 @@
-﻿using CarmenSchool.Core.Models;
+﻿using System.Linq.Expressions;
 
 namespace CarmenSchool.Core.Interfaces
 {
@@ -9,5 +9,6 @@ namespace CarmenSchool.Core.Interfaces
         Task<T> AddAsync(T entity);
         Task<bool> UpdateAsync(T entity);
         Task<bool> DeleteAsync(T entity);
-    }
+        Task<IEnumerable<T>> FindAsync(Expression<Func<T, bool>> expression);
+  }
 }
