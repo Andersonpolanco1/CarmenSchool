@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CarmenSchool.Infrastructure.AppDbContext
 {
-  public class AplicationDbContext(DbContextOptions<AplicationDbContext> options) : DbContext(options)
+  public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : DbContext(options)
   {
     public DbSet<Student> Students { get; set; }
     public DbSet<Course> Courses { get; set; }

@@ -1,6 +1,5 @@
 ﻿using CarmenSchool.Core.DTOs.StudentDTO;
 using CarmenSchool.Core.Interfaces;
-using CarmenSchool.Core.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CarmenSchool.Web.Controllers
@@ -21,7 +20,8 @@ namespace CarmenSchool.Web.Controllers
     [HttpGet("{id}")]
     public async Task<IActionResult> Get(int id)
     {
-      return Ok(await studentService.GetByIdAsync(id));
+      var student = await studentService.GetByIdAsync(id);
+      return student == null ? NotFound() : Ok(student);
     }
 
     [HttpPost]
@@ -44,8 +44,8 @@ namespace CarmenSchool.Web.Controllers
     {
       try
       {
-        await studentService.UpdateAsync(id, request);
-        return Ok();
+        var success  = await studentService.UpdateAsync(id, request);
+        return success ? NoContent() : NotFound();
       }
       catch (Exception ex)
       {
@@ -56,15 +56,8 @@ namespace CarmenSchool.Web.Controllers
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id)
     {
-      try
-      {
-        await studentService.DeleteByIdAsync(id);
-        return Ok();
-      }
-      catch (Exception ex)
-      {
-        return BadRequest(ex.Message);
-      }
+        var success = await studentService.DeleteByIdAsync(id);
+        return success ? NoContent() : NotFound();
     }
   }
 }

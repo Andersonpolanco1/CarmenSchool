@@ -7,7 +7,7 @@ using System.Linq.Expressions;
 
 namespace CarmenSchool.Infrastructure.Repositories
 {
-  public class StudentRepository(AplicationDbContext context, ILogger<StudentRepository> logger) : IStudentRepository
+  public class StudentRepository(ApplicationDbContext context, ILogger<StudentRepository> logger) : IStudentRepository
   {
     public async Task<Student> AddAsync(Student entity)
     {
@@ -55,9 +55,17 @@ namespace CarmenSchool.Infrastructure.Repositories
 
     public async Task<bool> UpdateAsync(Student entity)
     {
-      context.Students.Update(entity);
-      var affectedRows = await context.SaveChangesAsync();
-      return affectedRows > 0;
+      try
+      {
+        context.Students.Update(entity);
+        var affectedRows = await context.SaveChangesAsync();
+        return affectedRows > 0;
+      }
+      catch (Exception ex)
+      {
+        logger.LogError(message:ex.Message);
+        return false;
+      }
     }
   }
 }

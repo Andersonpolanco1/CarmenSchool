@@ -9,7 +9,7 @@ namespace CarmenSchool.Services.Internal
   {
     public async Task<StudentReadDto> AddAsync(StudentCreateRequest request)
     {
-      var student = await FindAsync(s => s.DNI == request.DNI || s.Email == request.Email);
+      var student = await studentRepository.FindAsync(s => s.DNI == request.DNI || s.Email == request.Email);
 
       if (student != null && student.Any())
       {
@@ -33,9 +33,7 @@ namespace CarmenSchool.Services.Internal
     public async Task<bool> DeleteByIdAsync(int id)
     {
       var studentDb = await studentRepository.GetByIdAsync(id);
-      return studentDb == null
-            ? throw new InvalidOperationException("El registro que desea eliminar no existe")
-            : await studentRepository.DeleteAsync(studentDb);
+      return studentDb != null && await studentRepository.DeleteAsync(studentDb);
     }
 
     public async Task<IEnumerable<StudentReadDto>> GetAllAsync()
@@ -61,7 +59,8 @@ namespace CarmenSchool.Services.Internal
     {
       var studentDb = await studentRepository.GetByIdAsync(id);
 
-      if (studentDb == null) throw new InvalidOperationException("No se encontro el registro a actualizar");
+      if (studentDb == null) 
+        return false;
 
       studentDb.Email = request.Email.ToLower();
       studentDb.PhoneNumber = request.PhoneNumber;

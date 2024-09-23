@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CarmenSchool.Infrastructure.Migrations
 {
-    [DbContext(typeof(AplicationDbContext))]
-    [Migration("20240922211701_InitialCreate")]
+    [DbContext(typeof(ApplicationDbContext))]
+    [Migration("20240923120923_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
