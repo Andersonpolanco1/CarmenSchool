@@ -1,7 +1,9 @@
 ﻿using CarmenSchool.Core.DTOs.StudentDTO;
 using CarmenSchool.Core.Interfaces;
 using CarmenSchool.Core.Models;
+using System.IO;
 using System.Linq.Expressions;
+using System.Text.Json;
 
 namespace CarmenSchool.Services.Internal
 {
@@ -72,6 +74,41 @@ namespace CarmenSchool.Services.Internal
     {
       var students = await studentRepository.FindAsync(expression);
       return students.Select(s => s.ToStudentReadDto());
+    }
+
+    private async Task<List<StudentCreateRequest>> GetStudentsFromJsonAsync(string path)
+    {
+      var students = new List<StudentCreateRequest>();
+
+      try
+      {
+        var json = await File.ReadAllTextAsync(path);
+        students = JsonSerializer.Deserialize<List<StudentCreateRequest>>(json);
+      }
+      catch (Exception) { }
+      
+      return students ?? [];
+    }
+
+    public async Task<int> InsertFromJsonFile(string jsonPath)
+    {
+      int totalNewRecords = 0;
+
+      try
+      {
+        var students = await GetStudentsFromJsonAsync(jsonPath);
+
+        foreach (var student in students)
+        {
+          await AddAsync(student);
+          totalNewRecords++;
+        }
+      }
+      catch (Exception)
+      {
+      }
+
+      return totalNewRecords;
     }
   }
 }

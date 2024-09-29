@@ -1,4 +1,5 @@
-﻿using CarmenSchool.Core.Interfaces;
+﻿using CarmenSchool.Core.Helpers;
+using CarmenSchool.Core.Interfaces;
 using CarmenSchool.Core.Models;
 using CarmenSchool.Infrastructure.AppDbContext;
 using Microsoft.EntityFrameworkCore;
@@ -40,7 +41,15 @@ namespace CarmenSchool.Infrastructure.Repositories
 
     public async Task<IEnumerable<Student>> GetAllAsync()
     {
-      return await context.Students.AsNoTracking().ToListAsync();
+      try
+      {
+        return await context.Students.AsNoTracking().ToListAsync();
+      }
+      catch (Exception ex)
+      {
+        logger.LogError(message: ex.Message);
+        throw new Exception(ErrorMessages.ERROR_OBTENIENDO_REGISTROS);
+      }
     }
 
     public async Task<Student?> GetByDNIAsync(string dni)
@@ -50,7 +59,15 @@ namespace CarmenSchool.Infrastructure.Repositories
 
     public async Task<Student?> GetByIdAsync(int id)
     {
-      return await context.Students.FirstOrDefaultAsync(s => s.Id == id);
+      try
+      {
+        return await context.Students.FirstOrDefaultAsync(s => s.Id == id);
+      }
+      catch (Exception ex)
+      {
+        logger.LogError(ex.Message);
+        throw new Exception(ErrorMessages.ERROR_OBTENIENDO_REGISTRO);
+      }
     }
 
     public async Task<bool> UpdateAsync(Student entity)

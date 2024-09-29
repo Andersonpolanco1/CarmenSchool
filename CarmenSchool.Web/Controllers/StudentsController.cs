@@ -12,16 +12,29 @@ namespace CarmenSchool.Web.Controllers
     [HttpGet]
     public async Task<IActionResult> Get()
     {
-      var students = await studentService.GetAllAsync();
-      return Ok(students);
-
+      try
+      {
+        var students = await studentService.GetAllAsync();
+        return Ok(students);
+      }
+      catch (Exception ex)
+      {
+        return StatusCode(StatusCodes.Status500InternalServerError,ex.Message);
+      }
     }
 
     [HttpGet("{id}")]
     public async Task<IActionResult> Get(int id)
     {
-      var student = await studentService.GetByIdAsync(id);
-      return student == null ? NotFound() : Ok(student);
+      try
+      {
+        var student = await studentService.GetByIdAsync(id);
+        return student == null ? NotFound() : Ok(student);
+      }
+      catch (Exception ex)
+      {
+        return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+      }
     }
 
     [HttpPost]
@@ -32,9 +45,13 @@ namespace CarmenSchool.Web.Controllers
         var newStudent = await studentService.AddAsync(request);
         return CreatedAtAction(nameof(Get), new { id = newStudent.Id }, newStudent);
       }
-      catch (Exception ex)
+      catch (InvalidOperationException ex)
       {
         return BadRequest(ex.Message);
+      }
+      catch (Exception ex)
+      {
+        return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
       }
     }
 

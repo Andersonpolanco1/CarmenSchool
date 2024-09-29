@@ -12,7 +12,7 @@ namespace CarmenSchool.Core.Interfaces
     Task<StudentReadDto?> GetByIdAsync(int id);
     Task<StudentReadDto?> GetByDNIAsync(string dni);
     Task<bool> UpdateAsync(int id, StudentUpdateRequest request);
-
     Task<IEnumerable<StudentReadDto>> FindAsync(Expression<Func<Student, bool>> expression);
+    Task<int> InsertFromJsonFile(string jsonPath);
   }
 }

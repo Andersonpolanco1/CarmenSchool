@@ -15,4 +15,8 @@
     <ProjectReference Include="..\CarmenSchool.Core\CarmenSchool.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Mock Data\" />
+  </ItemGroup>
+
 </Project>

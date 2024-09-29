@@ -1,0 +1,242 @@
+[
+  {
+    "DNI": "12345678A",
+    "FullName": "Juan Pérez",
+    "Email": "juan.perez@example.com",
+    "PhoneNumber": "123456789"
+  },
+  {
+    "DNI": "87654321B",
+    "FullName": "Ana Gómez",
+    "Email": "ana.gomez@example.com",
+    "PhoneNumber": "987654321"
+  },
+  {
+    "DNI": "23456789C",
+    "FullName": "Luis Martínez",
+    "Email": "luis.martinez@example.com",
+    "PhoneNumber": "456789123"
+  },
+  {
+    "DNI": "34567890D",
+    "FullName": "María López",
+    "Email": "maria.lopez@example.com",
+    "PhoneNumber": "654321789"
+  },
+  {
+    "DNI": "45678901E",
+    "FullName": "Carlos Sánchez",
+    "Email": "carlos.sanchez@example.com",
+    "PhoneNumber": "321654987"
+  },
+  {
+    "DNI": "56789012F",
+    "FullName": "Laura Fernández",
+    "Email": "laura.fernandez@example.com",
+    "PhoneNumber": "789654321"
+  },
+  {
+    "DNI": "67890123G",
+    "FullName": "Pedro García",
+    "Email": "pedro.garcia@example.com",
+    "PhoneNumber": "147258369"
+  },
+  {
+    "DNI": "78901234H",
+    "FullName": "Clara Torres",
+    "Email": "clara.torres@example.com",
+    "PhoneNumber": "258369147"
+  },
+  {
+    "DNI": "89012345I",
+    "FullName": "Javier Ruiz",
+    "Email": "javier.ruiz@example.com",
+    "PhoneNumber": "369147258"
+  },
+  {
+    "DNI": "90123456J",
+    "FullName": "Patricia Morales",
+    "Email": "patricia.morales@example.com",
+    "PhoneNumber": "987123456"
+  },
+  {
+    "DNI": "01234567K",
+    "FullName": "Fernando Castro",
+    "Email": "fernando.castro@example.com",
+    "PhoneNumber": "654987321"
+  },
+  {
+    "DNI": "12345678L",
+    "FullName": "Rosa Ortega",
+    "Email": "rosa.ortega@example.com",
+    "PhoneNumber": "321789456"
+  },
+  {
+    "DNI": "23456789M",
+    "FullName": "Santiago Romero",
+    "Email": "santiago.romero@example.com",
+    "PhoneNumber": "456123789"
+  },
+  {
+    "DNI": "34567890N",
+    "FullName": "Valentina Medina",
+    "Email": "valentina.medina@example.com",
+    "PhoneNumber": "789321654"
+  },
+  {
+    "DNI": "45678901O",
+    "FullName": "Andrés Jiménez",
+    "Email": "andres.jimenez@example.com",
+    "PhoneNumber": "159753846"
+  },
+  {
+    "DNI": "56789012P",
+    "FullName": "Marta Vargas",
+    "Email": "marta.vargas@example.com",
+    "PhoneNumber": "753159486"
+  },
+  {
+    "DNI": "67890123Q",
+    "FullName": "Raúl Herrera",
+    "Email": "raul.herrera@example.com",
+    "PhoneNumber": "951753864"
+  },
+  {
+    "DNI": "78901234R",
+    "FullName": "Carmen Peña",
+    "Email": "carmen.pena@example.com",
+    "PhoneNumber": "258147963"
+  },
+  {
+    "DNI": "89012345S",
+    "FullName": "Diego León",
+    "Email": "diego.leon@example.com",
+    "PhoneNumber": "456789321"
+  },
+  {
+    "DNI": "90123456T",
+    "FullName": "Angela Paredes",
+    "Email": "angela.paredes@example.com",
+    "PhoneNumber": "789654123"
+  },
+  {
+    "DNI": "01234567U",
+    "FullName": "Emilio Salazar",
+    "Email": "emilio.salazar@example.com",
+    "PhoneNumber": "321987654"
+  },
+  {
+    "DNI": "12345678V",
+    "FullName": "Lucía Ramírez",
+    "Email": "lucia.ramirez@example.com",
+    "PhoneNumber": "654321789"
+  },
+  {
+    "DNI": "23456789W",
+    "FullName": "Fernando Delgado",
+    "Email": "fernando.delgado@example.com",
+    "PhoneNumber": "987456123"
+  },
+  {
+    "DNI": "34567890X",
+    "FullName": "Gabriela Cordero",
+    "Email": "gabriela.cordero@example.com",
+    "PhoneNumber": "147369258"
+  },
+  {
+    "DNI": "45678901Y",
+    "FullName": "Arturo Ayala",
+    "Email": "arturo.ayala@example.com",
+    "PhoneNumber": "258147963"
+  },
+  {
+    "DNI": "56789012Z",
+    "FullName": "Verónica Soto",
+    "Email": "veronica.soto@example.com",
+    "PhoneNumber": "369258147"
+  },
+  {
+    "DNI": "67890123AA",
+    "FullName": "Esteban Ríos",
+    "Email": "esteban.rios@example.com",
+    "PhoneNumber": "159753258"
+  },
+  {
+    "DNI": "78901234BB",
+    "FullName": "Rocío Aguirre",
+    "Email": "rocio.aguirre@example.com",
+    "PhoneNumber": "753159456"
+  },
+  {
+    "DNI": "89012345CC",
+    "FullName": "Héctor Cifuentes",
+    "Email": "hector.cifuentes@example.com",
+    "PhoneNumber": "951753654"
+  },
+  {
+    "DNI": "90123456DD",
+    "FullName": "Marisol Cárdenas",
+    "Email": "marisol.cardenas@example.com",
+    "PhoneNumber": "258159753"
+  },
+  {
+    "DNI": "01234567EE",
+    "FullName": "Nicolás Andrade",
+    "Email": "nicolas.andrade@example.com",
+    "PhoneNumber": "369789147"
+  },
+  {
+    "DNI": "12345678FF",
+    "FullName": "Gina Rivas",
+    "Email": "gina.rivas@example.com",
+    "PhoneNumber": "147258963"
+  },
+  {
+    "DNI": "23456789GG",
+    "FullName": "Raúl Méndez",
+    "Email": "raul.mendez@example.com",
+    "PhoneNumber": "258369741"
+  },
+  {
+    "DNI": "34567890HH",
+    "FullName": "Selena Torres",
+    "Email": "selena.torres@example.com",
+    "PhoneNumber": "369147852"
+  },
+  {
+    "DNI": "45678901II",
+    "FullName": "Roberto Ruiz",
+    "Email": "roberto.ruiz@example.com",
+    "PhoneNumber": "147258963"
+  },
+  {
+    "DNI": "56789012JJ",
+    "FullName": "Silvia Silva",
+    "Email": "silvia.silva@example.com",
+    "PhoneNumber": "258963147"
+  },
+  {
+    "DNI": "67890123KK",
+    "FullName": "Victor Marín",
+    "Email": "victor.marin@example.com",
+    "PhoneNumber": "369852741"
+  },
+  {
+    "DNI": "78901234LL",
+    "FullName": "Inés Castillo",
+    "Email": "ines.castillo@example.com",
+    "PhoneNumber": "147963258"
+  },
+  {
+    "DNI": "89012345MM",
+    "FullName": "Oscar Castro",
+    "Email": "oscar.castro@example.com",
+    "PhoneNumber": "258741963"
+  },
+  {
+    "DNI": "90123456NN",
+    "FullName": "Lucía Acosta",
+    "Email": "lucia.acosta@example.com",
+    "PhoneNumber": "369258147"
+  }
+]
