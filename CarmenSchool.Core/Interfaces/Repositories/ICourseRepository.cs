@@ -1,0 +1,8 @@
+﻿using CarmenSchool.Core.Models;
+
+namespace CarmenSchool.Core.Interfaces.Repositories
+{
+  public interface ICourseRepository : IRepository<Course>
+  {
+  }
+}

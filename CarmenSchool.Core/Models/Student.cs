@@ -14,8 +14,7 @@ namespace CarmenSchool.Core.Models
     public DateTime CreatedDate { get; set; }
     public virtual List<Enrollment> Enrollments { get; set; } = [];
 
-
-    public StudentReadDto ToStudentReadDto()
+    public StudentReadDto ToRead()
     {
       return new StudentReadDto { DNI = DNI, FullName = FullName, Email = Email, PhoneNumber = PhoneNumber, Id=Id };
     }

@@ -2,14 +2,15 @@
 
 namespace CarmenSchool.Core.Models
 {
-    public class Period : IBaseEntity
-    {
-        public int Id { get; set; }
+  public class Period : IBaseEntity
+  {
+    public int Id { get; set; }
+    public DateTime CreatedDate { get; set; }
 
-        public DateOnly StartDate { get; set; }
+    public DateOnly StartDate { get; set; }
 
-        public DateOnly EndDate { get; set; }
+    public DateOnly EndDate { get; set; }
 
-        public virtual List<Enrollment>? Enrollments { get; set; }
-    }
+    public virtual List<Enrollment>? Enrollments { get; set; }
+  }
 }

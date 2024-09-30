@@ -2,6 +2,7 @@
 using CarmenSchool.Core.Interfaces.Repositories;
 using CarmenSchool.Core.Interfaces.Services;
 using CarmenSchool.Core.Models;
+using CarmenSchool.Core.Utils;
 using System.Linq.Expressions;
 using System.Text.Json;
 
@@ -28,7 +29,7 @@ namespace CarmenSchool.Services.Internal
       var newStudent = request.ToEntity();
       newStudent.CreatedDate = DateTime.Now;
       await studentRepository.AddAsync(newStudent);
-      return newStudent.ToStudentReadDto();
+      return newStudent.ToRead();
     }
 
 
@@ -42,19 +43,19 @@ namespace CarmenSchool.Services.Internal
     {
       var students = await studentRepository.GetAllAsync();
       return students is null ?
-        [] :  students.Select(s => s.ToStudentReadDto()).ToList();
+        [] :  students.Select(s => s.ToRead()).ToList();
     }
 
     public async Task<StudentReadDto?> GetByIdAsync(int id)
     {
       var student = await studentRepository.GetByIdAsync(id);
-      return student?.ToStudentReadDto() ?? null;
+      return student?.ToRead() ?? null;
     }
 
     public async Task<StudentReadDto?> GetByDNIAsync(string dni)
     {
       var student = await studentRepository.GetByDNIAsync(dni);
-      return student?.ToStudentReadDto() ?? null;
+      return student?.ToRead() ?? null;
     }
 
     public async Task<bool> UpdateAsync(int id,StudentUpdateRequest request)
@@ -73,21 +74,7 @@ namespace CarmenSchool.Services.Internal
     public async Task<IEnumerable<StudentReadDto>> FindAsync(Expression<Func<Student, bool>> expression)
     {
       var students = await studentRepository.FindAsync(expression);
-      return students.Select(s => s.ToStudentReadDto());
-    }
-
-    private async Task<List<StudentCreateRequest>> GetStudentsFromJsonAsync(string path)
-    {
-      var students = new List<StudentCreateRequest>();
-
-      try
-      {
-        var json = await File.ReadAllTextAsync(path);
-        students = JsonSerializer.Deserialize<List<StudentCreateRequest>>(json);
-      }
-      catch (Exception) { }
-      
-      return students ?? [];
+      return students.Select(s => s.ToRead());
     }
 
     public async Task<int> InsertFromJsonFile(string jsonPath)
@@ -96,7 +83,7 @@ namespace CarmenSchool.Services.Internal
 
       try
       {
-        var students = await GetStudentsFromJsonAsync(jsonPath);
+        var students = await JsonUtils.GetObjectFromJsonAsync<StudentCreateRequest>(jsonPath);
 
         foreach (var student in students)
         {

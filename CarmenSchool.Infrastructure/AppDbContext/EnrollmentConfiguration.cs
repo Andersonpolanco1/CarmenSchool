@@ -14,7 +14,7 @@ public class EnrollmentConfiguration : IEntityTypeConfiguration<Enrollment>
     builder.Property(e => e.StudentId)
         .IsRequired();
 
-    builder.Property(e => e.EnrollmentDate)
+    builder.Property(e => e.CreatedDate)
         .IsRequired(); 
 
     builder.HasOne(e => e.Course)

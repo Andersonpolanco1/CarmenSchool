@@ -28,7 +28,7 @@ namespace CarmenSchool.Core.DTOs.StudentDTO
       return new Student 
       {
         DNI = DNI.ToUpper(),
-        FullName = StringHelpers.CapitalizeWords(FullName),
+        FullName = FullName.CapitalizeWords(),
         Email = Email.ToLower(),
         PhoneNumber = PhoneNumber
       };

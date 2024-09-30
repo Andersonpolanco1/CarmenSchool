@@ -1,0 +1,102 @@
+[
+  {
+    "Name": "Técnico en Mantenimiento de Computadoras",
+    "Description": "Curso para aprender a diagnosticar y reparar equipos de cómputo."
+  },
+  {
+    "Name": "Redes y Telecomunicaciones",
+    "Description": "Estudio de la configuración y mantenimiento de redes informáticas."
+  },
+  {
+    "Name": "Automatización Industrial",
+    "Description": "Curso sobre sistemas de control y automatización en entornos industriales."
+  },
+  {
+    "Name": "Electrónica Básica",
+    "Description": "Introducción a los componentes y circuitos electrónicos."
+  },
+  {
+    "Name": "Desarrollo de Aplicaciones Web",
+    "Description": "Creación de aplicaciones web dinámicas utilizando HTML, CSS y JavaScript."
+  },
+  {
+    "Name": "Soldadura y Metalurgia",
+    "Description": "Curso sobre técnicas de soldadura y trabajo con metales."
+  },
+  {
+    "Name": "Mecánica Automotriz",
+    "Description": "Formación en reparación y mantenimiento de vehículos automotores."
+  },
+  {
+    "Name": "Técnico en Energías Renovables",
+    "Description": "Estudio sobre el uso e instalación de sistemas de energía solar y eólica."
+  },
+  {
+    "Name": "Programación de PLC",
+    "Description": "Curso de programación y control de autómatas programables (PLC)."
+  },
+  {
+    "Name": "Refrigeración y Climatización",
+    "Description": "Instalación y mantenimiento de sistemas de aire acondicionado y refrigeración."
+  },
+  {
+    "Name": "Técnico en Diseño Gráfico",
+    "Description": "Curso para aprender a crear y editar gráficos digitales utilizando software especializado."
+  },
+  {
+    "Name": "Administración de Servidores Linux",
+    "Description": "Instalación, configuración y administración de servidores basados en Linux."
+  },
+  {
+    "Name": "Electricidad Industrial",
+    "Description": "Formación en instalaciones eléctricas en el ámbito industrial."
+  },
+  {
+    "Name": "Técnico en Ciberseguridad",
+    "Description": "Curso sobre protección de sistemas y redes contra ataques cibernéticos."
+  },
+  {
+    "Name": "Instalación de Sistemas Domóticos",
+    "Description": "Aprendizaje sobre sistemas de automatización en hogares y edificios inteligentes."
+  },
+  {
+    "Name": "Técnico en Impresión 3D",
+    "Description": "Formación en diseño y producción de piezas mediante impresoras 3D."
+  },
+  {
+    "Name": "Mantenimiento de Equipos Médicos",
+    "Description": "Curso sobre mantenimiento preventivo y correctivo de equipos de uso médico."
+  },
+  {
+    "Name": "Diseño y Desarrollo de Videojuegos",
+    "Description": "Introducción a la creación de videojuegos desde el diseño hasta la programación."
+  },
+  {
+    "Name": "Técnico en Robótica",
+    "Description": "Estudio de los sistemas de robótica y su programación."
+  },
+  {
+    "Name": "Seguridad Electrónica",
+    "Description": "Instalación y mantenimiento de sistemas de alarmas y videovigilancia."
+  },
+  {
+    "Name": "Mantenimiento de Máquinas Industriales",
+    "Description": "Formación en reparación y mantenimiento de maquinaria utilizada en la industria."
+  },
+  {
+    "Name": "Técnico en Drones",
+    "Description": "Curso sobre el manejo, mantenimiento y aplicaciones de drones."
+  },
+  {
+    "Name": "Desarrollo de Aplicaciones Móviles",
+    "Description": "Curso técnico para aprender a crear aplicaciones móviles nativas para Android e iOS."
+  },
+  {
+    "Name": "Técnico en Automatización y Control",
+    "Description": "Formación en el diseño de sistemas automáticos y control de procesos industriales."
+  },
+  {
+    "Name": "Técnico en Inteligencia Artificial",
+    "Description": "Curso sobre aplicaciones de IA en la industria y desarrollo de soluciones automatizadas."
+  }
+]

@@ -15,6 +15,9 @@ public class PeriodConfiguration : IEntityTypeConfiguration<Period>
     builder.Property(e => e.EndDate)
         .IsRequired();
 
+    builder.Property(e => e.CreatedDate)
+    .IsRequired();
+
     builder.HasMany(e => e.Enrollments)
         .WithOne() 
         .OnDelete(DeleteBehavior.Cascade); 

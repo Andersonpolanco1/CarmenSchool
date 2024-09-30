@@ -1,5 +1,4 @@
 ﻿using CarmenSchool.Core.Interfaces.Repositories;
-using CarmenSchool.Core.Models;
 using CarmenSchool.Infrastructure.AppDbContext;
 using CarmenSchool.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -18,6 +17,7 @@ namespace CarmenSchool.Infrastructure
       );
 
       services.AddScoped<IStudentRepository, StudentRepository>();
+      services.AddScoped<ICourseRepository, CourseRepository>();
 
       return services;
     }

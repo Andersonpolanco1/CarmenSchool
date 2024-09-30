@@ -4,7 +4,7 @@ namespace CarmenSchool.Core.Helpers
 {
   public static class StringHelpers
   {
-    public static string CapitalizeWords(string input)
+    public static string CapitalizeWords(this string input)
     {
       if (string.IsNullOrWhiteSpace(input))
         return input;

@@ -12,6 +12,6 @@ namespace CarmenSchool.Core.Models
     public required int StudentId { get; set; }
     public virtual required Student Student { get; set; }
 
-    public DateTime EnrollmentDate { get; set; }
+    public DateTime CreatedDate { get; set; }
   }
 }

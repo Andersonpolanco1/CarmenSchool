@@ -1,5 +1,4 @@
-﻿using CarmenSchool.Core.DTOs.StudentDTO;
-using CarmenSchool.Core.Interfaces;
+﻿using CarmenSchool.Core.DTOs.CourseDTO;
 using CarmenSchool.Core.Interfaces.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,8 +14,8 @@ namespace CarmenSchool.Web.Controllers
     {
       try
       {
-        var students = await CourseService.GetAllAsync();
-        return Ok(students);
+        var courses = await CourseService.GetAllAsync();
+        return Ok(courses);
       }
       catch (Exception ex)
       {
@@ -29,8 +28,8 @@ namespace CarmenSchool.Web.Controllers
     {
       try
       {
-        var student = await CourseService.GetByIdAsync(id);
-        return student == null ? NotFound() : Ok(student);
+        var course = await CourseService.GetByIdAsync(id);
+        return course == null ? NotFound() : Ok(course);
       }
       catch (Exception ex)
       {
@@ -39,12 +38,12 @@ namespace CarmenSchool.Web.Controllers
     }
 
     [HttpPost]
-    public async Task<IActionResult> Post([FromBody] StudentCreateRequest request)
+    public async Task<IActionResult> Post([FromBody] CourseCreateDto request)
     {
       try
       {
-        var newStudent = await CourseService.AddAsync(request);
-        return CreatedAtAction(nameof(Get), new { id = newStudent.Id }, newStudent);
+        var newCourse = await CourseService.AddAsync(request);
+        return CreatedAtAction(nameof(Get), new { id = newCourse.Id }, newCourse);
       }
       catch (InvalidOperationException ex)
       {
@@ -58,7 +57,7 @@ namespace CarmenSchool.Web.Controllers
 
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> Put(int id, [FromBody] StudentUpdateRequest request)
+    public async Task<IActionResult> Put(int id, [FromBody] CourseUpdateDto request)
     {
       try
       {

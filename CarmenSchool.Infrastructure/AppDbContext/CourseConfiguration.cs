@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace CarmenSchool.Infrastructure.AppDbContext
 {
-  internal class CourseConfiguration :  IEntityTypeConfiguration<Course>
+  internal class CourseConfiguration : IEntityTypeConfiguration<Course>
   {
     public void Configure(EntityTypeBuilder<Course> builder)
     {
@@ -13,6 +13,9 @@ namespace CarmenSchool.Infrastructure.AppDbContext
       builder.Property(e => e.Name)
           .IsRequired()
           .HasMaxLength(120);
+
+      builder.Property(e => e.CreatedDate)
+          .IsRequired();
 
       builder.Property(e => e.Description)
           .IsRequired()
