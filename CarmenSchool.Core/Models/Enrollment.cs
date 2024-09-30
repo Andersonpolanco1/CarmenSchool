@@ -1,7 +1,11 @@
-﻿namespace CarmenSchool.Core.Models
+﻿using CarmenSchool.Core.Interfaces;
+
+namespace CarmenSchool.Core.Models
 {
-  public class Enrollment
+    public class Enrollment : IBaseEntity
   {
+    public int Id { get; set; }
+
     public required int CourseId { get; set; }
     public virtual required Course Course { get; set; }
 

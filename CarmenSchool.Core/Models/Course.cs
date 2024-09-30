@@ -1,9 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿
+using CarmenSchool.Core.Interfaces;
 
 namespace CarmenSchool.Core.Models
 {
-    public class Course
-    {
+    public class Course : IBaseEntity
+  {
         public int Id { get; set; }
         public required string Name { get; set; }
         public required string Description { get; set; } 

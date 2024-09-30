@@ -1,6 +1,8 @@
-﻿namespace CarmenSchool.Core.Models
+﻿using CarmenSchool.Core.Interfaces;
+
+namespace CarmenSchool.Core.Models
 {
-    public class Period
+    public class Period : IBaseEntity
     {
         public int Id { get; set; }
 

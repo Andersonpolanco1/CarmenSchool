@@ -1,12 +1,13 @@
 ﻿using CarmenSchool.Core.DTOs.StudentDTO;
+using CarmenSchool.Core.Interfaces;
 using CarmenSchool.Core.Interfaces.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CarmenSchool.Web.Controllers
 {
-    [Route("api/[controller]")]
+  [Route("api/[controller]")]
   [ApiController]
-  public class StudentsController(IStudentService studentService) : ControllerBase
+  public class CoursesController(ICourseService CourseService) : ControllerBase
   {
 
     [HttpGet]
@@ -14,7 +15,7 @@ namespace CarmenSchool.Web.Controllers
     {
       try
       {
-        var students = await studentService.GetAllAsync();
+        var students = await CourseService.GetAllAsync();
         return Ok(students);
       }
       catch (Exception ex)
@@ -28,7 +29,7 @@ namespace CarmenSchool.Web.Controllers
     {
       try
       {
-        var student = await studentService.GetByIdAsync(id);
+        var student = await CourseService.GetByIdAsync(id);
         return student == null ? NotFound() : Ok(student);
       }
       catch (Exception ex)
@@ -42,7 +43,7 @@ namespace CarmenSchool.Web.Controllers
     {
       try
       {
-        var newStudent = await studentService.AddAsync(request);
+        var newStudent = await CourseService.AddAsync(request);
         return CreatedAtAction(nameof(Get), new { id = newStudent.Id }, newStudent);
       }
       catch (InvalidOperationException ex)
@@ -61,7 +62,7 @@ namespace CarmenSchool.Web.Controllers
     {
       try
       {
-        var success  = await studentService.UpdateAsync(id, request);
+        var success  = await CourseService.UpdateAsync(id, request);
         return success ? NoContent() : NotFound();
       }
       catch (Exception ex)
@@ -73,7 +74,7 @@ namespace CarmenSchool.Web.Controllers
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id)
     {
-        var success = await studentService.DeleteByIdAsync(id);
+        var success = await CourseService.DeleteByIdAsync(id);
         return success ? NoContent() : NotFound();
     }
   }

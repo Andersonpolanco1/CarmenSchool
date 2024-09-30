@@ -1,13 +1,13 @@
 ﻿using CarmenSchool.Core.DTOs.StudentDTO;
-using CarmenSchool.Core.Interfaces;
+using CarmenSchool.Core.Interfaces.Repositories;
+using CarmenSchool.Core.Interfaces.Services;
 using CarmenSchool.Core.Models;
-using System.IO;
 using System.Linq.Expressions;
 using System.Text.Json;
 
 namespace CarmenSchool.Services.Internal
 {
-  public class StudentService(IStudentRepository studentRepository) : IStudentService
+    public class StudentService(IStudentRepository studentRepository) : IStudentService
   {
     public async Task<StudentReadDto> AddAsync(StudentCreateRequest request)
     {

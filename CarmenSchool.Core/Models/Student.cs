@@ -1,9 +1,10 @@
 ﻿
 using CarmenSchool.Core.DTOs.StudentDTO;
+using CarmenSchool.Core.Interfaces;
 
 namespace CarmenSchool.Core.Models
 {
-  public class Student
+    public class Student : IBaseEntity
   {
     public int Id { get; set; }
     public required string DNI { get; set; }
