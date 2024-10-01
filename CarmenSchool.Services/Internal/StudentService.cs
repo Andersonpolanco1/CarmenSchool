@@ -65,10 +65,15 @@ namespace CarmenSchool.Services.Internal
       if (studentDb == null) 
         return false;
 
-      studentDb.Email = request.Email.ToLower();
-      studentDb.PhoneNumber = request.PhoneNumber;
+      if(request.Email != null)
+        studentDb.Email = request.Email.ToLower();
 
-      return await studentRepository.UpdateAsync(studentDb);
+      if (request.PhoneNumber != null)
+        studentDb.PhoneNumber = request.PhoneNumber;
+
+      return studentRepository.IsModified(studentDb) ?
+           await studentRepository.UpdateAsync(studentDb)
+          : false;
     }
 
     public async Task<IEnumerable<StudentReadDto>> FindAsync(Expression<Func<Student, bool>> expression)

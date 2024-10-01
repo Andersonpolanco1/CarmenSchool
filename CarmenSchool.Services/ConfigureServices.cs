@@ -10,6 +10,7 @@ namespace CarmenSchool.Services
     {
       services.AddScoped<IStudentService, StudentService>();
       services.AddScoped<ICourseService, CourseService>();
+      services.AddScoped<IPeriodService, PeriodService>();
       return services;
     }
   }

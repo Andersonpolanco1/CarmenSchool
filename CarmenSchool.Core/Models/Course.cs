@@ -1,5 +1,4 @@
-﻿
-using CarmenSchool.Core.DTOs.CourseDTO;
+﻿using CarmenSchool.Core.DTOs.CourseDTO;
 using CarmenSchool.Core.Interfaces;
 
 namespace CarmenSchool.Core.Models
@@ -8,8 +7,8 @@ namespace CarmenSchool.Core.Models
   {
     public int Id { get; set; }
     public DateTime CreatedDate { get; set; }
-    public required string Name { get; set; }
-    public required string Description { get; set; }
+    public required string Name { get; set; } = string.Empty;
+    public required string Description { get; set; } = string.Empty;
     public virtual List<Enrollment> Enrollments { get; set; } = [];
 
     public CourseReadDto ToRead()

@@ -84,5 +84,11 @@ namespace CarmenSchool.Infrastructure.Repositories
         return false;
       }
     }
+
+    public bool IsModified(T entity)
+    {
+      var entry = context.Entry(entity);
+      return entry.State == EntityState.Modified;
+    }
   }
 }

@@ -1,4 +1,5 @@
-﻿using CarmenSchool.Core.Interfaces;
+﻿using CarmenSchool.Core.DTOs.PeriodDTO;
+using CarmenSchool.Core.Interfaces;
 
 namespace CarmenSchool.Core.Models
 {
@@ -12,5 +13,10 @@ namespace CarmenSchool.Core.Models
     public DateOnly EndDate { get; set; }
 
     public virtual List<Enrollment>? Enrollments { get; set; }
+
+    public PeriodReadDto ToRead()
+    {
+      return new PeriodReadDto { Id = Id, StartDate = StartDate, EndDate = EndDate };
+    }
   }
 }

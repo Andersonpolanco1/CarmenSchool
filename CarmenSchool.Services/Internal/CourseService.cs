@@ -20,7 +20,7 @@ namespace CarmenSchool.Services.Internal
       var newCourse = request.ToEntity();
       newCourse.CreatedDate = DateTime.Now;
       await courseRepository.AddAsync(newCourse);
-      return newCourse.ToRead();
+      return newCourse?.ToRead();
     }
 
 
@@ -45,15 +45,20 @@ namespace CarmenSchool.Services.Internal
 
     public async Task<bool> UpdateAsync(int id, CourseUpdateDto request)
     {
-      var course = await courseRepository.GetByIdAsync(id);
+      var courseDb = await courseRepository.GetByIdAsync(id);
 
-      if (course == null)
+      if (courseDb == null)
         return false;
 
-      course.Description = request.Description;
-      course.Name = request.Name.CapitalizeWords();
+      if(request.Name != null)
+        courseDb.Name = request.Name.CapitalizeWords();
 
-      return await courseRepository.UpdateAsync(course);
+      if (request.Description != null)
+        courseDb.Description = request.Description;
+
+      return courseRepository.IsModified(courseDb) ?
+        await courseRepository.UpdateAsync(courseDb)
+        : false;
     }
 
     public async Task<IEnumerable<CourseReadDto>> FindAsync(Expression<Func<Course, bool>> expression)

@@ -4,6 +4,7 @@ using CarmenSchool.Core.Interfaces.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
 using System.Text;
+using CarmenSchool.Core.DTOs.PeriodDTO;
 
 namespace CarmenSchool.Web.Controllers
 {
@@ -12,11 +13,12 @@ namespace CarmenSchool.Web.Controllers
   public class MockController(
       IStudentService studentService, 
       ICourseService courseService, 
+      IPeriodService periodService, 
       IHostEnvironment hostEnvironment, 
       IConfiguration configuration
       ) : ControllerBase
   {
-    [HttpGet("load-students")]
+    [HttpGet("students")]
     public async Task<IActionResult> Students()
     {
       try
@@ -31,13 +33,28 @@ namespace CarmenSchool.Web.Controllers
       }
     }
 
-    [HttpGet("load-courses")]
+    [HttpGet("courses")]
     public async Task<IActionResult> Courses()
     {
       try
       {
         var configurationKey = "MockJsonFilePaths:Courses";
         var result = await LoadDataFromJsonAsync<CourseCreateRequest>(configurationKey, courseService.AddAsync);
+        return Ok(result);
+      }
+      catch (Exception ex)
+      {
+        return Problem(detail: ex.Message);
+      }
+    }
+
+    [HttpGet("periods")]
+    public async Task<IActionResult> Periods()
+    {
+      try
+      {
+        var configurationKey = "MockJsonFilePaths:Periods";
+        var result = await LoadDataFromJsonAsync<PeriodCreateRequest>(configurationKey, periodService.AddAsync);
         return Ok(result);
       }
       catch (Exception ex)
