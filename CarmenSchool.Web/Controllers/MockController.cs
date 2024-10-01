@@ -4,7 +4,6 @@ using CarmenSchool.Core.Interfaces.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
 using System.Text;
-using CarmenSchool.Core.DTOs.PeriodDTO;
 
 namespace CarmenSchool.Web.Controllers
 {

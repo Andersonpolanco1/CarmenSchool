@@ -16,7 +16,6 @@ namespace CarmenSchool.Core.DTOs.PeriodDTO
 
     public DateOnly? GetStartDateAsDateOnly() 
     {
-
       if (StartDate == null)
         return null; 
 

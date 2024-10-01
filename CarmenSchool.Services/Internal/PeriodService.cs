@@ -16,7 +16,7 @@ namespace CarmenSchool.Services.Internal
         throw new InvalidOperationException("Ya existe un curso periodo registrado en la misma fecha de inicio y fin del mismo");
 
       if(request.GetStartDateAsDateOnly() > request.GetEndDateAsDateOnly())
-        throw new InvalidOperationException("La fecha de inicio no puede ser despues de la fecha fin");
+        throw new InvalidOperationException("La fecha de inicio no puede ser posterior a la fecha de fin");
 
       var newPeriod = request.ToEntity();
       newPeriod.CreatedDate = DateTime.Now;

@@ -17,6 +17,6 @@ public class PeriodCreateRequest
   public DateOnly GetEndDateAsDateOnly() => DateOnly.ParseExact(EndDate, DateTimeUtils.PERIOD_STRING_DATE_FORMATS, CultureInfo.InvariantCulture);
   public Period ToEntity()
   {
-    return new Period { EndDate = GetEndDateAsDateOnly(), StartDate = GetStartDateAsDateOnly(), };
+    return new Period { EndDate = GetEndDateAsDateOnly(), StartDate = GetStartDateAsDateOnly() };
   }
 }

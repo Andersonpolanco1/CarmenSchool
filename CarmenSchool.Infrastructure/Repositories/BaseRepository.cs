@@ -1,6 +1,5 @@
 ﻿using CarmenSchool.Core.Interfaces;
 using CarmenSchool.Core.Interfaces.Repositories;
-using CarmenSchool.Core.Utils;
 using CarmenSchool.Infrastructure.AppDbContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -9,11 +8,13 @@ using System.Linq.Expressions;
 
 namespace CarmenSchool.Infrastructure.Repositories
 {
-    public abstract class BaseRepository<T>(ApplicationDbContext context, ILogger<BaseRepository<T>> logger) : IRepository<T> 
-    where T :class, IBaseEntity
+  public abstract class BaseRepository<T>(ApplicationDbContext context, ILogger<BaseRepository<T>> logger) : IRepository<T>
+    where T : class, IBaseEntity
   {
     protected readonly ApplicationDbContext context = context;
     protected readonly ILogger<BaseRepository<T>> logger = logger;
+    public const string ERROR_OBTENIENDO_REGISTROS = "Ha ocurrido un error interno al intentar obtener los registros.";
+    public const string ERROR_OBTENIENDO_REGISTRO = "Ha ocurrido un error interno al intentar obtener el registro.";
 
     public async Task<T> AddAsync(T entity)
     {
@@ -53,7 +54,7 @@ namespace CarmenSchool.Infrastructure.Repositories
       catch (Exception ex)
       {
         logger.LogError(message: ex.Message);
-        throw new Exception(ErrorMessages.ERROR_OBTENIENDO_REGISTROS);
+        throw new Exception(ERROR_OBTENIENDO_REGISTROS);
       }
     }
 
@@ -66,7 +67,7 @@ namespace CarmenSchool.Infrastructure.Repositories
       catch (Exception ex)
       {
         logger.LogError(ex.Message);
-        throw new Exception(ErrorMessages.ERROR_OBTENIENDO_REGISTRO);
+        throw new Exception(ERROR_OBTENIENDO_REGISTRO);
       }
     }
 

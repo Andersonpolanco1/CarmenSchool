@@ -5,8 +5,8 @@ namespace CarmenSchool.Core.DTOs.PeriodDTO
   public class PeriodReadDto
   {
     public int Id { get; set; }
-    public DateOnly StartDate { get; set; } = DateOnly.MinValue;
-    public DateOnly EndDate { get; set; } = DateOnly.MinValue;
+    public string StartDate { get; set; } = string.Empty;
+    public string EndDate { get; set; } = string.Empty;
     public string Duration
     {
       get

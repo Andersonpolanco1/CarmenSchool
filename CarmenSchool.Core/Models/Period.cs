@@ -1,5 +1,6 @@
 ﻿using CarmenSchool.Core.DTOs.PeriodDTO;
 using CarmenSchool.Core.Interfaces;
+using CarmenSchool.Core.Utils;
 
 namespace CarmenSchool.Core.Models
 {
@@ -16,7 +17,12 @@ namespace CarmenSchool.Core.Models
 
     public PeriodReadDto ToRead()
     {
-      return new PeriodReadDto { Id = Id, StartDate = StartDate, EndDate = EndDate };
+      return new PeriodReadDto 
+      {
+        Id = Id, 
+        StartDate = StartDate.ToLocalDateString(), 
+        EndDate = EndDate.ToLocalDateString() 
+      };
     }
   }
 }

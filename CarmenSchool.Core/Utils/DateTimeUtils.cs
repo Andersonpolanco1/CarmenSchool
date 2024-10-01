@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Globalization;
+using System.Text;
 
 namespace CarmenSchool.Core.Utils
 {
@@ -9,6 +10,14 @@ namespace CarmenSchool.Core.Utils
       "dd-MM-yyyy",
       "dd/MM/yyyy"
     ];
+
+    public static string CalculateYearsAndMonthsBetweenDates(string startDate, string endDate)
+    {
+      var start = DateOnly.ParseExact(startDate, PERIOD_STRING_DATE_FORMATS, CultureInfo.InvariantCulture);
+      var end = DateOnly.ParseExact(endDate, PERIOD_STRING_DATE_FORMATS, CultureInfo.InvariantCulture);
+
+      return CalculateYearsAndMonthsBetweenDates(start, end); 
+    }
 
     public static string CalculateYearsAndMonthsBetweenDates(DateOnly startDate, DateOnly endDate)
     {
@@ -48,5 +57,12 @@ namespace CarmenSchool.Core.Utils
       return durationSB.ToString();
 
     }
+
+    public static string ToLocalDateString(this DateTime date) => date.ToString("dd/MM/yyyy");
+
+
+    public static string ToLocalDateString(this DateOnly date) => date.ToString("dd/MM/yyyy");
+
+    public static string ToLocalDateTimeString(this DateTime date) => date.ToString("dd/MM/yyyy hh:mm:ss");
   }
 }

@@ -1,242 +1,162 @@
 [
   {
-    "StartDate": "2023-01-28",
-    "EndDate": "2024-07-28"
+    "StartDate": "15-01-2020",
+    "EndDate": "15-04-2020"
   },
   {
-    "StartDate": "2023-09-18",
-    "EndDate": "2024-09-18"
+    "StartDate": "20/02/2020",
+    "EndDate": "20/08/2020"
   },
   {
-    "StartDate": "2023-08-19",
-    "EndDate": "2023-11-19"
+    "StartDate": "05-03-2020",
+    "EndDate": "05-12-2020"
   },
   {
-    "StartDate": "2022-12-13",
-    "EndDate": "2023-06-13"
+    "StartDate": "10/04/2020",
+    "EndDate": "10/04/2021"
   },
   {
-    "StartDate": "2023-07-08",
-    "EndDate": "2024-01-08"
+    "StartDate": "01-05-2020",
+    "EndDate": "01-11-2021"
   },
   {
-    "StartDate": "2022-04-06",
-    "EndDate": "2022-12-06"
+    "StartDate": "15/06/2020",
+    "EndDate": "15/06/2022"
   },
   {
-    "StartDate": "2023-03-15",
-    "EndDate": "2023-07-15"
+    "StartDate": "25-07-2020",
+    "EndDate": "25-07-2023"
   },
   {
-    "StartDate": "2023-05-13",
-    "EndDate": "2024-11-13"
+    "StartDate": "30/08/2020",
+    "EndDate": "30/08/2024"
   },
   {
-    "StartDate": "2022-03-21",
-    "EndDate": "2023-09-21"
+    "StartDate": "10-09-2021",
+    "EndDate": "10-12-2021"
   },
   {
-    "StartDate": "2024-04-04",
-    "EndDate": "2024-12-04"
+    "StartDate": "01/10/2021",
+    "EndDate": "01/04/2022"
   },
   {
-    "StartDate": "2024-04-12",
-    "EndDate": "2024-10-12"
+    "StartDate": "15-11-2021",
+    "EndDate": "15-08-2022"
   },
   {
-    "StartDate": "2022-05-15",
-    "EndDate": "2022-11-15"
+    "StartDate": "20/12/2021",
+    "EndDate": "20/12/2022"
   },
   {
-    "StartDate": "2023-01-16",
-    "EndDate": "2024-01-16"
+    "StartDate": "05-01-2022",
+    "EndDate": "05-07-2023"
   },
   {
-    "StartDate": "2024-03-08",
-    "EndDate": "2024-06-08"
+    "StartDate": "10/02/2022",
+    "EndDate": "10/08/2024"
   },
   {
-    "StartDate": "2022-06-25",
-    "EndDate": "2022-12-25"
+    "StartDate": "25-03-2022",
+    "EndDate": "25-03-2025"
   },
   {
-    "StartDate": "2023-08-23",
-    "EndDate": "2024-02-23"
+    "StartDate": "30/04/2022",
+    "EndDate": "30/04/2026"
   },
   {
-    "StartDate": "2022-05-16",
-    "EndDate": "2023-11-16"
+    "StartDate": "01-05-2022",
+    "EndDate": "01-08-2022"
   },
   {
-    "StartDate": "2023-03-09",
-    "EndDate": "2023-06-09"
+    "StartDate": "15/06/2022",
+    "EndDate": "15/12/2022"
   },
   {
-    "StartDate": "2020-12-17",
-    "EndDate": "2022-12-17"
+    "StartDate": "20-07-2022",
+    "EndDate": "20-04-2023"
   },
   {
-    "StartDate": "2024-05-01",
-    "EndDate": "2025-11-01"
+    "StartDate": "01/08/2022",
+    "EndDate": "01/08/2023"
   },
   {
-    "StartDate": "2023-02-14",
-    "EndDate": "2027-02-14"
+    "StartDate": "05-09-2022",
+    "EndDate": "05-03-2024"
   },
   {
-    "StartDate": "2024-02-14",
-    "EndDate": "2025-02-14"
+    "StartDate": "10/10/2022",
+    "EndDate": "10/10/2025"
   },
   {
-    "StartDate": "2023-03-10",
-    "EndDate": "2023-07-10"
+    "StartDate": "15-11-2022",
+    "EndDate": "15-11-2026"
   },
   {
-    "StartDate": "2023-07-10",
-    "EndDate": "2024-07-10"
+    "StartDate": "20/12/2022",
+    "EndDate": "20/12/2024"
   },
   {
-    "StartDate": "2024-10-07",
-    "EndDate": "2025-10-07"
+    "StartDate": "05-01-2023",
+    "EndDate": "05-01-2024"
   },
   {
-    "StartDate": "2023-01-08",
-    "EndDate": "2024-07-08"
+    "StartDate": "10/02/2023",
+    "EndDate": "10/05/2023"
   },
   {
-    "StartDate": "2022-06-16",
-    "EndDate": "2026-06-16"
+    "StartDate": "25-03-2023",
+    "EndDate": "25-09-2023"
   },
   {
-    "StartDate": "2022-02-24",
-    "EndDate": "2023-08-24"
+    "StartDate": "30/04/2023",
+    "EndDate": "30/10/2023"
   },
   {
-    "StartDate": "2023-01-14",
-    "EndDate": "2023-07-14"
+    "StartDate": "01-05-2023",
+    "EndDate": "01-11-2024"
   },
   {
-    "StartDate": "2026-06-15",
-    "EndDate": "2024-12-15"
+    "StartDate": "15/06/2023",
+    "EndDate": "15/06/2025"
   },
   {
-    "StartDate": "2022-10-10",
-    "EndDate": "2023-10-10"
+    "StartDate": "20-07-2023",
+    "EndDate": "20-07-2026"
   },
   {
-    "StartDate": "2022-03-20",
-    "EndDate": "2022-06-20"
+    "StartDate": "01/08/2023",
+    "EndDate": "01/08/2024"
   },
   {
-    "StartDate": "2022-02-26",
-    "EndDate": "2022-06-26"
+    "StartDate": "05-09-2023",
+    "EndDate": "05-03-2026"
   },
   {
-    "StartDate": "2023-04-11",
-    "EndDate": "2023-08-11"
+    "StartDate": "10/10/2023",
+    "EndDate": "10/10/2027"
   },
   {
-    "StartDate": "2023-04-23",
-    "EndDate": "2023-10-23"
+    "StartDate": "15-11-2023",
+    "EndDate": "15-05-2024"
   },
   {
-    "StartDate": "2023-04-28",
-    "EndDate": "2023-07-28"
+    "StartDate": "20/12/2023",
+    "EndDate": "20/06/2024"
   },
   {
-    "StartDate": "2025-12-15",
-    "EndDate": "2025-09-26"
+    "StartDate": "05-01-2024",
+    "EndDate": "05-07-2024"
   },
   {
-    "StartDate": "2024-01-08",
-    "EndDate": "2024-09-08"
+    "StartDate": "10/02/2024",
+    "EndDate": "10/02/2025"
   },
   {
-    "StartDate": "2022-07-22",
-    "EndDate": "2022-11-22"
+    "StartDate": "25-03-2024",
+    "EndDate": "25-03-2026"
   },
   {
-    "StartDate": "2022-06-14",
-    "EndDate": "2022-10-14"
-  },
-  {
-    "StartDate": "2023-01-16",
-    "EndDate": "2024-07-16"
-  },
-  {
-    "StartDate": "2022-01-06",
-    "EndDate": "2022-04-06"
-  },
-  {
-    "StartDate": "2022-01-15",
-    "EndDate": "2022-04-15"
-  },
-  {
-    "StartDate": "2022-05-05",
-    "EndDate": "2022-08-05"
-  },
-  {
-    "StartDate": "2024-11-25",
-    "EndDate": "2025-05-25"
-  },
-  {
-    "StartDate": "2024-05-05",
-    "EndDate": "2024-08-05"
-  },
-  {
-    "StartDate": "2022-03-01",
-    "EndDate": "2023-03-01"
-  },
-  {
-    "StartDate": "2023-03-18",
-    "EndDate": "2023-06-18"
-  },
-  {
-    "StartDate": "2022-07-06",
-    "EndDate": "2026-07-06"
-  },
-  {
-    "StartDate": "2024-09-16",
-    "EndDate": "2028-09-16"
-  },
-  {
-    "StartDate": "2023-02-13",
-    "EndDate": "2027-02-13"
-  },
-  {
-    "StartDate": "2024-03-20",
-    "EndDate": "2025-03-20"
-  },
-  {
-    "StartDate": "2024-01-06",
-    "EndDate": "2024-05-06"
-  },
-  {
-    "StartDate": "2023-03-16",
-    "EndDate": "2023-12-16"
-  },
-  {
-    "StartDate": "2023-12-13",
-    "EndDate": "2024-06-13"
-  },
-  {
-    "StartDate": "2023-01-14",
-    "EndDate": "2024-01-14"
-  },
-  {
-    "StartDate": "2022-12-05",
-    "EndDate": "2026-12-05"
-  },
-  {
-    "StartDate": "2024-01-04",
-    "EndDate": "2025-01-04"
-  },
-  {
-    "StartDate": "2022-02-17",
-    "EndDate": "2022-08-17"
-  },
-  {
-    "StartDate": "2024-04-22",
-    "EndDate": "2024-08-22"
+    "StartDate": "30/04/2024",
+    "EndDate": "30/04/2028"
   }
 ]
