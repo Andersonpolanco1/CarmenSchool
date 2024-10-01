@@ -43,7 +43,7 @@ namespace CarmenSchool.Services.Internal
     {
       var students = await studentRepository.GetAllAsync();
       return students is null ?
-        [] :  students.Select(s => s.ToRead()).ToList();
+        [] :  students.Select(s => s.ToRead()).OrderBy(s => s.FullName).ToList();
     }
 
     public async Task<StudentReadDto?> GetByIdAsync(int id)
@@ -74,28 +74,7 @@ namespace CarmenSchool.Services.Internal
     public async Task<IEnumerable<StudentReadDto>> FindAsync(Expression<Func<Student, bool>> expression)
     {
       var students = await studentRepository.FindAsync(expression);
-      return students.Select(s => s.ToRead());
-    }
-
-    public async Task<int> InsertFromJsonFile(string jsonPath)
-    {
-      int totalNewRecords = 0;
-
-      try
-      {
-        var students = await JsonUtils.GetObjectFromJsonAsync<StudentCreateRequest>(jsonPath);
-
-        foreach (var student in students)
-        {
-          await AddAsync(student);
-          totalNewRecords++;
-        }
-      }
-      catch (Exception)
-      {
-      }
-
-      return totalNewRecords;
+      return students.Select(s => s.ToRead()).OrderBy(s => s.FullName);
     }
   }
 }

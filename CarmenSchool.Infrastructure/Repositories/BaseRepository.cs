@@ -1,6 +1,6 @@
-﻿using CarmenSchool.Core.Helpers;
-using CarmenSchool.Core.Interfaces;
+﻿using CarmenSchool.Core.Interfaces;
 using CarmenSchool.Core.Interfaces.Repositories;
+using CarmenSchool.Core.Utils;
 using CarmenSchool.Infrastructure.AppDbContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;

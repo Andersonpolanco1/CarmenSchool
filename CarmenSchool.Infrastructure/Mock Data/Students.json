@@ -1,43 +1,43 @@
 [
   {
     "DNI": "12345678A",
-    "FullName": "Juan PÈrez",
+    "FullName": "Juan P√©rez",
     "Email": "juan.perez@example.com",
     "PhoneNumber": "123456789"
   },
   {
     "DNI": "87654321B",
-    "FullName": "Ana GÛmez",
+    "FullName": "Ana G√≥mez",
     "Email": "ana.gomez@example.com",
     "PhoneNumber": "987654321"
   },
   {
     "DNI": "23456789C",
-    "FullName": "Luis MartÌnez",
+    "FullName": "Luis Mart√≠nez",
     "Email": "luis.martinez@example.com",
     "PhoneNumber": "456789123"
   },
   {
     "DNI": "34567890D",
-    "FullName": "MarÌa LÛpez",
+    "FullName": "Mar√≠a L√≥pez",
     "Email": "maria.lopez@example.com",
     "PhoneNumber": "654321789"
   },
   {
     "DNI": "45678901E",
-    "FullName": "Carlos S·nchez",
+    "FullName": "Carlos S√°nchez",
     "Email": "carlos.sanchez@example.com",
     "PhoneNumber": "321654987"
   },
   {
     "DNI": "56789012F",
-    "FullName": "Laura Fern·ndez",
+    "FullName": "Laura Fern√°ndez",
     "Email": "laura.fernandez@example.com",
     "PhoneNumber": "789654321"
   },
   {
     "DNI": "67890123G",
-    "FullName": "Pedro GarcÌa",
+    "FullName": "Pedro Garc√≠a",
     "Email": "pedro.garcia@example.com",
     "PhoneNumber": "147258369"
   },
@@ -85,7 +85,7 @@
   },
   {
     "DNI": "45678901O",
-    "FullName": "AndrÈs JimÈnez",
+    "FullName": "Andr√©s Jim√©nez",
     "Email": "andres.jimenez@example.com",
     "PhoneNumber": "159753846"
   },
@@ -97,25 +97,25 @@
   },
   {
     "DNI": "67890123Q",
-    "FullName": "Ra˙l Herrera",
+    "FullName": "Ra√∫l Herrera",
     "Email": "raul.herrera@example.com",
     "PhoneNumber": "951753864"
   },
   {
     "DNI": "78901234R",
-    "FullName": "Carmen PeÒa",
+    "FullName": "Carmen Pe√±a",
     "Email": "carmen.pena@example.com",
     "PhoneNumber": "258147963"
   },
   {
     "DNI": "89012345S",
-    "FullName": "Diego LeÛn",
+    "FullName": "Diego Le√≥n",
     "Email": "diego.leon@example.com",
     "PhoneNumber": "456789321"
   },
   {
     "DNI": "90123456T",
-    "FullName": "Angela Paredes",
+    "FullName": "√Ångela Paredes",
     "Email": "angela.paredes@example.com",
     "PhoneNumber": "789654123"
   },
@@ -127,7 +127,7 @@
   },
   {
     "DNI": "12345678V",
-    "FullName": "LucÌa RamÌrez",
+    "FullName": "Luc√≠a Ram√≠rez",
     "Email": "lucia.ramirez@example.com",
     "PhoneNumber": "654321789"
   },
@@ -151,37 +151,37 @@
   },
   {
     "DNI": "56789012Z",
-    "FullName": "VerÛnica Soto",
+    "FullName": "Ver√≥nica Soto",
     "Email": "veronica.soto@example.com",
     "PhoneNumber": "369258147"
   },
   {
     "DNI": "67890123AA",
-    "FullName": "Esteban RÌos",
+    "FullName": "Esteban R√≠os",
     "Email": "esteban.rios@example.com",
     "PhoneNumber": "159753258"
   },
   {
     "DNI": "78901234BB",
-    "FullName": "RocÌo Aguirre",
+    "FullName": "Roc√≠o Aguirre",
     "Email": "rocio.aguirre@example.com",
     "PhoneNumber": "753159456"
   },
   {
     "DNI": "89012345CC",
-    "FullName": "HÈctor Cifuentes",
+    "FullName": "H√©ctor Cifuentes",
     "Email": "hector.cifuentes@example.com",
     "PhoneNumber": "951753654"
   },
   {
     "DNI": "90123456DD",
-    "FullName": "Marisol C·rdenas",
+    "FullName": "Marisol C√°rdenas",
     "Email": "marisol.cardenas@example.com",
     "PhoneNumber": "258159753"
   },
   {
     "DNI": "01234567EE",
-    "FullName": "Nicol·s Andrade",
+    "FullName": "Nicol√°s Andrade",
     "Email": "nicolas.andrade@example.com",
     "PhoneNumber": "369789147"
   },
@@ -193,7 +193,7 @@
   },
   {
     "DNI": "23456789GG",
-    "FullName": "Ra˙l MÈndez",
+    "FullName": "Ra√∫l M√©ndez",
     "Email": "raul.mendez@example.com",
     "PhoneNumber": "258369741"
   },
@@ -217,25 +217,25 @@
   },
   {
     "DNI": "67890123KK",
-    "FullName": "Victor MarÌn",
+    "FullName": "V√≠ctor Mar√≠n",
     "Email": "victor.marin@example.com",
     "PhoneNumber": "369852741"
   },
   {
     "DNI": "78901234LL",
-    "FullName": "InÈs Castillo",
+    "FullName": "In√©s Castillo",
     "Email": "ines.castillo@example.com",
     "PhoneNumber": "147963258"
   },
   {
     "DNI": "89012345MM",
-    "FullName": "Oscar Castro",
+    "FullName": "√ìscar Castro",
     "Email": "oscar.castro@example.com",
     "PhoneNumber": "258741963"
   },
   {
     "DNI": "90123456NN",
-    "FullName": "LucÌa Acosta",
+    "FullName": "Luc√≠a Acosta",
     "Email": "lucia.acosta@example.com",
     "PhoneNumber": "369258147"
   }

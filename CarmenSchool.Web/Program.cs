@@ -3,7 +3,6 @@ using CarmenSchool.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
 builder.Services.AddRouting(options =>
 {
   options.LowercaseQueryStrings = true;

@@ -38,7 +38,7 @@ namespace CarmenSchool.Web.Controllers
     }
 
     [HttpPost]
-    public async Task<IActionResult> Post([FromBody] CourseCreateDto request)
+    public async Task<IActionResult> Post([FromBody] CourseCreateRequest request)
     {
       try
       {

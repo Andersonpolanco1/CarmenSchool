@@ -1,5 +1,4 @@
 ﻿using CarmenSchool.Core.DTOs.CourseDTO;
-using CarmenSchool.Core.DTOs.StudentDTO;
 using CarmenSchool.Core.Helpers;
 using CarmenSchool.Core.Interfaces.Repositories;
 using CarmenSchool.Core.Interfaces.Services;
@@ -11,7 +10,7 @@ namespace CarmenSchool.Services.Internal
 {
   public class CourseService(ICourseRepository courseRepository) : ICourseService
   {
-    public async Task<CourseReadDto> AddAsync(CourseCreateDto request)
+    public async Task<CourseReadDto> AddAsync(CourseCreateRequest request)
     {
       var course = await courseRepository.FindAsync(c => c.Name.ToUpper() == request.Name.ToUpper());
 
@@ -61,27 +60,6 @@ namespace CarmenSchool.Services.Internal
     {
       var courses = await courseRepository.FindAsync(expression);
       return courses.Select(s => s.ToRead());
-    }
-
-    public async Task<int> InsertFromJsonFile(string jsonPath)
-    {
-      int totalNewRecords = 0;
-
-      try
-      {
-        var courses = await JsonUtils.GetObjectFromJsonAsync<CourseCreateDto>(jsonPath);
-
-        foreach (var course in courses)
-        {
-          await AddAsync(course);
-          totalNewRecords++;
-        }
-      }
-      catch (Exception)
-      {
-      }
-
-      return totalNewRecords;
     }
   }
 }

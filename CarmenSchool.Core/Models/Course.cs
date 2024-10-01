@@ -1,6 +1,5 @@
 ﻿
 using CarmenSchool.Core.DTOs.CourseDTO;
-using CarmenSchool.Core.DTOs.StudentDTO;
 using CarmenSchool.Core.Interfaces;
 
 namespace CarmenSchool.Core.Models
@@ -15,7 +14,7 @@ namespace CarmenSchool.Core.Models
 
     public CourseReadDto ToRead()
     {
-      return new CourseReadDto { Id = Id, Description = Description, Name = Name, CreatedDate = CreatedDate };
+      return new CourseReadDto { Id = Id, Description = Description, Name = Name };
     }
   }
 }
