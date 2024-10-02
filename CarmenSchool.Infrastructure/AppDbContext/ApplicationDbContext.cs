@@ -1,7 +1,6 @@
 ﻿using CarmenSchool.Core.Models;
 using Microsoft.EntityFrameworkCore;
 
-
 namespace CarmenSchool.Infrastructure.AppDbContext
 {
   public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : DbContext(options)
@@ -15,8 +14,8 @@ namespace CarmenSchool.Infrastructure.AppDbContext
     {
       modelBuilder.ApplyConfiguration(new CourseConfiguration());
       modelBuilder.ApplyConfiguration(new StudentConfiguration());
-      modelBuilder.ApplyConfiguration(new EnrollmentConfiguration());
       modelBuilder.ApplyConfiguration(new PeriodConfiguration());
+      modelBuilder.ApplyConfiguration(new EnrollmentConfiguration());
     }
   }
 }

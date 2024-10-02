@@ -56,16 +56,16 @@ namespace CarmenSchool.Infrastructure.Migrations
                     b.Property<int>("StudentId")
                         .HasColumnType("int");
 
+                    b.Property<int>("PeriodId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("Id")
                         .HasColumnType("int");
 
-                    b.Property<int?>("PeriodId")
-                        .HasColumnType("int");
-
-                    b.HasKey("CourseId", "StudentId");
+                    b.HasKey("CourseId", "StudentId", "PeriodId");
 
                     b.HasIndex("PeriodId");
 
@@ -139,10 +139,11 @@ namespace CarmenSchool.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("CarmenSchool.Core.Models.Period", null)
+                    b.HasOne("CarmenSchool.Core.Models.Period", "Period")
                         .WithMany("Enrollments")
                         .HasForeignKey("PeriodId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("CarmenSchool.Core.Models.Student", "Student")
                         .WithMany("Enrollments")
@@ -151,6 +152,8 @@ namespace CarmenSchool.Infrastructure.Migrations
                         .IsRequired();
 
                     b.Navigation("Course");
+
+                    b.Navigation("Period");
 
                     b.Navigation("Student");
                 });

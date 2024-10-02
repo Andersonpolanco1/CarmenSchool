@@ -9,7 +9,7 @@ namespace CarmenSchool.Core.Models
     public DateTime CreatedDate { get; set; }
     public required string Name { get; set; } = string.Empty;
     public required string Description { get; set; } = string.Empty;
-    public virtual List<Enrollment> Enrollments { get; set; } = [];
+    public virtual List<Enrollment>? Enrollments { get; set; } = new List<Enrollment>();
 
     public CourseReadDto ToRead()
     {

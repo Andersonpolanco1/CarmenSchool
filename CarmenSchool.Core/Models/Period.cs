@@ -13,7 +13,8 @@ namespace CarmenSchool.Core.Models
 
     public DateOnly EndDate { get; set; }
 
-    public virtual List<Enrollment>? Enrollments { get; set; }
+    public virtual List<Enrollment>? Enrollments { get; set; } = new List<Enrollment>();
+
 
     public PeriodReadDto ToRead()
     {

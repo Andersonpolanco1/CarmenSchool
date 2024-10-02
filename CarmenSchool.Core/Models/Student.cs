@@ -12,7 +12,7 @@ namespace CarmenSchool.Core.Models
     public required string Email { get; set; }
     public string? PhoneNumber { get; set; }
     public DateTime CreatedDate { get; set; }
-    public virtual List<Enrollment> Enrollments { get; set; } = [];
+    public virtual List<Enrollment>? Enrollments { get; set; } = new List<Enrollment>();
 
     public StudentReadDto ToRead()
     {

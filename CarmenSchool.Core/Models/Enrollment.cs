@@ -2,7 +2,7 @@
 
 namespace CarmenSchool.Core.Models
 {
-    public class Enrollment : IBaseEntity
+  public class Enrollment : IBaseEntity
   {
     public int Id { get; set; }
 
@@ -11,6 +11,9 @@ namespace CarmenSchool.Core.Models
 
     public required int StudentId { get; set; }
     public virtual required Student Student { get; set; }
+
+    public int PeriodId { get; set; }
+    public virtual required Period Period { get; set; }
 
     public DateTime CreatedDate { get; set; }
   }
