@@ -4,20 +4,22 @@ using CarmenSchool.Core.Interfaces.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
 using System.Text;
+using CarmenSchool.Core.DTOs.EnrollmentsDTO;
 
 namespace CarmenSchool.Web.Controllers
 {
-  [Route("api/[controller]")]
+  [Route("api/[controller]/[action]")]
   [ApiController]
   public class MockController(
       IStudentService studentService, 
       ICourseService courseService, 
       IPeriodService periodService, 
+      IEnrollmentService enrollmentService, 
       IHostEnvironment hostEnvironment, 
       IConfiguration configuration
       ) : ControllerBase
   {
-    [HttpGet("students")]
+    [HttpGet]
     public async Task<IActionResult> Students()
     {
       try
@@ -32,7 +34,7 @@ namespace CarmenSchool.Web.Controllers
       }
     }
 
-    [HttpGet("courses")]
+    [HttpGet]
     public async Task<IActionResult> Courses()
     {
       try
@@ -47,13 +49,28 @@ namespace CarmenSchool.Web.Controllers
       }
     }
 
-    [HttpGet("periods")]
+    [HttpGet]
     public async Task<IActionResult> Periods()
     {
       try
       {
         var configurationKey = "MockJsonFilePaths:Periods";
         var result = await LoadDataFromJsonAsync<PeriodCreateRequest>(configurationKey, periodService.AddAsync);
+        return Ok(result);
+      }
+      catch (Exception ex)
+      {
+        return Problem(detail: ex.Message);
+      }
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> Enrollments()
+    {
+      try
+      {
+        var configurationKey = "MockJsonFilePaths:Enrollments";
+        var result = await LoadDataFromJsonAsync<EnrollmentCreateRequest>(configurationKey, enrollmentService.AddAsync);
         return Ok(result);
       }
       catch (Exception ex)

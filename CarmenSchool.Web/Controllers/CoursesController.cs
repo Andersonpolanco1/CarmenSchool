@@ -15,7 +15,7 @@ namespace CarmenSchool.Web.Controllers
       try
       {
         var courses = await CourseService.GetAllAsync();
-        return Ok(courses.Select(c => c.ToRead()).ToList());
+        return Ok(courses.Select(c => c.ToRead()));
       }
       catch (Exception ex)
       {

@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-public class EnrollmentConfiguration : IEntityTypeConfiguration<Enrollment>
+internal class EnrollmentConfiguration : IEntityTypeConfiguration<Enrollment>
 {
   public void Configure(EntityTypeBuilder<Enrollment> builder)
   {

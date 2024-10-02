@@ -2,13 +2,11 @@
 using CarmenSchool.Core.Interfaces.Repositories;
 using CarmenSchool.Core.Interfaces.Services;
 using CarmenSchool.Core.Models;
-using CarmenSchool.Core.Utils;
 using System.Linq.Expressions;
-using System.Text.Json;
 
 namespace CarmenSchool.Services.Internal
 {
-    public class StudentService(IStudentRepository studentRepository) : IStudentService
+  internal class StudentService(IStudentRepository studentRepository) : IStudentService
   {
     public async Task<Student> AddAsync(StudentCreateRequest request)
     {

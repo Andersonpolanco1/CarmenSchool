@@ -6,7 +6,7 @@ using Microsoft.Extensions.Logging;
 
 namespace CarmenSchool.Infrastructure.Repositories
 {
-  public class EnrollmentRepository(ApplicationDbContext context, ILogger<EnrollmentRepository> logger)
+  internal class EnrollmentRepository(ApplicationDbContext context, ILogger<EnrollmentRepository> logger)
     : BaseRepository<Enrollment>(context, logger), IEnrollmentRepository
   {
     public async Task<Enrollment?> GetByIdAsync(int studentId, int courseId, int periodId)

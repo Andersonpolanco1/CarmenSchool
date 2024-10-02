@@ -5,7 +5,7 @@ using Microsoft.Extensions.Logging;
 
 namespace CarmenSchool.Infrastructure.Repositories
 {
-  public class CourseRepository(ApplicationDbContext context, ILogger<CourseRepository> logger) 
+  internal class CourseRepository(ApplicationDbContext context, ILogger<CourseRepository> logger) 
     : BaseRepository<Course>(context, logger), ICourseRepository
   {
   }

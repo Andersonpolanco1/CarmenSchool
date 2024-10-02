@@ -13,8 +13,8 @@ namespace CarmenSchool.Web.Controllers
     {
       try
       {
-        var Enrollments = await enrollmentService.GetAllAsync();
-        return Ok(Enrollments.Select(e => e.ToRead()));
+        var enrollments = await enrollmentService.GetAllAsync();
+        return Ok(enrollments.Select(e => e.ToRead()));
       }
       catch (Exception ex)
       {

@@ -7,7 +7,7 @@ using Microsoft.Extensions.Logging;
 
 namespace CarmenSchool.Infrastructure.Repositories
 {
-  public class StudentRepository(ApplicationDbContext context, ILogger<StudentRepository> logger) 
+  internal class StudentRepository(ApplicationDbContext context, ILogger<StudentRepository> logger) 
     : BaseRepository<Student>(context, logger), IStudentRepository
   {
     public async Task<Student?> GetByDNIAsync(string dni)

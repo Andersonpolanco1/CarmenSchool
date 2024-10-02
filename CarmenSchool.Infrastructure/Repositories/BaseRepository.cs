@@ -8,13 +8,12 @@ using System.Linq.Expressions;
 
 namespace CarmenSchool.Infrastructure.Repositories
 {
-  public abstract class BaseRepository<T>(ApplicationDbContext context, ILogger<BaseRepository<T>> logger) : IRepository<T>
+  internal abstract class BaseRepository<T>(ApplicationDbContext context, ILogger<BaseRepository<T>> logger) : IRepository<T>
     where T : class, IBaseEntity
   {
     protected readonly ApplicationDbContext context = context;
     protected readonly ILogger<BaseRepository<T>> logger = logger;
-    public const string ERROR_OBTENIENDO_REGISTROS = "Ha ocurrido un error interno al intentar obtener los registros.";
-    public const string ERROR_OBTENIENDO_REGISTRO = "Ha ocurrido un error interno al intentar obtener el registro.";
+    public const string ERROR_OBTENIENDO_REGISTROS = "Se produjo un error interno al intentar recuperar el/los registro(s).";
 
     public async Task<T> AddAsync(T entity)
     {
@@ -83,7 +82,7 @@ namespace CarmenSchool.Infrastructure.Repositories
       catch (Exception ex)
       {
         logger.LogError(ex.Message);
-        throw new Exception(ERROR_OBTENIENDO_REGISTRO);
+        throw new Exception(ERROR_OBTENIENDO_REGISTROS);
       }
     }
 

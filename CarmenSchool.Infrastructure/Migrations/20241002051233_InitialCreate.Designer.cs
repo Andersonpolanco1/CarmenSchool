@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CarmenSchool.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241002014336_InitialCreate")]
+    [Migration("20241002051233_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />

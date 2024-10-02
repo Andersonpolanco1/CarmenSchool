@@ -1,0 +1,2502 @@
+[
+  {
+    "CourseId": 15,
+    "PeriodId": 32,
+    "StudentId": 18
+  },
+  {
+    "CourseId": 20,
+    "PeriodId": 25,
+    "StudentId": 32
+  },
+  {
+    "CourseId": 14,
+    "PeriodId": 33,
+    "StudentId": 23
+  },
+  {
+    "CourseId": 5,
+    "PeriodId": 5,
+    "StudentId": 3
+  },
+  {
+    "CourseId": 24,
+    "PeriodId": 23,
+    "StudentId": 3
+  },
+  {
+    "CourseId": 9,
+    "PeriodId": 16,
+    "StudentId": 7
+  },
+  {
+    "CourseId": 21,
+    "PeriodId": 38,
+    "StudentId": 13
+  },
+  {
+    "CourseId": 21,
+    "PeriodId": 27,
+    "StudentId": 13
+  },
+  {
+    "CourseId": 1,
+    "PeriodId": 21,
+    "StudentId": 33
+  },
+  {
+    "CourseId": 15,
+    "PeriodId": 24,
+    "StudentId": 37
+  },
+  {
+    "CourseId": 22,
+    "PeriodId": 35,
+    "StudentId": 2
+  },
+  {
+    "CourseId": 13,
+    "PeriodId": 8,
+    "StudentId": 19
+  },
+  {
+    "CourseId": 7,
+    "PeriodId": 30,
+    "StudentId": 34
+  },
+  {
+    "CourseId": 20,
+    "PeriodId": 21,
+    "StudentId": 12
+  },
+  {
+    "CourseId": 4,
+    "PeriodId": 14,
+    "StudentId": 29
+  },
+  {
+    "CourseId": 8,
+    "PeriodId": 18,
+    "StudentId": 37
+  },
+  {
+    "CourseId": 14,
+    "PeriodId": 9,
+    "StudentId": 34
+  },
+  {
+    "CourseId": 17,
+    "PeriodId": 5,
+    "StudentId": 25
+  },
+  {
+    "CourseId": 4,
+    "PeriodId": 7,
+    "StudentId": 8
+  },
+  {
+    "CourseId": 21,
+    "PeriodId": 22,
+    "StudentId": 37
+  },
+  {
+    "CourseId": 10,
+    "PeriodId": 24,
+    "StudentId": 19
+  },
+  {
+    "CourseId": 9,
+    "PeriodId": 12,
+    "StudentId": 5
+  },
+  {
+    "CourseId": 2,
+    "PeriodId": 19,
+    "StudentId": 16
+  },
+  {
+    "CourseId": 25,
+    "PeriodId": 32,
+    "StudentId": 1
+  },
+  {
+    "CourseId": 15,
+    "PeriodId": 12,
+    "StudentId": 31
+  },
+  {
+    "CourseId": 19,
+    "PeriodId": 7,
+    "StudentId": 28
+  },
+  {
+    "CourseId": 22,
+    "PeriodId": 23,
+    "StudentId": 14
+  },
+  {
+    "CourseId": 7,
+    "PeriodId": 30,
+    "StudentId": 11
+  },
+  {
+    "CourseId": 17,
+    "PeriodId": 36,
+    "StudentId": 17
+  },
+  {
+    "CourseId": 22,
+    "PeriodId": 15,
+    "StudentId": 6
+  },
+  {
+    "CourseId": 4,
+    "PeriodId": 23,
+    "StudentId": 11
+  },
+  {
+    "CourseId": 21,
+    "PeriodId": 21,
+    "StudentId": 40
+  },
+  {
+    "CourseId": 24,
+    "PeriodId": 30,
+    "StudentId": 6
+  },
+  {
+    "CourseId": 12,
+    "PeriodId": 4,
+    "StudentId": 20
+  },
+  {
+    "CourseId": 14,
+    "PeriodId": 32,
+    "StudentId": 21
+  },
+  {
+    "CourseId": 5,
+    "PeriodId": 20,
+    "StudentId": 9
+  },
+  {
+    "CourseId": 19,
+    "PeriodId": 6,
+    "StudentId": 22
+  },
+  {
+    "CourseId": 5,
+    "PeriodId": 33,
+    "StudentId": 37
+  },
+  {
+    "CourseId": 11,
+    "PeriodId": 6,
+    "StudentId": 27
+  },
+  {
+    "CourseId": 10,
+    "PeriodId": 5,
+    "StudentId": 19
+  },
+  {
+    "CourseId": 9,
+    "PeriodId": 12,
+    "StudentId": 9
+  },
+  {
+    "CourseId": 25,
+    "PeriodId": 20,
+    "StudentId": 22
+  },
+  {
+    "CourseId": 6,
+    "PeriodId": 22,
+    "StudentId": 14
+  },
+  {
+    "CourseId": 5,
+    "PeriodId": 37,
+    "StudentId": 25
+  },
+  {
+    "CourseId": 19,
+    "PeriodId": 40,
+    "StudentId": 20
+  },
+  {
+    "CourseId": 20,
+    "PeriodId": 17,
+    "StudentId": 23
+  },
+  {
+    "CourseId": 11,
+    "PeriodId": 20,
+    "StudentId": 28
+  },
+  {
+    "CourseId": 8,
+    "PeriodId": 15,
+    "StudentId": 4
+  },
+  {
+    "CourseId": 17,
+    "PeriodId": 13,
+    "StudentId": 1
+  },
+  {
+    "CourseId": 13,
+    "PeriodId": 8,
+    "StudentId": 27
+  },
+  {
+    "CourseId": 20,
+    "PeriodId": 40,
+    "StudentId": 24
+  },
+  {
+    "CourseId": 24,
+    "PeriodId": 6,
+    "StudentId": 34
+  },
+  {
+    "CourseId": 20,
+    "PeriodId": 10,
+    "StudentId": 1
+  },
+  {
+    "CourseId": 18,
+    "PeriodId": 3,
+    "StudentId": 25
+  },
+  {
+    "CourseId": 11,
+    "PeriodId": 36,
+    "StudentId": 17
+  },
+  {
+    "CourseId": 15,
+    "PeriodId": 32,
+    "StudentId": 3
+  },
+  {
+    "CourseId": 10,
+    "PeriodId": 15,
+    "StudentId": 37
+  },
+  {
+    "CourseId": 22,
+    "PeriodId": 29,
+    "StudentId": 39
+  },
+  {
+    "CourseId": 4,
+    "PeriodId": 22,
+    "StudentId": 1
+  },
+  {
+    "CourseId": 13,
+    "PeriodId": 38,
+    "StudentId": 18
+  },
+  {
+    "CourseId": 8,
+    "PeriodId": 33,
+    "StudentId": 29
+  },
+  {
+    "CourseId": 15,
+    "PeriodId": 24,
+    "StudentId": 13
+  },
+  {
+    "CourseId": 12,
+    "PeriodId": 8,
+    "StudentId": 35
+  },
+  {
+    "CourseId": 24,
+    "PeriodId": 6,
+    "StudentId": 11
+  },
+  {
+    "CourseId": 1,
+    "PeriodId": 23,
+    "StudentId": 36
+  },
+  {
+    "CourseId": 15,
+    "PeriodId": 5,
+    "StudentId": 17
+  },
+  {
+    "CourseId": 1,
+    "PeriodId": 39,
+    "StudentId": 17
+  },
+  {
+    "CourseId": 23,
+    "PeriodId": 11,
+    "StudentId": 14
+  },
+  {
+    "CourseId": 15,
+    "PeriodId": 27,
+    "StudentId": 23
+  },
+  {
+    "CourseId": 14,
+    "PeriodId": 6,
+    "StudentId": 4
+  },
+  {
+    "CourseId": 12,
+    "PeriodId": 30,
+    "StudentId": 22
+  },
+  {
+    "CourseId": 4,
+    "PeriodId": 10,
+    "StudentId": 12
+  },
+  {
+    "CourseId": 22,
+    "PeriodId": 10,
+    "StudentId": 20
+  },
+  {
+    "CourseId": 3,
+    "PeriodId": 21,
+    "StudentId": 6
+  },
+  {
+    "CourseId": 18,
+    "PeriodId": 11,
+    "StudentId": 5
+  },
+  {
+    "CourseId": 13,
+    "PeriodId": 29,
+    "StudentId": 22
+  },
+  {
+    "CourseId": 19,
+    "PeriodId": 29,
+    "StudentId": 18
+  },
+  {
+    "CourseId": 1,
+    "PeriodId": 24,
+    "StudentId": 14
+  },
+  {
+    "CourseId": 24,
+    "PeriodId": 3,
+    "StudentId": 37
+  },
+  {
+    "CourseId": 21,
+    "PeriodId": 14,
+    "StudentId": 4
+  },
+  {
+    "CourseId": 18,
+    "PeriodId": 3,
+    "StudentId": 33
+  },
+  {
+    "CourseId": 24,
+    "PeriodId": 40,
+    "StudentId": 13
+  },
+  {
+    "CourseId": 8,
+    "PeriodId": 29,
+    "StudentId": 13
+  },
+  {
+    "CourseId": 10,
+    "PeriodId": 15,
+    "StudentId": 27
+  },
+  {
+    "CourseId": 6,
+    "PeriodId": 10,
+    "StudentId": 7
+  },
+  {
+    "CourseId": 18,
+    "PeriodId": 15,
+    "StudentId": 7
+  },
+  {
+    "CourseId": 14,
+    "PeriodId": 20,
+    "StudentId": 19
+  },
+  {
+    "CourseId": 24,
+    "PeriodId": 29,
+    "StudentId": 31
+  },
+  {
+    "CourseId": 4,
+    "PeriodId": 29,
+    "StudentId": 30
+  },
+  {
+    "CourseId": 8,
+    "PeriodId": 2,
+    "StudentId": 14
+  },
+  {
+    "CourseId": 19,
+    "PeriodId": 28,
+    "StudentId": 31
+  },
+  {
+    "CourseId": 14,
+    "PeriodId": 4,
+    "StudentId": 38
+  },
+  {
+    "CourseId": 13,
+    "PeriodId": 18,
+    "StudentId": 11
+  },
+  {
+    "CourseId": 5,
+    "PeriodId": 38,
+    "StudentId": 2
+  },
+  {
+    "CourseId": 16,
+    "PeriodId": 5,
+    "StudentId": 14
+  },
+  {
+    "CourseId": 4,
+    "PeriodId": 16,
+    "StudentId": 32
+  },
+  {
+    "CourseId": 8,
+    "PeriodId": 28,
+    "StudentId": 35
+  },
+  {
+    "CourseId": 21,
+    "PeriodId": 10,
+    "StudentId": 11
+  },
+  {
+    "CourseId": 22,
+    "PeriodId": 28,
+    "StudentId": 32
+  },
+  {
+    "CourseId": 4,
+    "PeriodId": 25,
+    "StudentId": 37
+  },
+  {
+    "CourseId": 20,
+    "PeriodId": 20,
+    "StudentId": 27
+  },
+  {
+    "CourseId": 24,
+    "PeriodId": 29,
+    "StudentId": 17
+  },
+  {
+    "CourseId": 15,
+    "PeriodId": 8,
+    "StudentId": 36
+  },
+  {
+    "CourseId": 5,
+    "PeriodId": 14,
+    "StudentId": 22
+  },
+  {
+    "CourseId": 6,
+    "PeriodId": 10,
+    "StudentId": 20
+  },
+  {
+    "CourseId": 5,
+    "PeriodId": 14,
+    "StudentId": 31
+  },
+  {
+    "CourseId": 7,
+    "PeriodId": 34,
+    "StudentId": 11
+  },
+  {
+    "CourseId": 13,
+    "PeriodId": 15,
+    "StudentId": 1
+  },
+  {
+    "CourseId": 25,
+    "PeriodId": 3,
+    "StudentId": 7
+  },
+  {
+    "CourseId": 15,
+    "PeriodId": 23,
+    "StudentId": 24
+  },
+  {
+    "CourseId": 23,
+    "PeriodId": 22,
+    "StudentId": 27
+  },
+  {
+    "CourseId": 22,
+    "PeriodId": 2,
+    "StudentId": 6
+  },
+  {
+    "CourseId": 14,
+    "PeriodId": 36,
+    "StudentId": 13
+  },
+  {
+    "CourseId": 1,
+    "PeriodId": 31,
+    "StudentId": 35
+  },
+  {
+    "CourseId": 17,
+    "PeriodId": 4,
+    "StudentId": 31
+  },
+  {
+    "CourseId": 24,
+    "PeriodId": 2,
+    "StudentId": 26
+  },
+  {
+    "CourseId": 4,
+    "PeriodId": 2,
+    "StudentId": 25
+  },
+  {
+    "CourseId": 21,
+    "PeriodId": 39,
+    "StudentId": 24
+  },
+  {
+    "CourseId": 21,
+    "PeriodId": 9,
+    "StudentId": 32
+  },
+  {
+    "CourseId": 3,
+    "PeriodId": 20,
+    "StudentId": 27
+  },
+  {
+    "CourseId": 17,
+    "PeriodId": 26,
+    "StudentId": 18
+  },
+  {
+    "CourseId": 24,
+    "PeriodId": 16,
+    "StudentId": 37
+  },
+  {
+    "CourseId": 4,
+    "PeriodId": 16,
+    "StudentId": 36
+  },
+  {
+    "CourseId": 11,
+    "PeriodId": 38,
+    "StudentId": 7
+  },
+  {
+    "CourseId": 10,
+    "PeriodId": 26,
+    "StudentId": 17
+  },
+  {
+    "CourseId": 18,
+    "PeriodId": 28,
+    "StudentId": 16
+  },
+  {
+    "CourseId": 20,
+    "PeriodId": 1,
+    "StudentId": 36
+  },
+  {
+    "CourseId": 9,
+    "PeriodId": 33,
+    "StudentId": 25
+  },
+  {
+    "CourseId": 11,
+    "PeriodId": 31,
+    "StudentId": 4
+  },
+  {
+    "CourseId": 21,
+    "PeriodId": 5,
+    "StudentId": 21
+  },
+  {
+    "CourseId": 4,
+    "PeriodId": 31,
+    "StudentId": 29
+  },
+  {
+    "CourseId": 1,
+    "PeriodId": 31,
+    "StudentId": 21
+  },
+  {
+    "CourseId": 14,
+    "PeriodId": 34,
+    "StudentId": 29
+  },
+  {
+    "CourseId": 1,
+    "PeriodId": 8,
+    "StudentId": 28
+  },
+  {
+    "CourseId": 23,
+    "PeriodId": 3,
+    "StudentId": 27
+  },
+  {
+    "CourseId": 20,
+    "PeriodId": 38,
+    "StudentId": 30
+  },
+  {
+    "CourseId": 23,
+    "PeriodId": 34,
+    "StudentId": 5
+  },
+  {
+    "CourseId": 2,
+    "PeriodId": 13,
+    "StudentId": 6
+  },
+  {
+    "CourseId": 15,
+    "PeriodId": 37,
+    "StudentId": 30
+  },
+  {
+    "CourseId": 16,
+    "PeriodId": 27,
+    "StudentId": 10
+  },
+  {
+    "CourseId": 7,
+    "PeriodId": 17,
+    "StudentId": 29
+  },
+  {
+    "CourseId": 15,
+    "PeriodId": 34,
+    "StudentId": 15
+  },
+  {
+    "CourseId": 24,
+    "PeriodId": 14,
+    "StudentId": 4
+  },
+  {
+    "CourseId": 4,
+    "PeriodId": 32,
+    "StudentId": 39
+  },
+  {
+    "CourseId": 13,
+    "PeriodId": 9,
+    "StudentId": 28
+  },
+  {
+    "CourseId": 12,
+    "PeriodId": 33,
+    "StudentId": 8
+  },
+  {
+    "CourseId": 22,
+    "PeriodId": 8,
+    "StudentId": 26
+  },
+  {
+    "CourseId": 22,
+    "PeriodId": 36,
+    "StudentId": 26
+  },
+  {
+    "CourseId": 8,
+    "PeriodId": 31,
+    "StudentId": 35
+  },
+  {
+    "CourseId": 19,
+    "PeriodId": 13,
+    "StudentId": 18
+  },
+  {
+    "CourseId": 22,
+    "PeriodId": 1,
+    "StudentId": 13
+  },
+  {
+    "CourseId": 18,
+    "PeriodId": 9,
+    "StudentId": 25
+  },
+  {
+    "CourseId": 11,
+    "PeriodId": 40,
+    "StudentId": 38
+  },
+  {
+    "CourseId": 18,
+    "PeriodId": 29,
+    "StudentId": 3
+  },
+  {
+    "CourseId": 16,
+    "PeriodId": 4,
+    "StudentId": 7
+  },
+  {
+    "CourseId": 25,
+    "PeriodId": 11,
+    "StudentId": 19
+  },
+  {
+    "CourseId": 21,
+    "PeriodId": 27,
+    "StudentId": 31
+  },
+  {
+    "CourseId": 19,
+    "PeriodId": 8,
+    "StudentId": 34
+  },
+  {
+    "CourseId": 24,
+    "PeriodId": 32,
+    "StudentId": 17
+  },
+  {
+    "CourseId": 11,
+    "PeriodId": 11,
+    "StudentId": 7
+  },
+  {
+    "CourseId": 24,
+    "PeriodId": 5,
+    "StudentId": 18
+  },
+  {
+    "CourseId": 17,
+    "PeriodId": 34,
+    "StudentId": 12
+  },
+  {
+    "CourseId": 13,
+    "PeriodId": 21,
+    "StudentId": 25
+  },
+  {
+    "CourseId": 4,
+    "PeriodId": 35,
+    "StudentId": 30
+  },
+  {
+    "CourseId": 24,
+    "PeriodId": 5,
+    "StudentId": 27
+  },
+  {
+    "CourseId": 11,
+    "PeriodId": 3,
+    "StudentId": 21
+  },
+  {
+    "CourseId": 18,
+    "PeriodId": 24,
+    "StudentId": 18
+  },
+  {
+    "CourseId": 11,
+    "PeriodId": 3,
+    "StudentId": 30
+  },
+  {
+    "CourseId": 6,
+    "PeriodId": 9,
+    "StudentId": 13
+  },
+  {
+    "CourseId": 21,
+    "PeriodId": 24,
+    "StudentId": 25
+  },
+  {
+    "CourseId": 24,
+    "PeriodId": 40,
+    "StudentId": 11
+  },
+  {
+    "CourseId": 9,
+    "PeriodId": 14,
+    "StudentId": 2
+  },
+  {
+    "CourseId": 18,
+    "PeriodId": 6,
+    "StudentId": 24
+  },
+  {
+    "CourseId": 15,
+    "PeriodId": 21,
+    "StudentId": 30
+  },
+  {
+    "CourseId": 8,
+    "PeriodId": 32,
+    "StudentId": 22
+  },
+  {
+    "CourseId": 1,
+    "PeriodId": 19,
+    "StudentId": 18
+  },
+  {
+    "CourseId": 8,
+    "PeriodId": 24,
+    "StudentId": 27
+  },
+  {
+    "CourseId": 21,
+    "PeriodId": 27,
+    "StudentId": 35
+  },
+  {
+    "CourseId": 8,
+    "PeriodId": 16,
+    "StudentId": 23
+  },
+  {
+    "CourseId": 7,
+    "PeriodId": 17,
+    "StudentId": 1
+  },
+  {
+    "CourseId": 22,
+    "PeriodId": 27,
+    "StudentId": 2
+  },
+  {
+    "CourseId": 24,
+    "PeriodId": 16,
+    "StudentId": 4
+  },
+  {
+    "CourseId": 5,
+    "PeriodId": 9,
+    "StudentId": 13
+  },
+  {
+    "CourseId": 15,
+    "PeriodId": 6,
+    "StudentId": 23
+  },
+  {
+    "CourseId": 9,
+    "PeriodId": 6,
+    "StudentId": 30
+  },
+  {
+    "CourseId": 9,
+    "PeriodId": 28,
+    "StudentId": 30
+  },
+  {
+    "CourseId": 3,
+    "PeriodId": 1,
+    "StudentId": 17
+  },
+  {
+    "CourseId": 2,
+    "PeriodId": 1,
+    "StudentId": 39
+  },
+  {
+    "CourseId": 17,
+    "PeriodId": 7,
+    "StudentId": 8
+  },
+  {
+    "CourseId": 22,
+    "PeriodId": 5,
+    "StudentId": 10
+  },
+  {
+    "CourseId": 1,
+    "PeriodId": 18,
+    "StudentId": 22
+  },
+  {
+    "CourseId": 20,
+    "PeriodId": 23,
+    "StudentId": 3
+  },
+  {
+    "CourseId": 8,
+    "PeriodId": 8,
+    "StudentId": 14
+  },
+  {
+    "CourseId": 18,
+    "PeriodId": 28,
+    "StudentId": 10
+  },
+  {
+    "CourseId": 12,
+    "PeriodId": 25,
+    "StudentId": 8
+  },
+  {
+    "CourseId": 8,
+    "PeriodId": 31,
+    "StudentId": 34
+  },
+  {
+    "CourseId": 5,
+    "PeriodId": 24,
+    "StudentId": 6
+  },
+  {
+    "CourseId": 23,
+    "PeriodId": 32,
+    "StudentId": 21
+  },
+  {
+    "CourseId": 16,
+    "PeriodId": 3,
+    "StudentId": 38
+  },
+  {
+    "CourseId": 2,
+    "PeriodId": 12,
+    "StudentId": 17
+  },
+  {
+    "CourseId": 6,
+    "PeriodId": 35,
+    "StudentId": 20
+  },
+  {
+    "CourseId": 3,
+    "PeriodId": 31,
+    "StudentId": 17
+  },
+  {
+    "CourseId": 15,
+    "PeriodId": 22,
+    "StudentId": 8
+  },
+  {
+    "CourseId": 21,
+    "PeriodId": 31,
+    "StudentId": 9
+  },
+  {
+    "CourseId": 17,
+    "PeriodId": 34,
+    "StudentId": 2
+  },
+  {
+    "CourseId": 14,
+    "PeriodId": 19,
+    "StudentId": 7
+  },
+  {
+    "CourseId": 24,
+    "PeriodId": 13,
+    "StudentId": 30
+  },
+  {
+    "CourseId": 10,
+    "PeriodId": 14,
+    "StudentId": 5
+  },
+  {
+    "CourseId": 14,
+    "PeriodId": 19,
+    "StudentId": 25
+  },
+  {
+    "CourseId": 13,
+    "PeriodId": 12,
+    "StudentId": 15
+  },
+  {
+    "CourseId": 23,
+    "PeriodId": 40,
+    "StudentId": 24
+  },
+  {
+    "CourseId": 5,
+    "PeriodId": 8,
+    "StudentId": 39
+  },
+  {
+    "CourseId": 6,
+    "PeriodId": 38,
+    "StudentId": 39
+  },
+  {
+    "CourseId": 1,
+    "PeriodId": 37,
+    "StudentId": 30
+  },
+  {
+    "CourseId": 15,
+    "PeriodId": 29,
+    "StudentId": 25
+  },
+  {
+    "CourseId": 21,
+    "PeriodId": 34,
+    "StudentId": 28
+  },
+  {
+    "CourseId": 9,
+    "PeriodId": 32,
+    "StudentId": 9
+  },
+  {
+    "CourseId": 15,
+    "PeriodId": 25,
+    "StudentId": 9
+  },
+  {
+    "CourseId": 20,
+    "PeriodId": 6,
+    "StudentId": 12
+  },
+  {
+    "CourseId": 6,
+    "PeriodId": 12,
+    "StudentId": 4
+  },
+  {
+    "CourseId": 7,
+    "PeriodId": 16,
+    "StudentId": 35
+  },
+  {
+    "CourseId": 9,
+    "PeriodId": 16,
+    "StudentId": 37
+  },
+  {
+    "CourseId": 1,
+    "PeriodId": 22,
+    "StudentId": 19
+  },
+  {
+    "CourseId": 1,
+    "PeriodId": 33,
+    "StudentId": 19
+  },
+  {
+    "CourseId": 17,
+    "PeriodId": 25,
+    "StudentId": 16
+  },
+  {
+    "CourseId": 17,
+    "PeriodId": 28,
+    "StudentId": 30
+  },
+  {
+    "CourseId": 13,
+    "PeriodId": 4,
+    "StudentId": 15
+  },
+  {
+    "CourseId": 24,
+    "PeriodId": 26,
+    "StudentId": 34
+  },
+  {
+    "CourseId": 21,
+    "PeriodId": 24,
+    "StudentId": 1
+  },
+  {
+    "CourseId": 7,
+    "PeriodId": 1,
+    "StudentId": 6
+  },
+  {
+    "CourseId": 9,
+    "PeriodId": 31,
+    "StudentId": 33
+  },
+  {
+    "CourseId": 10,
+    "PeriodId": 36,
+    "StudentId": 24
+  },
+  {
+    "CourseId": 3,
+    "PeriodId": 30,
+    "StudentId": 6
+  },
+  {
+    "CourseId": 25,
+    "PeriodId": 21,
+    "StudentId": 7
+  },
+  {
+    "CourseId": 18,
+    "PeriodId": 19,
+    "StudentId": 37
+  },
+  {
+    "CourseId": 12,
+    "PeriodId": 17,
+    "StudentId": 3
+  },
+  {
+    "CourseId": 22,
+    "PeriodId": 31,
+    "StudentId": 3
+  },
+  {
+    "CourseId": 17,
+    "PeriodId": 18,
+    "StudentId": 21
+  },
+  {
+    "CourseId": 11,
+    "PeriodId": 18,
+    "StudentId": 27
+  },
+  {
+    "CourseId": 10,
+    "PeriodId": 32,
+    "StudentId": 8
+  },
+  {
+    "CourseId": 11,
+    "PeriodId": 21,
+    "StudentId": 14
+  },
+  {
+    "CourseId": 15,
+    "PeriodId": 10,
+    "StudentId": 24
+  },
+  {
+    "CourseId": 14,
+    "PeriodId": 34,
+    "StudentId": 4
+  },
+  {
+    "CourseId": 19,
+    "PeriodId": 27,
+    "StudentId": 9
+  },
+  {
+    "CourseId": 2,
+    "PeriodId": 12,
+    "StudentId": 7
+  },
+  {
+    "CourseId": 25,
+    "PeriodId": 16,
+    "StudentId": 14
+  },
+  {
+    "CourseId": 1,
+    "PeriodId": 21,
+    "StudentId": 31
+  },
+  {
+    "CourseId": 2,
+    "PeriodId": 34,
+    "StudentId": 13
+  },
+  {
+    "CourseId": 16,
+    "PeriodId": 15,
+    "StudentId": 20
+  },
+  {
+    "CourseId": 13,
+    "PeriodId": 27,
+    "StudentId": 30
+  },
+  {
+    "CourseId": 21,
+    "PeriodId": 20,
+    "StudentId": 8
+  },
+  {
+    "CourseId": 13,
+    "PeriodId": 11,
+    "StudentId": 31
+  },
+  {
+    "CourseId": 15,
+    "PeriodId": 36,
+    "StudentId": 27
+  },
+  {
+    "CourseId": 6,
+    "PeriodId": 7,
+    "StudentId": 33
+  },
+  {
+    "CourseId": 5,
+    "PeriodId": 8,
+    "StudentId": 11
+  },
+  {
+    "CourseId": 14,
+    "PeriodId": 11,
+    "StudentId": 2
+  },
+  {
+    "CourseId": 10,
+    "PeriodId": 35,
+    "StudentId": 36
+  },
+  {
+    "CourseId": 11,
+    "PeriodId": 36,
+    "StudentId": 16
+  },
+  {
+    "CourseId": 7,
+    "PeriodId": 8,
+    "StudentId": 40
+  },
+  {
+    "CourseId": 14,
+    "PeriodId": 10,
+    "StudentId": 24
+  },
+  {
+    "CourseId": 7,
+    "PeriodId": 12,
+    "StudentId": 1
+  },
+  {
+    "CourseId": 13,
+    "PeriodId": 32,
+    "StudentId": 10
+  },
+  {
+    "CourseId": 24,
+    "PeriodId": 8,
+    "StudentId": 8
+  },
+  {
+    "CourseId": 16,
+    "PeriodId": 21,
+    "StudentId": 35
+  },
+  {
+    "CourseId": 1,
+    "PeriodId": 15,
+    "StudentId": 10
+  },
+  {
+    "CourseId": 4,
+    "PeriodId": 27,
+    "StudentId": 29
+  },
+  {
+    "CourseId": 15,
+    "PeriodId": 9,
+    "StudentId": 36
+  },
+  {
+    "CourseId": 24,
+    "PeriodId": 19,
+    "StudentId": 26
+  },
+  {
+    "CourseId": 16,
+    "PeriodId": 2,
+    "StudentId": 40
+  },
+  {
+    "CourseId": 7,
+    "PeriodId": 13,
+    "StudentId": 2
+  },
+  {
+    "CourseId": 3,
+    "PeriodId": 40,
+    "StudentId": 23
+  },
+  {
+    "CourseId": 20,
+    "PeriodId": 36,
+    "StudentId": 21
+  },
+  {
+    "CourseId": 3,
+    "PeriodId": 10,
+    "StudentId": 19
+  },
+  {
+    "CourseId": 17,
+    "PeriodId": 32,
+    "StudentId": 27
+  },
+  {
+    "CourseId": 15,
+    "PeriodId": 24,
+    "StudentId": 21
+  },
+  {
+    "CourseId": 20,
+    "PeriodId": 17,
+    "StudentId": 35
+  },
+  {
+    "CourseId": 11,
+    "PeriodId": 12,
+    "StudentId": 36
+  },
+  {
+    "CourseId": 24,
+    "PeriodId": 22,
+    "StudentId": 36
+  },
+  {
+    "CourseId": 18,
+    "PeriodId": 1,
+    "StudentId": 19
+  },
+  {
+    "CourseId": 19,
+    "PeriodId": 29,
+    "StudentId": 40
+  },
+  {
+    "CourseId": 11,
+    "PeriodId": 32,
+    "StudentId": 32
+  },
+  {
+    "CourseId": 17,
+    "PeriodId": 5,
+    "StudentId": 18
+  },
+  {
+    "CourseId": 8,
+    "PeriodId": 7,
+    "StudentId": 39
+  },
+  {
+    "CourseId": 18,
+    "PeriodId": 3,
+    "StudentId": 28
+  },
+  {
+    "CourseId": 19,
+    "PeriodId": 6,
+    "StudentId": 11
+  },
+  {
+    "CourseId": 16,
+    "PeriodId": 29,
+    "StudentId": 25
+  },
+  {
+    "CourseId": 24,
+    "PeriodId": 26,
+    "StudentId": 33
+  },
+  {
+    "CourseId": 21,
+    "PeriodId": 22,
+    "StudentId": 39
+  },
+  {
+    "CourseId": 23,
+    "PeriodId": 31,
+    "StudentId": 18
+  },
+  {
+    "CourseId": 10,
+    "PeriodId": 26,
+    "StudentId": 40
+  },
+  {
+    "CourseId": 19,
+    "PeriodId": 25,
+    "StudentId": 33
+  },
+  {
+    "CourseId": 3,
+    "PeriodId": 36,
+    "StudentId": 30
+  },
+  {
+    "CourseId": 18,
+    "PeriodId": 30,
+    "StudentId": 27
+  },
+  {
+    "CourseId": 21,
+    "PeriodId": 26,
+    "StudentId": 18
+  },
+  {
+    "CourseId": 19,
+    "PeriodId": 15,
+    "StudentId": 25
+  },
+  {
+    "CourseId": 7,
+    "PeriodId": 4,
+    "StudentId": 28
+  },
+  {
+    "CourseId": 23,
+    "PeriodId": 32,
+    "StudentId": 19
+  },
+  {
+    "CourseId": 19,
+    "PeriodId": 7,
+    "StudentId": 30
+  },
+  {
+    "CourseId": 20,
+    "PeriodId": 6,
+    "StudentId": 15
+  },
+  {
+    "CourseId": 5,
+    "PeriodId": 3,
+    "StudentId": 39
+  },
+  {
+    "CourseId": 22,
+    "PeriodId": 25,
+    "StudentId": 35
+  },
+  {
+    "CourseId": 17,
+    "PeriodId": 16,
+    "StudentId": 14
+  },
+  {
+    "CourseId": 5,
+    "PeriodId": 30,
+    "StudentId": 38
+  },
+  {
+    "CourseId": 14,
+    "PeriodId": 9,
+    "StudentId": 22
+  },
+  {
+    "CourseId": 13,
+    "PeriodId": 11,
+    "StudentId": 30
+  },
+  {
+    "CourseId": 4,
+    "PeriodId": 23,
+    "StudentId": 13
+  },
+  {
+    "CourseId": 4,
+    "PeriodId": 15,
+    "StudentId": 9
+  },
+  {
+    "CourseId": 1,
+    "PeriodId": 24,
+    "StudentId": 31
+  },
+  {
+    "CourseId": 12,
+    "PeriodId": 1,
+    "StudentId": 26
+  },
+  {
+    "CourseId": 25,
+    "PeriodId": 8,
+    "StudentId": 23
+  },
+  {
+    "CourseId": 7,
+    "PeriodId": 11,
+    "StudentId": 17
+  },
+  {
+    "CourseId": 25,
+    "PeriodId": 38,
+    "StudentId": 36
+  },
+  {
+    "CourseId": 7,
+    "PeriodId": 19,
+    "StudentId": 30
+  },
+  {
+    "CourseId": 22,
+    "PeriodId": 7,
+    "StudentId": 22
+  },
+  {
+    "CourseId": 12,
+    "PeriodId": 26,
+    "StudentId": 37
+  },
+  {
+    "CourseId": 25,
+    "PeriodId": 31,
+    "StudentId": 24
+  },
+  {
+    "CourseId": 16,
+    "PeriodId": 11,
+    "StudentId": 8
+  },
+  {
+    "CourseId": 10,
+    "PeriodId": 38,
+    "StudentId": 18
+  },
+  {
+    "CourseId": 5,
+    "PeriodId": 34,
+    "StudentId": 40
+  },
+  {
+    "CourseId": 6,
+    "PeriodId": 25,
+    "StudentId": 21
+  },
+  {
+    "CourseId": 23,
+    "PeriodId": 12,
+    "StudentId": 26
+  },
+  {
+    "CourseId": 12,
+    "PeriodId": 31,
+    "StudentId": 17
+  },
+  {
+    "CourseId": 25,
+    "PeriodId": 4,
+    "StudentId": 21
+  },
+  {
+    "CourseId": 20,
+    "PeriodId": 29,
+    "StudentId": 8
+  },
+  {
+    "CourseId": 12,
+    "PeriodId": 8,
+    "StudentId": 33
+  },
+  {
+    "CourseId": 25,
+    "PeriodId": 27,
+    "StudentId": 31
+  },
+  {
+    "CourseId": 20,
+    "PeriodId": 10,
+    "StudentId": 3
+  },
+  {
+    "CourseId": 7,
+    "PeriodId": 22,
+    "StudentId": 18
+  },
+  {
+    "CourseId": 6,
+    "PeriodId": 29,
+    "StudentId": 14
+  },
+  {
+    "CourseId": 17,
+    "PeriodId": 39,
+    "StudentId": 6
+  },
+  {
+    "CourseId": 21,
+    "PeriodId": 28,
+    "StudentId": 27
+  },
+  {
+    "CourseId": 15,
+    "PeriodId": 4,
+    "StudentId": 19
+  },
+  {
+    "CourseId": 10,
+    "PeriodId": 31,
+    "StudentId": 1
+  },
+  {
+    "CourseId": 15,
+    "PeriodId": 4,
+    "StudentId": 37
+  },
+  {
+    "CourseId": 25,
+    "PeriodId": 23,
+    "StudentId": 11
+  },
+  {
+    "CourseId": 17,
+    "PeriodId": 4,
+    "StudentId": 39
+  },
+  {
+    "CourseId": 23,
+    "PeriodId": 34,
+    "StudentId": 27
+  },
+  {
+    "CourseId": 20,
+    "PeriodId": 40,
+    "StudentId": 3
+  },
+  {
+    "CourseId": 8,
+    "PeriodId": 13,
+    "StudentId": 40
+  },
+  {
+    "CourseId": 22,
+    "PeriodId": 3,
+    "StudentId": 33
+  },
+  {
+    "CourseId": 1,
+    "PeriodId": 39,
+    "StudentId": 10
+  },
+  {
+    "CourseId": 10,
+    "PeriodId": 14,
+    "StudentId": 33
+  },
+  {
+    "CourseId": 2,
+    "PeriodId": 28,
+    "StudentId": 25
+  },
+  {
+    "CourseId": 3,
+    "PeriodId": 24,
+    "StudentId": 14
+  },
+  {
+    "CourseId": 20,
+    "PeriodId": 39,
+    "StudentId": 34
+  },
+  {
+    "CourseId": 10,
+    "PeriodId": 6,
+    "StudentId": 38
+  },
+  {
+    "CourseId": 11,
+    "PeriodId": 17,
+    "StudentId": 1
+  },
+  {
+    "CourseId": 12,
+    "PeriodId": 15,
+    "StudentId": 36
+  },
+  {
+    "CourseId": 12,
+    "PeriodId": 7,
+    "StudentId": 32
+  },
+  {
+    "CourseId": 7,
+    "PeriodId": 34,
+    "StudentId": 5
+  },
+  {
+    "CourseId": 4,
+    "PeriodId": 6,
+    "StudentId": 35
+  },
+  {
+    "CourseId": 4,
+    "PeriodId": 30,
+    "StudentId": 11
+  },
+  {
+    "CourseId": 5,
+    "PeriodId": 18,
+    "StudentId": 13
+  },
+  {
+    "CourseId": 13,
+    "PeriodId": 18,
+    "StudentId": 9
+  },
+  {
+    "CourseId": 14,
+    "PeriodId": 13,
+    "StudentId": 14
+  },
+  {
+    "CourseId": 18,
+    "PeriodId": 10,
+    "StudentId": 30
+  },
+  {
+    "CourseId": 7,
+    "PeriodId": 30,
+    "StudentId": 7
+  },
+  {
+    "CourseId": 14,
+    "PeriodId": 39,
+    "StudentId": 26
+  },
+  {
+    "CourseId": 21,
+    "PeriodId": 2,
+    "StudentId": 32
+  },
+  {
+    "CourseId": 22,
+    "PeriodId": 7,
+    "StudentId": 7
+  },
+  {
+    "CourseId": 12,
+    "PeriodId": 3,
+    "StudentId": 39
+  },
+  {
+    "CourseId": 25,
+    "PeriodId": 19,
+    "StudentId": 17
+  },
+  {
+    "CourseId": 21,
+    "PeriodId": 16,
+    "StudentId": 34
+  },
+  {
+    "CourseId": 19,
+    "PeriodId": 4,
+    "StudentId": 39
+  },
+  {
+    "CourseId": 3,
+    "PeriodId": 28,
+    "StudentId": 15
+  },
+  {
+    "CourseId": 24,
+    "PeriodId": 21,
+    "StudentId": 29
+  },
+  {
+    "CourseId": 11,
+    "PeriodId": 27,
+    "StudentId": 27
+  },
+  {
+    "CourseId": 12,
+    "PeriodId": 30,
+    "StudentId": 10
+  },
+  {
+    "CourseId": 14,
+    "PeriodId": 24,
+    "StudentId": 9
+  },
+  {
+    "CourseId": 20,
+    "PeriodId": 38,
+    "StudentId": 33
+  },
+  {
+    "CourseId": 13,
+    "PeriodId": 21,
+    "StudentId": 15
+  },
+  {
+    "CourseId": 13,
+    "PeriodId": 40,
+    "StudentId": 28
+  },
+  {
+    "CourseId": 21,
+    "PeriodId": 33,
+    "StudentId": 6
+  },
+  {
+    "CourseId": 10,
+    "PeriodId": 13,
+    "StudentId": 40
+  },
+  {
+    "CourseId": 12,
+    "PeriodId": 22,
+    "StudentId": 11
+  },
+  {
+    "CourseId": 4,
+    "PeriodId": 25,
+    "StudentId": 3
+  },
+  {
+    "CourseId": 5,
+    "PeriodId": 40,
+    "StudentId": 13
+  },
+  {
+    "CourseId": 3,
+    "PeriodId": 4,
+    "StudentId": 26
+  },
+  {
+    "CourseId": 15,
+    "PeriodId": 7,
+    "StudentId": 19
+  },
+  {
+    "CourseId": 2,
+    "PeriodId": 36,
+    "StudentId": 37
+  },
+  {
+    "CourseId": 12,
+    "PeriodId": 15,
+    "StudentId": 17
+  },
+  {
+    "CourseId": 3,
+    "PeriodId": 28,
+    "StudentId": 1
+  },
+  {
+    "CourseId": 22,
+    "PeriodId": 9,
+    "StudentId": 11
+  },
+  {
+    "CourseId": 3,
+    "PeriodId": 27,
+    "StudentId": 33
+  },
+  {
+    "CourseId": 6,
+    "PeriodId": 2,
+    "StudentId": 9
+  },
+  {
+    "CourseId": 12,
+    "PeriodId": 38,
+    "StudentId": 9
+  },
+  {
+    "CourseId": 10,
+    "PeriodId": 30,
+    "StudentId": 3
+  },
+  {
+    "CourseId": 13,
+    "PeriodId": 26,
+    "StudentId": 3
+  },
+  {
+    "CourseId": 1,
+    "PeriodId": 8,
+    "StudentId": 17
+  },
+  {
+    "CourseId": 25,
+    "PeriodId": 3,
+    "StudentId": 9
+  },
+  {
+    "CourseId": 18,
+    "PeriodId": 29,
+    "StudentId": 24
+  },
+  {
+    "CourseId": 24,
+    "PeriodId": 33,
+    "StudentId": 16
+  },
+  {
+    "CourseId": 22,
+    "PeriodId": 25,
+    "StudentId": 10
+  },
+  {
+    "CourseId": 18,
+    "PeriodId": 29,
+    "StudentId": 33
+  },
+  {
+    "CourseId": 24,
+    "PeriodId": 25,
+    "StudentId": 12
+  },
+  {
+    "CourseId": 23,
+    "PeriodId": 14,
+    "StudentId": 34
+  },
+  {
+    "CourseId": 16,
+    "PeriodId": 28,
+    "StudentId": 13
+  },
+  {
+    "CourseId": 13,
+    "PeriodId": 29,
+    "StudentId": 14
+  },
+  {
+    "CourseId": 23,
+    "PeriodId": 18,
+    "StudentId": 4
+  },
+  {
+    "CourseId": 24,
+    "PeriodId": 24,
+    "StudentId": 34
+  },
+  {
+    "CourseId": 22,
+    "PeriodId": 6,
+    "StudentId": 5
+  },
+  {
+    "CourseId": 11,
+    "PeriodId": 3,
+    "StudentId": 24
+  },
+  {
+    "CourseId": 2,
+    "PeriodId": 28,
+    "StudentId": 10
+  },
+  {
+    "CourseId": 25,
+    "PeriodId": 25,
+    "StudentId": 32
+  },
+  {
+    "CourseId": 16,
+    "PeriodId": 19,
+    "StudentId": 40
+  },
+  {
+    "CourseId": 11,
+    "PeriodId": 30,
+    "StudentId": 14
+  },
+  {
+    "CourseId": 2,
+    "PeriodId": 28,
+    "StudentId": 37
+  },
+  {
+    "CourseId": 15,
+    "PeriodId": 19,
+    "StudentId": 24
+  },
+  {
+    "CourseId": 22,
+    "PeriodId": 13,
+    "StudentId": 13
+  },
+  {
+    "CourseId": 22,
+    "PeriodId": 32,
+    "StudentId": 26
+  },
+  {
+    "CourseId": 12,
+    "PeriodId": 6,
+    "StudentId": 30
+  },
+  {
+    "CourseId": 17,
+    "PeriodId": 4,
+    "StudentId": 10
+  },
+  {
+    "CourseId": 22,
+    "PeriodId": 10,
+    "StudentId": 16
+  },
+  {
+    "CourseId": 5,
+    "PeriodId": 28,
+    "StudentId": 11
+  },
+  {
+    "CourseId": 8,
+    "PeriodId": 36,
+    "StudentId": 4
+  },
+  {
+    "CourseId": 13,
+    "PeriodId": 40,
+    "StudentId": 9
+  },
+  {
+    "CourseId": 3,
+    "PeriodId": 11,
+    "StudentId": 28
+  },
+  {
+    "CourseId": 20,
+    "PeriodId": 15,
+    "StudentId": 30
+  },
+  {
+    "CourseId": 6,
+    "PeriodId": 4,
+    "StudentId": 40
+  },
+  {
+    "CourseId": 22,
+    "PeriodId": 24,
+    "StudentId": 27
+  },
+  {
+    "CourseId": 25,
+    "PeriodId": 26,
+    "StudentId": 14
+  },
+  {
+    "CourseId": 3,
+    "PeriodId": 35,
+    "StudentId": 13
+  },
+  {
+    "CourseId": 22,
+    "PeriodId": 8,
+    "StudentId": 19
+  },
+  {
+    "CourseId": 21,
+    "PeriodId": 12,
+    "StudentId": 22
+  },
+  {
+    "CourseId": 25,
+    "PeriodId": 40,
+    "StudentId": 16
+  },
+  {
+    "CourseId": 6,
+    "PeriodId": 1,
+    "StudentId": 7
+  },
+  {
+    "CourseId": 25,
+    "PeriodId": 18,
+    "StudentId": 6
+  },
+  {
+    "CourseId": 2,
+    "PeriodId": 40,
+    "StudentId": 6
+  },
+  {
+    "CourseId": 8,
+    "PeriodId": 20,
+    "StudentId": 19
+  },
+  {
+    "CourseId": 13,
+    "PeriodId": 14,
+    "StudentId": 1
+  },
+  {
+    "CourseId": 5,
+    "PeriodId": 1,
+    "StudentId": 35
+  },
+  {
+    "CourseId": 8,
+    "PeriodId": 23,
+    "StudentId": 24
+  },
+  {
+    "CourseId": 22,
+    "PeriodId": 32,
+    "StudentId": 21
+  },
+  {
+    "CourseId": 25,
+    "PeriodId": 2,
+    "StudentId": 34
+  },
+  {
+    "CourseId": 7,
+    "PeriodId": 24,
+    "StudentId": 29
+  },
+  {
+    "CourseId": 7,
+    "PeriodId": 16,
+    "StudentId": 34
+  },
+  {
+    "CourseId": 14,
+    "PeriodId": 26,
+    "StudentId": 31
+  },
+  {
+    "CourseId": 5,
+    "PeriodId": 9,
+    "StudentId": 2
+  },
+  {
+    "CourseId": 7,
+    "PeriodId": 28,
+    "StudentId": 8
+  },
+  {
+    "CourseId": 4,
+    "PeriodId": 35,
+    "StudentId": 5
+  },
+  {
+    "CourseId": 3,
+    "PeriodId": 20,
+    "StudentId": 10
+  },
+  {
+    "CourseId": 19,
+    "PeriodId": 23,
+    "StudentId": 6
+  },
+  {
+    "CourseId": 13,
+    "PeriodId": 40,
+    "StudentId": 22
+  },
+  {
+    "CourseId": 12,
+    "PeriodId": 21,
+    "StudentId": 31
+  },
+  {
+    "CourseId": 16,
+    "PeriodId": 30,
+    "StudentId": 12
+  },
+  {
+    "CourseId": 11,
+    "PeriodId": 11,
+    "StudentId": 18
+  },
+  {
+    "CourseId": 17,
+    "PeriodId": 15,
+    "StudentId": 10
+  },
+  {
+    "CourseId": 14,
+    "PeriodId": 39,
+    "StudentId": 6
+  },
+  {
+    "CourseId": 18,
+    "PeriodId": 5,
+    "StudentId": 7
+  },
+  {
+    "CourseId": 25,
+    "PeriodId": 17,
+    "StudentId": 27
+  },
+  {
+    "CourseId": 6,
+    "PeriodId": 30,
+    "StudentId": 38
+  },
+  {
+    "CourseId": 6,
+    "PeriodId": 11,
+    "StudentId": 34
+  },
+  {
+    "CourseId": 14,
+    "PeriodId": 23,
+    "StudentId": 16
+  },
+  {
+    "CourseId": 16,
+    "PeriodId": 31,
+    "StudentId": 22
+  },
+  {
+    "CourseId": 25,
+    "PeriodId": 21,
+    "StudentId": 6
+  },
+  {
+    "CourseId": 1,
+    "PeriodId": 7,
+    "StudentId": 19
+  },
+  {
+    "CourseId": 12,
+    "PeriodId": 40,
+    "StudentId": 13
+  },
+  {
+    "CourseId": 12,
+    "PeriodId": 17,
+    "StudentId": 20
+  },
+  {
+    "CourseId": 16,
+    "PeriodId": 22,
+    "StudentId": 40
+  },
+  {
+    "CourseId": 7,
+    "PeriodId": 25,
+    "StudentId": 7
+  },
+  {
+    "CourseId": 8,
+    "PeriodId": 1,
+    "StudentId": 36
+  },
+  {
+    "CourseId": 21,
+    "PeriodId": 31,
+    "StudentId": 7
+  },
+  {
+    "CourseId": 23,
+    "PeriodId": 5,
+    "StudentId": 19
+  },
+  {
+    "CourseId": 17,
+    "PeriodId": 14,
+    "StudentId": 31
+  },
+  {
+    "CourseId": 16,
+    "PeriodId": 38,
+    "StudentId": 11
+  },
+  {
+    "CourseId": 6,
+    "PeriodId": 7,
+    "StudentId": 32
+  },
+  {
+    "CourseId": 21,
+    "PeriodId": 39,
+    "StudentId": 29
+  },
+  {
+    "CourseId": 18,
+    "PeriodId": 24,
+    "StudentId": 24
+  },
+  {
+    "CourseId": 24,
+    "PeriodId": 27,
+    "StudentId": 29
+  },
+  {
+    "CourseId": 25,
+    "PeriodId": 21,
+    "StudentId": 10
+  },
+  {
+    "CourseId": 25,
+    "PeriodId": 33,
+    "StudentId": 12
+  },
+  {
+    "CourseId": 23,
+    "PeriodId": 2,
+    "StudentId": 13
+  },
+  {
+    "CourseId": 21,
+    "PeriodId": 34,
+    "StudentId": 35
+  },
+  {
+    "CourseId": 18,
+    "PeriodId": 19,
+    "StudentId": 40
+  },
+  {
+    "CourseId": 9,
+    "PeriodId": 32,
+    "StudentId": 25
+  },
+  {
+    "CourseId": 18,
+    "PeriodId": 23,
+    "StudentId": 19
+  },
+  {
+    "CourseId": 20,
+    "PeriodId": 7,
+    "StudentId": 2
+  },
+  {
+    "CourseId": 23,
+    "PeriodId": 36,
+    "StudentId": 20
+  },
+  {
+    "CourseId": 15,
+    "PeriodId": 36,
+    "StudentId": 21
+  },
+  {
+    "CourseId": 14,
+    "PeriodId": 7,
+    "StudentId": 7
+  },
+  {
+    "CourseId": 14,
+    "PeriodId": 7,
+    "StudentId": 16
+  },
+  {
+    "CourseId": 17,
+    "PeriodId": 15,
+    "StudentId": 9
+  },
+  {
+    "CourseId": 10,
+    "PeriodId": 35,
+    "StudentId": 30
+  },
+  {
+    "CourseId": 16,
+    "PeriodId": 18,
+    "StudentId": 24
+  },
+  {
+    "CourseId": 2,
+    "PeriodId": 18,
+    "StudentId": 34
+  },
+  {
+    "CourseId": 23,
+    "PeriodId": 31,
+    "StudentId": 26
+  },
+  {
+    "CourseId": 11,
+    "PeriodId": 28,
+    "StudentId": 33
+  },
+  {
+    "CourseId": 13,
+    "PeriodId": 16,
+    "StudentId": 5
+  },
+  {
+    "CourseId": 11,
+    "PeriodId": 18,
+    "StudentId": 7
+  },
+  {
+    "CourseId": 20,
+    "PeriodId": 3,
+    "StudentId": 18
+  },
+  {
+    "CourseId": 15,
+    "PeriodId": 21,
+    "StudentId": 31
+  },
+  {
+    "CourseId": 10,
+    "PeriodId": 9,
+    "StudentId": 31
+  },
+  {
+    "CourseId": 23,
+    "PeriodId": 28,
+    "StudentId": 11
+  },
+  {
+    "CourseId": 5,
+    "PeriodId": 9,
+    "StudentId": 5
+  },
+  {
+    "CourseId": 14,
+    "PeriodId": 38,
+    "StudentId": 8
+  },
+  {
+    "CourseId": 19,
+    "PeriodId": 33,
+    "StudentId": 32
+  },
+  {
+    "CourseId": 5,
+    "PeriodId": 27,
+    "StudentId": 13
+  },
+  {
+    "CourseId": 20,
+    "PeriodId": 32,
+    "StudentId": 26
+  },
+  {
+    "CourseId": 13,
+    "PeriodId": 12,
+    "StudentId": 21
+  },
+  {
+    "CourseId": 23,
+    "PeriodId": 30,
+    "StudentId": 38
+  }
+]

@@ -6,23 +6,22 @@ using System.Linq.Expressions;
 
 namespace CarmenSchool.Services.Internal
 {
-  public class EnrollmentService(
+  internal class EnrollmentService(
     IEnrollmentRepository enrollmentRepository, 
     IStudentService studentService,
     ICourseService courseService,
-    IPeriodService periodService) 
-    : IEnrollmentService
+    IPeriodService periodService) : IEnrollmentService
   {
     public async Task<Enrollment> AddAsync(EnrollmentCreateRequest request)
     {
       var studentEnrollments = await enrollmentRepository.GetByIdAsync(request.StudentId, request.CourseId, request.PeriodId);
 
       if (studentEnrollments != null)
-        throw new InvalidOperationException("El estudiante ya esta inscrito en este curso en este periodo.");
+        throw new InvalidOperationException("El estudiante ya esta inscrito en este curso en este período.");
 
-      var student = await studentService.GetByIdAsync(request.StudentId) ?? throw new InvalidOperationException("No se pudo realizar la inscripcion, el estudiante no existe.");
-      var course = await courseService.GetByIdAsync(request.CourseId) ?? throw new InvalidOperationException("No se pudo realizar la inscripcion, el curso no existe.");
-      var period = await periodService.GetByIdAsync(request.PeriodId) ?? throw new InvalidOperationException("No se pudo realizar la inscripcion, el periodo no existe.");
+      var student = await studentService.GetByIdAsync(request.StudentId) ?? throw new InvalidOperationException("No se pudo realizar la inscripción, el estudiante no existe.");
+      var course = await courseService.GetByIdAsync(request.CourseId) ?? throw new InvalidOperationException("No se pudo realizar la inscripción, el curso no existe.");
+      var period = await periodService.GetByIdAsync(request.PeriodId) ?? throw new InvalidOperationException("No se pudo realizar la inscripción, el periodo no existe.");
       
       var newEnrollment = request.ToEntity(course,student,period);
       newEnrollment.CreatedDate = DateTime.Now;
@@ -46,8 +45,7 @@ namespace CarmenSchool.Services.Internal
 
     public async Task<Enrollment?> GetByIdAsync(int id)
     {
-      var enrollment = await enrollmentRepository.GetByIdAsync(id, e => e.Student, e => e.Period, e => e.Course);
-      return enrollment;
+      return await enrollmentRepository.GetByIdAsync(id, e => e.Student, e => e.Period, e => e.Course);
     }
 
     public async Task<bool> UpdateAsync(int id, EnrollmentUpdateDto request)
@@ -55,22 +53,23 @@ namespace CarmenSchool.Services.Internal
       var enrollmentDb = await enrollmentRepository.GetByIdAsync(id);
 
       if (enrollmentDb == null)
-        throw new InvalidOperationException("Inscripcion no encontrada");
+        throw new InvalidOperationException("Inscripción no encontrada");
 
-      if (request.StudentId.HasValue){
-        var student = await studentService.GetByIdAsync(request.StudentId!.Value) ?? throw new InvalidOperationException("No se pudo actualizar la inscripcion, el estudiante no existe.");
+      if (request.StudentId.HasValue && enrollmentDb.StudentId != request.StudentId)
+      {
+        var student = await studentService.GetByIdAsync(request.StudentId!.Value) ?? throw new InvalidOperationException("No se pudo actualizar la inscripción, el estudiante no existe.");
         enrollmentDb.Student = student;
       }
 
-      if (request.CourseId.HasValue)
+      if (request.CourseId.HasValue && enrollmentDb.CourseId != request.CourseId)
       {
-        var course = await courseService.GetByIdAsync(request.CourseId!.Value) ?? throw new InvalidOperationException("No se pudo actualizar la inscripcion, el curso no existe.");
+        var course = await courseService.GetByIdAsync(request.CourseId!.Value) ?? throw new InvalidOperationException("No se pudo actualizar la inscripción, el curso no existe.");
         enrollmentDb.Course = course;
       }
 
-      if (request.PeriodId.HasValue)
+      if (request.PeriodId.HasValue && enrollmentDb.PeriodId != request.PeriodId)
       {
-        var period = await periodService.GetByIdAsync(request.PeriodId!.Value) ?? throw new InvalidOperationException("No se pudo actualizar la inscripcion, el curso no existe.");
+        var period = await periodService.GetByIdAsync(request.PeriodId!.Value) ?? throw new InvalidOperationException("No se pudo actualizar la inscripción, el período no existe.");
         enrollmentDb.Period = period;
       }
 

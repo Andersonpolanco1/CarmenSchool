@@ -3,12 +3,11 @@ using CarmenSchool.Core.Helpers;
 using CarmenSchool.Core.Interfaces.Repositories;
 using CarmenSchool.Core.Interfaces.Services;
 using CarmenSchool.Core.Models;
-using CarmenSchool.Core.Utils;
 using System.Linq.Expressions;
 
 namespace CarmenSchool.Services.Internal
 {
-  public class CourseService(ICourseRepository courseRepository) : ICourseService
+  internal class CourseService(ICourseRepository courseRepository) : ICourseService
   {
     public async Task<Course> AddAsync(CourseCreateRequest request)
     {

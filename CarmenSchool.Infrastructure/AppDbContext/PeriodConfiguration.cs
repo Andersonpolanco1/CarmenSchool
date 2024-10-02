@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-public class PeriodConfiguration : IEntityTypeConfiguration<Period>
+internal class PeriodConfiguration : IEntityTypeConfiguration<Period>
 {
   public void Configure(EntityTypeBuilder<Period> builder)
   {

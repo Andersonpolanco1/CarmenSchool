@@ -24,7 +24,7 @@ namespace CarmenSchool.Core.Models
       return new EnrollmentReadDto
       {
         EnrollmentId = Id,
-        EnrollmentCreatedDate = CreatedDate,
+        EnrollmentCreatedDate = CreatedDate.ToLocalDateString(),
         CourseId = CourseId,
         CourseName = Course.Name,
         StudentDNI = Student.DNI,
