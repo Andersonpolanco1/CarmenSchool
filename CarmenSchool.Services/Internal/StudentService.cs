@@ -71,7 +71,7 @@ namespace CarmenSchool.Services.Internal
 
       return studentRepository.IsModified(studentDb) ?
            await studentRepository.UpdateAsync(studentDb)
-          : false;
+          : true;
     }
 
     public async Task<IEnumerable<Student>> FindAsync(Expression<Func<Student, bool>> expression)

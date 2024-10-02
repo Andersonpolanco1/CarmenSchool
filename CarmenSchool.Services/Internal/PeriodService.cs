@@ -58,7 +58,7 @@ namespace CarmenSchool.Services.Internal
 
       return periodRepository.IsModified(period) ?
         await periodRepository.UpdateAsync(period)
-        : false;
+        : true;
     }
 
     public async Task<IEnumerable<Period>> FindAsync(Expression<Func<Period, bool>> expression)

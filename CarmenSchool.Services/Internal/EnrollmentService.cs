@@ -53,7 +53,7 @@ namespace CarmenSchool.Services.Internal
       var enrollmentDb = await enrollmentRepository.GetByIdAsync(id);
 
       if (enrollmentDb == null)
-        throw new InvalidOperationException("Inscripción no encontrada");
+        return false;
 
       if (request.StudentId.HasValue && enrollmentDb.StudentId != request.StudentId)
       {
