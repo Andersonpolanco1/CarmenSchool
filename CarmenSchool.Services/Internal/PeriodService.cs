@@ -2,6 +2,7 @@
 using CarmenSchool.Core.Interfaces.Repositories;
 using CarmenSchool.Core.Interfaces.Services;
 using CarmenSchool.Core.Models;
+using CarmenSchool.Core.Utils;
 using System.Linq.Expressions;
 
 namespace CarmenSchool.Services.Internal
@@ -10,13 +11,7 @@ namespace CarmenSchool.Services.Internal
   {
     public async Task<Period> AddAsync(PeriodCreateRequest request)
     {
-      var period = await periodRepository.FindAsync(p => p.StartDate == request.GetStartDateAsDateOnly() && p.EndDate == request.GetEndDateAsDateOnly());
-
-      if (period != null && period.Any())
-        throw new InvalidOperationException("Ya existe un curso periodo registrado en la misma fecha de inicio y fin del mismo");
-
-      if(request.GetStartDateAsDateOnly() > request.GetEndDateAsDateOnly())
-        throw new InvalidOperationException("La fecha de inicio no puede ser posterior a la fecha de fin");
+      await ValidatePeriod(request.GetStartDateAsDateOnly(), request.GetEndDateAsDateOnly());
 
       var newPeriod = request.ToEntity();
       newPeriod.CreatedDate = DateTime.Now;
@@ -50,19 +45,36 @@ namespace CarmenSchool.Services.Internal
       if (period == null)
         return false;
 
-      if (request.GetStartDateAsDateOnly() != null)
+      if (ValidationUtils.FieldHasChanged(request.GetStartDateAsDateOnly(), period.StartDate))
         period.StartDate = request.GetStartDateAsDateOnly()!.Value;
 
-      if (request.EndDate != null)
+      if (ValidationUtils.FieldHasChanged(request.GetEndDateAsDateOnly(), period.EndDate))
         period.EndDate = request.GetEndDateAsDateOnly()!.Value;
 
-      return !periodRepository.IsModified(period) || await periodRepository.UpdateAsync(period);
+      if (periodRepository.IsModified(period))
+      {
+        await ValidatePeriod(period.StartDate, period.EndDate);
+        return await periodRepository.UpdateAsync(period);
+      }
+
+      return true;
     }
 
     public async Task<IEnumerable<Period>> FindAsync(Expression<Func<Period, bool>> expression)
     {
       var courses = await periodRepository.FindAsync(expression);
       return courses.OrderByDescending(p => p.StartDate);
+    }
+
+    private async Task ValidatePeriod(DateOnly startDate, DateOnly endDate)
+    {
+      var period = await periodRepository.FindAsync(p => p.StartDate == startDate && p.EndDate == endDate);
+
+      if (period != null && period.Any())
+        throw new InvalidOperationException("Ya existe un curso periodo registrado en la misma fecha de inicio y fin del mismo");
+
+      if (startDate > endDate)
+        throw new InvalidOperationException("La fecha de inicio no puede ser posterior a la fecha de fin");
     }
   }
 }

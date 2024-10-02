@@ -63,9 +63,13 @@ namespace CarmenSchool.Web.Controllers
         var success = await enrollmentService.UpdateAsync(id, request);
         return success ? NoContent() : NotFound();
       }
-      catch (Exception ex)
+      catch (InvalidOperationException ex)
       {
         return BadRequest(ex.Message);
+      }
+      catch (Exception ex)
+      {
+        return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
       }
     }
 

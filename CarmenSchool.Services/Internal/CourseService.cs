@@ -3,6 +3,7 @@ using CarmenSchool.Core.Helpers;
 using CarmenSchool.Core.Interfaces.Repositories;
 using CarmenSchool.Core.Interfaces.Services;
 using CarmenSchool.Core.Models;
+using CarmenSchool.Core.Utils;
 using System.Linq.Expressions;
 
 namespace CarmenSchool.Services.Internal
@@ -11,17 +12,12 @@ namespace CarmenSchool.Services.Internal
   {
     public async Task<Course> AddAsync(CourseCreateRequest request)
     {
-      var course = await courseRepository.FindAsync(c => c.Name.ToUpper() == request.Name.ToUpper());
-
-      if (course != null && course.Any())
-          throw new InvalidOperationException("Ya existe un curso registrado con ese nombre");
-
+      await ValidateCourseNameIsValid(request.Name);
       var newCourse = request.ToEntity();
       newCourse.CreatedDate = DateTime.Now;
       await courseRepository.AddAsync(newCourse);
       return newCourse;
     }
-
 
     public async Task<bool> DeleteByIdAsync(int id)
     {
@@ -49,19 +45,36 @@ namespace CarmenSchool.Services.Internal
       if (courseDb == null)
         return false;
 
-      if(request.Name != null)
-        courseDb.Name = request.Name.CapitalizeWords();
+      if (ValidationUtils.FieldHasChanged(request.Name, courseDb.Name))
+        courseDb.Name = request.Name!.CapitalizeWords();
 
-      if (request.Description != null)
-        courseDb.Description = request.Description;
+      if (ValidationUtils.FieldHasChanged(request.Description, courseDb.Description))
+        courseDb.Description = request.Description!;
 
-      return !courseRepository.IsModified(courseDb) || await courseRepository.UpdateAsync(courseDb);
+      if (courseRepository.IsModified(courseDb))
+      {
+        await ValidateCourseNameIsValid(request.Name!);
+        await courseRepository.UpdateAsync(courseDb);
+      }
+
+      return true;  
     }
 
     public async Task<IEnumerable<Course>> FindAsync(Expression<Func<Course, bool>> expression)
     {
       var courses = await courseRepository.FindAsync(expression);
       return courses ?? [];
+    }
+
+    private async Task ValidateCourseNameIsValid(string courseName)
+    {
+      if (string.IsNullOrWhiteSpace(courseName))
+        throw new InvalidOperationException("El nombre del curso no puede estar en blanco");
+
+      var course = await courseRepository.FindAsync(c => c.Name.ToUpper() == courseName!.ToUpper());
+
+      if (course != null && course.Any())
+        throw new InvalidOperationException("Ya existe un curso registrado con ese nombre");
     }
   }
 }

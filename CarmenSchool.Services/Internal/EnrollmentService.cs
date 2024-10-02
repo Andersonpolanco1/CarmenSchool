@@ -2,33 +2,30 @@
 using CarmenSchool.Core.Interfaces.Repositories;
 using CarmenSchool.Core.Interfaces.Services;
 using CarmenSchool.Core.Models;
+using CarmenSchool.Core.Utils;
 using System.Linq.Expressions;
 
 namespace CarmenSchool.Services.Internal
 {
   internal class EnrollmentService(
-    IEnrollmentRepository enrollmentRepository, 
+    IEnrollmentRepository enrollmentRepository,
     IStudentService studentService,
     ICourseService courseService,
     IPeriodService periodService) : IEnrollmentService
   {
     public async Task<Enrollment> AddAsync(EnrollmentCreateRequest request)
     {
-      var studentEnrollments = await enrollmentRepository.GetByUnikeIdAsync(request.StudentId, request.CourseId, request.PeriodId);
-
-      if (studentEnrollments != null)
-        throw new InvalidOperationException("El estudiante ya esta inscrito en este curso en este período.");
-
       var student = await GetValidStudent(request.StudentId);
       var course = await GetValidCourse(request.CourseId);
       var period = await GetValidPeriod(request.PeriodId);
-      
-      var newEnrollment = request.ToEntity(course,student,period);
+
+      await ValidateEnrollment(request.StudentId, request.CourseId, request.PeriodId);
+
+      var newEnrollment = request.ToEntity(course, student, period);
       newEnrollment.CreatedDate = DateTime.Now;
       await enrollmentRepository.AddAsync(newEnrollment);
       return newEnrollment;
     }
-
 
     public async Task<bool> DeleteByIdAsync(int id)
     {
@@ -55,16 +52,22 @@ namespace CarmenSchool.Services.Internal
       if (enrollmentDb == null)
         return false;
 
-      if (RequestValueExistsAndIsDifferentCurrentValue(request.StudentId, enrollmentDb.StudentId))
+      if (ValidationUtils.FieldHasChanged(request.StudentId, enrollmentDb.StudentId))
         enrollmentDb.Student = await GetValidStudent(request.StudentId!.Value);
 
-      if (RequestValueExistsAndIsDifferentCurrentValue(request.CourseId, enrollmentDb.CourseId))
+      if (ValidationUtils.FieldHasChanged(request.CourseId, enrollmentDb.CourseId))
         enrollmentDb.Course = await GetValidCourse(request.CourseId!.Value);
 
-      if (RequestValueExistsAndIsDifferentCurrentValue(request.PeriodId, enrollmentDb.PeriodId))
+      if (ValidationUtils.FieldHasChanged(request.PeriodId, enrollmentDb.PeriodId))
         enrollmentDb.Period = await GetValidPeriod(request.PeriodId!.Value);
 
-      return !enrollmentRepository.IsModified(enrollmentDb) || await enrollmentRepository.UpdateAsync(enrollmentDb);
+      if (enrollmentRepository.IsModified(enrollmentDb))
+      {
+        await ValidateEnrollment(enrollmentDb.Student.Id, enrollmentDb.Course.Id, enrollmentDb.Period.Id);
+        await enrollmentRepository.UpdateAsync(enrollmentDb);
+      }
+
+      return true;
     }
 
     public async Task<IEnumerable<Enrollment>> FindAsync(Expression<Func<Enrollment, bool>> expression)
@@ -72,24 +75,22 @@ namespace CarmenSchool.Services.Internal
       var courses = await enrollmentRepository.FindAsync(expression);
       return courses;
     }
-    private static bool RequestValueExistsAndIsDifferentCurrentValue(int? requestValue, int currentValue)
+
+    private async Task ValidateEnrollment(int studentId, int courseId, int periodId)
     {
-      return requestValue.HasValue && currentValue != requestValue;
+      var studentEnrollments = await enrollmentRepository.GetByUnikeIdAsync(studentId, courseId, periodId);
+
+      if (studentEnrollments != null)
+        throw new InvalidOperationException("El estudiante ya esta inscrito en este curso en este período.");
     }
 
-    private async Task<Period> GetValidPeriod(int periodId)
-    {
-      return await periodService.GetByIdAsync(periodId) ?? throw new InvalidOperationException("Período no existe.");
-    }
+    private async Task<Period> GetValidPeriod(int periodId) =>
+      await periodService.GetByIdAsync(periodId) ?? throw new InvalidOperationException("Período no existe.");
 
-    private async Task<Course> GetValidCourse(int courseId)
-    {
-      return await courseService.GetByIdAsync(courseId) ?? throw new InvalidOperationException("Curso no existe.");
-    }
+    private async Task<Course> GetValidCourse(int courseId) =>
+       await courseService.GetByIdAsync(courseId) ?? throw new InvalidOperationException("Curso no existe.");
 
-    private async Task<Student> GetValidStudent(int studentId)
-    {
-      return await studentService.GetByIdAsync(studentId) ?? throw new InvalidOperationException("Estudiante no existe.");
-    }
+    private async Task<Student> GetValidStudent(int studentId) =>
+       await studentService.GetByIdAsync(studentId) ?? throw new InvalidOperationException("Estudiante no existe.");
   }
 }

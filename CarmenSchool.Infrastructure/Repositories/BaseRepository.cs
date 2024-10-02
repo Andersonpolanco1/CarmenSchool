@@ -97,7 +97,7 @@ namespace CarmenSchool.Infrastructure.Repositories
       catch (Exception ex)
       {
         logger.LogError(message: ex.Message);
-        return false;
+        throw;
       }
     }
 

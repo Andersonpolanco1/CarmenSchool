@@ -2,6 +2,7 @@
 using CarmenSchool.Core.Interfaces.Repositories;
 using CarmenSchool.Core.Interfaces.Services;
 using CarmenSchool.Core.Models;
+using CarmenSchool.Core.Utils;
 using System.Linq.Expressions;
 
 namespace CarmenSchool.Services.Internal
@@ -10,26 +11,12 @@ namespace CarmenSchool.Services.Internal
   {
     public async Task<Student> AddAsync(StudentCreateRequest request)
     {
-      var student = await studentRepository.FindAsync(s => s.DNI == request.DNI || s.Email == request.Email);
-
-      if (student != null && student.Any())
-      {
-        var existingEmail = student.FirstOrDefault(s => s.Email.ToUpper() == request.Email.ToUpper());
-        var existingDNI = student.FirstOrDefault(s => s.DNI.ToUpper() == request.DNI.ToUpper());
-
-        if (existingEmail != null)
-          throw new InvalidOperationException($"Ya existe un estudiante registrado con el Email {request.Email}");
-
-        if (existingDNI != null)
-          throw new InvalidOperationException($"Ya existe un estudiante registrado con el DNI {request.DNI}");
-      }
-
+      await ValidateStudent(request.Email, request.DNI);
       var newStudent = request.ToEntity();
       newStudent.CreatedDate = DateTime.Now;
       await studentRepository.AddAsync(newStudent);
       return newStudent;
     }
-
 
     public async Task<bool> DeleteByIdAsync(int id)
     {
@@ -63,19 +50,45 @@ namespace CarmenSchool.Services.Internal
       if (studentDb == null) 
         return false;
 
-      if(request.Email != null)
-        studentDb.Email = request.Email.ToLower();
+      if(ValidationUtils.FieldHasChanged(request.Email, studentDb.Email))
+        studentDb.Email = request.Email!.ToLower();
 
-      if (request.PhoneNumber != null)
+      if (ValidationUtils.FieldHasChanged(request.PhoneNumber, studentDb.PhoneNumber))
         studentDb.PhoneNumber = request.PhoneNumber;
 
-      return !studentRepository.IsModified(studentDb) || await studentRepository.UpdateAsync(studentDb);
+      if (studentRepository.IsModified(studentDb))
+      {
+        await ValidateStudent(studentDb.Email);
+        await studentRepository.UpdateAsync(studentDb);
+      }
+
+      return true;
     }
 
     public async Task<IEnumerable<Student>> FindAsync(Expression<Func<Student, bool>> expression)
     {
       var students = await studentRepository.FindAsync(expression);
       return students.OrderBy(s => s.FullName);
+    }
+
+    private async Task ValidateStudent(string email, string? dni = null)
+    {
+      var emailUpper = email.ToUpper();
+      var dniUpper = dni?.ToUpper();
+
+      Expression<Func<Student, bool>> filter = s =>
+          s.Email.ToUpper() == emailUpper || (!string.IsNullOrEmpty(dniUpper) && s.DNI.ToUpper() == dniUpper);
+
+      var students = await studentRepository.FindAsync(filter);
+
+      if (students?.Any() == true)
+      {
+        if (students.Any(s => s.Email.ToUpper() == emailUpper))
+          throw new InvalidOperationException($"Ya existe un estudiante registrado con el Email {email}");
+
+        if (!string.IsNullOrEmpty(dniUpper) && students.Any(s => s.DNI.ToUpper() == dniUpper))
+          throw new InvalidOperationException($"Ya existe un estudiante registrado con el DNI {dni}");
+      }
     }
   }
 }
