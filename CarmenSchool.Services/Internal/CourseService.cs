@@ -10,7 +10,7 @@ namespace CarmenSchool.Services.Internal
 {
   public class CourseService(ICourseRepository courseRepository) : ICourseService
   {
-    public async Task<CourseReadDto> AddAsync(CourseCreateRequest request)
+    public async Task<Course> AddAsync(CourseCreateRequest request)
     {
       var course = await courseRepository.FindAsync(c => c.Name.ToUpper() == request.Name.ToUpper());
 
@@ -20,7 +20,7 @@ namespace CarmenSchool.Services.Internal
       var newCourse = request.ToEntity();
       newCourse.CreatedDate = DateTime.Now;
       await courseRepository.AddAsync(newCourse);
-      return newCourse?.ToRead();
+      return newCourse;
     }
 
 
@@ -30,17 +30,17 @@ namespace CarmenSchool.Services.Internal
       return studentDb != null && await courseRepository.DeleteAsync(studentDb);
     }
 
-    public async Task<IEnumerable<CourseReadDto>> GetAllAsync()
+    public async Task<IEnumerable<Course>> GetAllAsync()
     {
       var courses = await courseRepository.GetAllAsync();
       return courses is null ?
-        [] : courses.Select(c => c.ToRead()).ToList();
+        [] : courses.ToList();
     }
 
-    public async Task<CourseReadDto?> GetByIdAsync(int id)
+    public async Task<Course?> GetByIdAsync(int id)
     {
       var course = await courseRepository.GetByIdAsync(id);
-      return course?.ToRead() ?? null;
+      return course ?? null;
     }
 
     public async Task<bool> UpdateAsync(int id, CourseUpdateDto request)
@@ -61,10 +61,10 @@ namespace CarmenSchool.Services.Internal
         : false;
     }
 
-    public async Task<IEnumerable<CourseReadDto>> FindAsync(Expression<Func<Course, bool>> expression)
+    public async Task<IEnumerable<Course>> FindAsync(Expression<Func<Course, bool>> expression)
     {
       var courses = await courseRepository.FindAsync(expression);
-      return courses.Select(s => s.ToRead());
+      return courses ?? [];
     }
   }
 }

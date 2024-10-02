@@ -1,6 +1,7 @@
 ﻿
 using CarmenSchool.Core.DTOs.StudentDTO;
 using CarmenSchool.Core.Interfaces;
+using System.Text.Json.Serialization;
 
 namespace CarmenSchool.Core.Models
 {
@@ -12,11 +13,19 @@ namespace CarmenSchool.Core.Models
     public required string Email { get; set; }
     public string? PhoneNumber { get; set; }
     public DateTime CreatedDate { get; set; }
-    public virtual List<Enrollment>? Enrollments { get; set; } = new List<Enrollment>();
 
+    [JsonIgnore]
+    public virtual List<Enrollment>? Enrollments { get; set; } = new List<Enrollment>();
     public StudentReadDto ToRead()
     {
-      return new StudentReadDto { DNI = DNI, FullName = FullName, Email = Email, PhoneNumber = PhoneNumber, Id=Id };
+      return new StudentReadDto 
+      { 
+        DNI = DNI, 
+        FullName = FullName,
+        Email = Email, 
+        PhoneNumber = PhoneNumber, 
+        Id=Id 
+      };
     }
   }
 }

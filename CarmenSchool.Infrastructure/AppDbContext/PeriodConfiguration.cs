@@ -7,18 +7,18 @@ public class PeriodConfiguration : IEntityTypeConfiguration<Period>
   public void Configure(EntityTypeBuilder<Period> builder)
   {
 
-    builder.HasKey(e => e.Id);
+    builder.HasKey(p => p.Id);
 
-    builder.Property(e => e.StartDate)
+    builder.Property(p => p.StartDate)
         .IsRequired();
 
-    builder.Property(e => e.EndDate)
+    builder.Property(p => p.EndDate)
         .IsRequired();
 
-    builder.Property(e => e.CreatedDate)
+    builder.Property(p => p.CreatedDate)
     .IsRequired();
 
-    builder.HasMany(e => e.Enrollments)
+    builder.HasMany(p => p.Enrollments)
         .WithOne() 
         .OnDelete(DeleteBehavior.Cascade); 
 

@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CarmenSchool.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241001235841_InitialCreate")]
+    [Migration("20241002014336_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -53,26 +53,31 @@ namespace CarmenSchool.Infrastructure.Migrations
 
             modelBuilder.Entity("CarmenSchool.Core.Models.Enrollment", b =>
                 {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
                     b.Property<int>("CourseId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("StudentId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("PeriodId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("Id")
+                    b.Property<int>("PeriodId")
                         .HasColumnType("int");
 
-                    b.HasKey("CourseId", "StudentId", "PeriodId");
+                    b.Property<int>("StudentId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
 
                     b.HasIndex("PeriodId");
 
                     b.HasIndex("StudentId");
+
+                    b.HasIndex("CourseId", "StudentId", "PeriodId");
 
                     b.ToTable("Enrollments");
                 });

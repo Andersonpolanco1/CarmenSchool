@@ -6,11 +6,11 @@ namespace CarmenSchool.Core.Interfaces.Services
 {
   public interface IPeriodService 
   {
-    Task<PeriodReadDto> AddAsync(PeriodCreateRequest request);
+    Task<Period> AddAsync(PeriodCreateRequest request);
     Task<bool> DeleteByIdAsync(int id);
-    Task<IEnumerable<PeriodReadDto>> GetAllAsync();
-    Task<PeriodReadDto?> GetByIdAsync(int id);
+    Task<IEnumerable<Period>> GetAllAsync();
+    Task<Period?> GetByIdAsync(int id);
     Task<bool> UpdateAsync(int id, PeriodUpdateRequest request);
-    Task<IEnumerable<PeriodReadDto>> FindAsync(Expression<Func<Period, bool>> expression);
+    Task<IEnumerable<Period>> FindAsync(Expression<Func<Period, bool>> expression);
   }
 }

@@ -6,12 +6,12 @@ namespace CarmenSchool.Core.Interfaces.Services
 {
     public interface IStudentService
     {
-        Task<StudentReadDto> AddAsync(StudentCreateRequest request);
+        Task<Student> AddAsync(StudentCreateRequest request);
         Task<bool> DeleteByIdAsync(int id);
-        Task<IEnumerable<StudentReadDto>> GetAllAsync();
-        Task<StudentReadDto?> GetByIdAsync(int id);
-        Task<StudentReadDto?> GetByDNIAsync(string dni);
+        Task<IEnumerable<Student>> GetAllAsync();
+        Task<Student?> GetByIdAsync(int id);
+        Task<Student?> GetByDNIAsync(string dni);
         Task<bool> UpdateAsync(int id, StudentUpdateRequest request);
-        Task<IEnumerable<StudentReadDto>> FindAsync(Expression<Func<Student, bool>> expression);
+        Task<IEnumerable<Student>> FindAsync(Expression<Func<Student, bool>> expression);
     }
 }

@@ -19,6 +19,7 @@ namespace CarmenSchool.Infrastructure
       services.AddScoped<IStudentRepository, StudentRepository>();
       services.AddScoped<ICourseRepository, CourseRepository>();
       services.AddScoped<IPeriodRepository, PeriodRepository>();
+      services.AddScoped<IEnrollmentRepository, EnrollmentRepository>();
 
       return services;
     }

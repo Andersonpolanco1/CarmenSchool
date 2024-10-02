@@ -1,16 +1,14 @@
-﻿using CarmenSchool.Core.DTOs.PeriodDTO;
+﻿using CarmenSchool.Core.DTOs.EnrollmentsDTO;
 using CarmenSchool.Core.Models;
-using System.Linq.Expressions;
 
 namespace CarmenSchool.Core.Interfaces.Services
 {
   public interface IEnrollmentService
   {
-    Task<PeriodReadDto> AddAsync(PeriodCreateRequest request);
+    Task<Enrollment> AddAsync(EnrollmentCreateRequest request);
     Task<bool> DeleteByIdAsync(int id);
-    Task<IEnumerable<PeriodReadDto>> GetAllAsync();
-    Task<PeriodReadDto?> GetByIdAsync(int id);
-    Task<bool> UpdateAsync(int id, PeriodUpdateRequest request);
-    Task<IEnumerable<PeriodReadDto>> FindAsync(Expression<Func<Period, bool>> expression);
+    Task<IEnumerable<Enrollment>> GetAllAsync();
+    Task<Enrollment?> GetByIdAsync(int id);
+    Task<bool> UpdateAsync(int id, EnrollmentUpdateDto request);
   }
 }

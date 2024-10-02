@@ -10,7 +10,7 @@ namespace CarmenSchool.Services.Internal
 {
     public class StudentService(IStudentRepository studentRepository) : IStudentService
   {
-    public async Task<StudentReadDto> AddAsync(StudentCreateRequest request)
+    public async Task<Student> AddAsync(StudentCreateRequest request)
     {
       var student = await studentRepository.FindAsync(s => s.DNI == request.DNI || s.Email == request.Email);
 
@@ -29,7 +29,7 @@ namespace CarmenSchool.Services.Internal
       var newStudent = request.ToEntity();
       newStudent.CreatedDate = DateTime.Now;
       await studentRepository.AddAsync(newStudent);
-      return newStudent.ToRead();
+      return newStudent;
     }
 
 
@@ -39,23 +39,23 @@ namespace CarmenSchool.Services.Internal
       return studentDb != null && await studentRepository.DeleteAsync(studentDb);
     }
 
-    public async Task<IEnumerable<StudentReadDto>> GetAllAsync()
+    public async Task<IEnumerable<Student>> GetAllAsync()
     {
       var students = await studentRepository.GetAllAsync();
       return students is null ?
-        [] :  students.Select(s => s.ToRead()).OrderBy(s => s.FullName).ToList();
+        [] :  students.OrderBy(s => s.FullName).ToList();
     }
 
-    public async Task<StudentReadDto?> GetByIdAsync(int id)
+    public async Task<Student?> GetByIdAsync(int id)
     {
       var student = await studentRepository.GetByIdAsync(id);
-      return student?.ToRead() ?? null;
+      return student;
     }
 
-    public async Task<StudentReadDto?> GetByDNIAsync(string dni)
+    public async Task<Student?> GetByDNIAsync(string dni)
     {
       var student = await studentRepository.GetByDNIAsync(dni);
-      return student?.ToRead() ?? null;
+      return student;
     }
 
     public async Task<bool> UpdateAsync(int id,StudentUpdateRequest request)
@@ -76,10 +76,10 @@ namespace CarmenSchool.Services.Internal
           : false;
     }
 
-    public async Task<IEnumerable<StudentReadDto>> FindAsync(Expression<Func<Student, bool>> expression)
+    public async Task<IEnumerable<Student>> FindAsync(Expression<Func<Student, bool>> expression)
     {
       var students = await studentRepository.FindAsync(expression);
-      return students.Select(s => s.ToRead()).OrderBy(s => s.FullName);
+      return students.OrderBy(s => s.FullName);
     }
   }
 }

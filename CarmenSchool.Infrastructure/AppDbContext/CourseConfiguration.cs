@@ -8,20 +8,20 @@ namespace CarmenSchool.Infrastructure.AppDbContext
   {
     public void Configure(EntityTypeBuilder<Course> builder)
     {
-      builder.HasKey(e => e.Id);
+      builder.HasKey(c => c.Id);
 
-      builder.Property(e => e.Name)
+      builder.Property(c => c.Name)
           .IsRequired()
           .HasMaxLength(120);
 
-      builder.Property(e => e.CreatedDate)
+      builder.Property(c => c.CreatedDate)
           .IsRequired();
 
-      builder.Property(e => e.Description)
+      builder.Property(c => c.Description)
           .IsRequired()
           .HasMaxLength(500);
 
-      builder.HasMany(e => e.Enrollments)
+      builder.HasMany(c => c.Enrollments)
           .WithOne()
           .OnDelete(DeleteBehavior.Cascade);
     }

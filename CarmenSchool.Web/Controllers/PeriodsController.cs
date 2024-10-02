@@ -14,7 +14,7 @@ namespace CarmenSchool.Web.Controllers
       try
       {
         var periods = await periodService.GetAllAsync();
-        return Ok(periods);
+        return Ok(periods.Select(p => p.ToRead()));
       }
       catch (Exception ex)
       {
@@ -28,7 +28,7 @@ namespace CarmenSchool.Web.Controllers
       try
       {
         var period = await periodService.GetByIdAsync(id);
-        return period == null ? NotFound() : Ok(period);
+        return period == null ? NotFound() : Ok(period.ToRead());
       }
       catch (Exception ex)
       {
@@ -42,7 +42,7 @@ namespace CarmenSchool.Web.Controllers
       try
       {
         var newPeriod = await periodService.AddAsync(request);
-        return CreatedAtAction(nameof(Get), new { id = newPeriod.Id }, newPeriod);
+        return CreatedAtAction(nameof(Get), new { id = newPeriod.Id }, newPeriod.ToRead());
       }
       catch (InvalidOperationException ex)
       {

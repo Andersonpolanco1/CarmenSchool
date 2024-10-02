@@ -15,7 +15,7 @@ namespace CarmenSchool.Web.Controllers
       try
       {
         var courses = await CourseService.GetAllAsync();
-        return Ok(courses);
+        return Ok(courses.Select(c => c.ToRead()).ToList());
       }
       catch (Exception ex)
       {
@@ -29,7 +29,7 @@ namespace CarmenSchool.Web.Controllers
       try
       {
         var course = await CourseService.GetByIdAsync(id);
-        return course == null ? NotFound() : Ok(course);
+        return course == null ? NotFound() : Ok(course.ToRead());
       }
       catch (Exception ex)
       {
@@ -43,7 +43,7 @@ namespace CarmenSchool.Web.Controllers
       try
       {
         var newCourse = await CourseService.AddAsync(request);
-        return CreatedAtAction(nameof(Get), new { id = newCourse.Id }, newCourse);
+        return CreatedAtAction(nameof(Get), new { id = newCourse.Id }, newCourse.ToRead());
       }
       catch (InvalidOperationException ex)
       {

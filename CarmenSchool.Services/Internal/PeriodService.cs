@@ -8,7 +8,7 @@ namespace CarmenSchool.Services.Internal
 {
   internal class PeriodService(IPeriodRepository periodRepository) : IPeriodService
   {
-    public async Task<PeriodReadDto> AddAsync(PeriodCreateRequest request)
+    public async Task<Period> AddAsync(PeriodCreateRequest request)
     {
       var period = await periodRepository.FindAsync(p => p.StartDate == request.GetStartDateAsDateOnly() && p.EndDate == request.GetEndDateAsDateOnly());
 
@@ -21,7 +21,7 @@ namespace CarmenSchool.Services.Internal
       var newPeriod = request.ToEntity();
       newPeriod.CreatedDate = DateTime.Now;
       await periodRepository.AddAsync(newPeriod);
-      return newPeriod.ToRead();
+      return newPeriod;
     }
 
     public async Task<bool> DeleteByIdAsync(int id)
@@ -30,17 +30,17 @@ namespace CarmenSchool.Services.Internal
       return periodDb != null && await periodRepository.DeleteAsync(periodDb);
     }
 
-    public async Task<IEnumerable<PeriodReadDto>> GetAllAsync()
+    public async Task<IEnumerable<Period>> GetAllAsync()
     {
       var periods = await periodRepository.GetAllAsync();
       return periods is null ?
-        [] : periods.Select(c => c.ToRead()).OrderByDescending(p => p.StartDate).ToList();
+        [] : periods.OrderByDescending(p => p.StartDate).ToList();
     }
 
-    public async Task<PeriodReadDto?> GetByIdAsync(int id)
+    public async Task<Period?> GetByIdAsync(int id)
     {
       var period = await periodRepository.GetByIdAsync(id);
-      return period?.ToRead();
+      return period;
     }
 
     public async Task<bool> UpdateAsync(int id, PeriodUpdateRequest request)
@@ -61,10 +61,10 @@ namespace CarmenSchool.Services.Internal
         : false;
     }
 
-    public async Task<IEnumerable<PeriodReadDto>> FindAsync(Expression<Func<Period, bool>> expression)
+    public async Task<IEnumerable<Period>> FindAsync(Expression<Func<Period, bool>> expression)
     {
       var courses = await periodRepository.FindAsync(expression);
-      return courses.Select(s => s.ToRead()).OrderByDescending(p => p.StartDate);
+      return courses.OrderByDescending(p => p.StartDate);
     }
   }
 }

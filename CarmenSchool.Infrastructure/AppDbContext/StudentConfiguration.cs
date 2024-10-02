@@ -6,27 +6,27 @@ public class StudentConfiguration : IEntityTypeConfiguration<Student>
 {
   public void Configure(EntityTypeBuilder<Student> builder)
   {
-    builder.HasKey(e => e.Id);
+    builder.HasKey(s => s.Id);
 
-    builder.Property(e => e.DNI)
+    builder.Property(s => s.DNI)
         .IsRequired()
         .HasMaxLength(20);
 
-    builder.Property(e => e.FullName)
+    builder.Property(s => s.FullName)
         .IsRequired()
         .HasMaxLength(150);
 
-    builder.Property(e => e.Email)
+    builder.Property(s => s.Email)
         .IsRequired()
         .HasMaxLength(100);
 
-    builder.Property(e => e.PhoneNumber)
+    builder.Property(s => s.PhoneNumber)
         .HasMaxLength(15);
 
-    builder.Property(e => e.CreatedDate)
+    builder.Property(s => s.CreatedDate)
         .IsRequired();
 
-    builder.HasMany(e => e.Enrollments)
+    builder.HasMany(s => s.Enrollments)
         .WithOne()
         .OnDelete(DeleteBehavior.Cascade);
   }

@@ -6,7 +6,9 @@ public class EnrollmentConfiguration : IEntityTypeConfiguration<Enrollment>
 {
   public void Configure(EntityTypeBuilder<Enrollment> builder)
   {
-    builder.HasKey(e => new { e.CourseId, e.StudentId, e.PeriodId });
+    builder.HasKey(e => e.Id); 
+
+    builder.HasIndex(e => new { e.CourseId, e.StudentId, e.PeriodId });
 
     builder.HasOne(e => e.Course)
         .WithMany(c => c.Enrollments)

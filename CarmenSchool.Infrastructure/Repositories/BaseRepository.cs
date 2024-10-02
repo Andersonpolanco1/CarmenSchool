@@ -45,11 +45,19 @@ namespace CarmenSchool.Infrastructure.Repositories
       return result ?? [];
     }
 
-    public async Task<IEnumerable<T>> GetAllAsync()
+    public virtual async Task<IEnumerable<T>> GetAllAsync(params Expression<Func<T, object>>[]? includes)
     {
       try
       {
-        return await context.Set<T>().AsNoTracking().ToListAsync();
+        IQueryable<T> query = context.Set<T>().AsNoTracking();
+
+        if (includes != null)
+        {
+          foreach (var include in includes)
+            query = query.Include(include);
+        }
+
+        return await query.ToListAsync();
       }
       catch (Exception ex)
       {
@@ -58,11 +66,19 @@ namespace CarmenSchool.Infrastructure.Repositories
       }
     }
 
-    public async Task<T?> GetByIdAsync(int id)
+    public async Task<T?> GetByIdAsync(int id, params Expression<Func<T, object>>[]? includes)
     {
       try
       {
-        return await context.Set<T>().FirstOrDefaultAsync(s => s.Id == id);
+        IQueryable<T> query = context.Set<T>();
+
+        if (includes != null)
+        {
+          foreach (var include in includes)
+            query = query.Include(include);
+        }
+
+        return await query.FirstOrDefaultAsync(s => s.Id == id);
       }
       catch (Exception ex)
       {

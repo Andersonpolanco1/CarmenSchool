@@ -15,7 +15,7 @@ namespace CarmenSchool.Web.Controllers
       try
       {
         var students = await studentService.GetAllAsync();
-        return Ok(students);
+        return Ok(students.Select(s => s.ToRead()));
       }
       catch (Exception ex)
       {
@@ -29,7 +29,7 @@ namespace CarmenSchool.Web.Controllers
       try
       {
         var student = await studentService.GetByIdAsync(id);
-        return student == null ? NotFound() : Ok(student);
+        return student == null ? NotFound() : Ok(student.ToRead());
       }
       catch (Exception ex)
       {
@@ -43,7 +43,7 @@ namespace CarmenSchool.Web.Controllers
       try
       {
         var newStudent = await studentService.AddAsync(request);
-        return CreatedAtAction(nameof(Get), new { id = newStudent.Id }, newStudent);
+        return CreatedAtAction(nameof(Get), new { id = newStudent.Id }, newStudent.ToRead());
       }
       catch (InvalidOperationException ex)
       {
