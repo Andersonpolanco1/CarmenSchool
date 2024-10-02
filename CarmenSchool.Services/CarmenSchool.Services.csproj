@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CarmenSchool.Core\CarmenSchool.Core.csproj" />
+    <ProjectReference Include="..\CarmenSchool.Infrastructure\CarmenSchool.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

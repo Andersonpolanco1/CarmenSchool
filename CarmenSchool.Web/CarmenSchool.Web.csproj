@@ -15,7 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CarmenSchool.Infrastructure\CarmenSchool.Infrastructure.csproj" />
     <ProjectReference Include="..\CarmenSchool.Services\CarmenSchool.Services.csproj" />
   </ItemGroup>
 
