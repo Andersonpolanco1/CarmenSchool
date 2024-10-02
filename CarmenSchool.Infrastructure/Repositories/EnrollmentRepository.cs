@@ -9,7 +9,7 @@ namespace CarmenSchool.Infrastructure.Repositories
   internal class EnrollmentRepository(ApplicationDbContext context, ILogger<EnrollmentRepository> logger)
     : BaseRepository<Enrollment>(context, logger), IEnrollmentRepository
   {
-    public async Task<Enrollment?> GetByIdAsync(int studentId, int courseId, int periodId)
+    public async Task<Enrollment?> GetByUnikeIdAsync(int studentId, int courseId, int periodId)
     {
       return await context.Enrollments.FirstOrDefaultAsync(e =>
       e.StudentId == studentId &&

@@ -14,14 +14,14 @@ namespace CarmenSchool.Services.Internal
   {
     public async Task<Enrollment> AddAsync(EnrollmentCreateRequest request)
     {
-      var studentEnrollments = await enrollmentRepository.GetByIdAsync(request.StudentId, request.CourseId, request.PeriodId);
+      var studentEnrollments = await enrollmentRepository.GetByUnikeIdAsync(request.StudentId, request.CourseId, request.PeriodId);
 
       if (studentEnrollments != null)
         throw new InvalidOperationException("El estudiante ya esta inscrito en este curso en este período.");
 
-      var student = await studentService.GetByIdAsync(request.StudentId) ?? throw new InvalidOperationException("No se pudo realizar la inscripción, el estudiante no existe.");
-      var course = await courseService.GetByIdAsync(request.CourseId) ?? throw new InvalidOperationException("No se pudo realizar la inscripción, el curso no existe.");
-      var period = await periodService.GetByIdAsync(request.PeriodId) ?? throw new InvalidOperationException("No se pudo realizar la inscripción, el periodo no existe.");
+      var student = await GetValidStudent(request.StudentId);
+      var course = await GetValidCourse(request.CourseId);
+      var period = await GetValidPeriod(request.PeriodId);
       
       var newEnrollment = request.ToEntity(course,student,period);
       newEnrollment.CreatedDate = DateTime.Now;
@@ -57,19 +57,19 @@ namespace CarmenSchool.Services.Internal
 
       if (request.StudentId.HasValue && enrollmentDb.StudentId != request.StudentId)
       {
-        var student = await studentService.GetByIdAsync(request.StudentId!.Value) ?? throw new InvalidOperationException("No se pudo actualizar la inscripción, el estudiante no existe.");
+        var student = await GetValidStudent(request.StudentId!.Value);
         enrollmentDb.Student = student;
       }
 
       if (request.CourseId.HasValue && enrollmentDb.CourseId != request.CourseId)
       {
-        var course = await courseService.GetByIdAsync(request.CourseId!.Value) ?? throw new InvalidOperationException("No se pudo actualizar la inscripción, el curso no existe.");
+        var course = await GetValidCourse(request.CourseId!.Value);
         enrollmentDb.Course = course;
       }
 
       if (request.PeriodId.HasValue && enrollmentDb.PeriodId != request.PeriodId)
       {
-        var period = await periodService.GetByIdAsync(request.PeriodId!.Value) ?? throw new InvalidOperationException("No se pudo actualizar la inscripción, el período no existe.");
+        var period = await GetValidPeriod(request.PeriodId!.Value);
         enrollmentDb.Period = period;
       }
 
@@ -82,6 +82,21 @@ namespace CarmenSchool.Services.Internal
     {
       var courses = await enrollmentRepository.FindAsync(expression);
       return courses;
+    }
+
+    private async Task<Period> GetValidPeriod(int periodId)
+    {
+      return await periodService.GetByIdAsync(periodId) ?? throw new InvalidOperationException("Período no existe.");
+    }
+
+    private async Task<Course> GetValidCourse(int courseId)
+    {
+      return await courseService.GetByIdAsync(courseId) ?? throw new InvalidOperationException("Curso no existe.");
+    }
+
+    private async Task<Student> GetValidStudent(int studentId)
+    {
+      return await studentService.GetByIdAsync(studentId) ?? throw new InvalidOperationException("Estudiante no existe.");
     }
   }
 }
