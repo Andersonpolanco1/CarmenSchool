@@ -56,9 +56,7 @@ namespace CarmenSchool.Services.Internal
       if (request.EndDate != null)
         period.EndDate = request.GetEndDateAsDateOnly()!.Value;
 
-      return periodRepository.IsModified(period) ?
-        await periodRepository.UpdateAsync(period)
-        : true;
+      return !periodRepository.IsModified(period) || await periodRepository.UpdateAsync(period);
     }
 
     public async Task<IEnumerable<Period>> FindAsync(Expression<Func<Period, bool>> expression)

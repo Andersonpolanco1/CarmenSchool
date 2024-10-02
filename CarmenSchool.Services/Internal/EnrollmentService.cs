@@ -55,33 +55,26 @@ namespace CarmenSchool.Services.Internal
       if (enrollmentDb == null)
         return false;
 
-      if (request.StudentId.HasValue && enrollmentDb.StudentId != request.StudentId)
-      {
-        var student = await GetValidStudent(request.StudentId!.Value);
-        enrollmentDb.Student = student;
-      }
+      if (RequestValueExistsAndIsDifferentCurrentValue(request.StudentId, enrollmentDb.StudentId))
+        enrollmentDb.Student = await GetValidStudent(request.StudentId!.Value);
 
-      if (request.CourseId.HasValue && enrollmentDb.CourseId != request.CourseId)
-      {
-        var course = await GetValidCourse(request.CourseId!.Value);
-        enrollmentDb.Course = course;
-      }
+      if (RequestValueExistsAndIsDifferentCurrentValue(request.CourseId, enrollmentDb.CourseId))
+        enrollmentDb.Course = await GetValidCourse(request.CourseId!.Value);
 
-      if (request.PeriodId.HasValue && enrollmentDb.PeriodId != request.PeriodId)
-      {
-        var period = await GetValidPeriod(request.PeriodId!.Value);
-        enrollmentDb.Period = period;
-      }
+      if (RequestValueExistsAndIsDifferentCurrentValue(request.PeriodId, enrollmentDb.PeriodId))
+        enrollmentDb.Period = await GetValidPeriod(request.PeriodId!.Value);
 
-      return enrollmentRepository.IsModified(enrollmentDb) ?
-        await enrollmentRepository.UpdateAsync(enrollmentDb)
-        : true;
+      return !enrollmentRepository.IsModified(enrollmentDb) || await enrollmentRepository.UpdateAsync(enrollmentDb);
     }
 
     public async Task<IEnumerable<Enrollment>> FindAsync(Expression<Func<Enrollment, bool>> expression)
     {
       var courses = await enrollmentRepository.FindAsync(expression);
       return courses;
+    }
+    private static bool RequestValueExistsAndIsDifferentCurrentValue(int? requestValue, int currentValue)
+    {
+      return requestValue.HasValue && currentValue != requestValue;
     }
 
     private async Task<Period> GetValidPeriod(int periodId)

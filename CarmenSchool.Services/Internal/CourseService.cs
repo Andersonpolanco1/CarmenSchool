@@ -55,9 +55,7 @@ namespace CarmenSchool.Services.Internal
       if (request.Description != null)
         courseDb.Description = request.Description;
 
-      return courseRepository.IsModified(courseDb) ?
-        await courseRepository.UpdateAsync(courseDb)
-        : true;
+      return !courseRepository.IsModified(courseDb) || await courseRepository.UpdateAsync(courseDb);
     }
 
     public async Task<IEnumerable<Course>> FindAsync(Expression<Func<Course, bool>> expression)
