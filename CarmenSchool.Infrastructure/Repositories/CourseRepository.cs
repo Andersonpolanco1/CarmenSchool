@@ -7,7 +7,11 @@ using Microsoft.Extensions.Options;
 
 namespace CarmenSchool.Infrastructure.Repositories
 {
-  internal class CourseRepository(ApplicationDbContext context, ILogger<CourseRepository> logger, IOptions<ConfigurationsOptions> options) 
+  internal class CourseRepository
+    (
+      ApplicationDbContext context,
+      ILogger<CourseRepository> logger,
+      IOptions<ConfigurationsOptions> options) 
     : BaseRepository<Course>(context, logger, options), ICourseRepository
   {
   }

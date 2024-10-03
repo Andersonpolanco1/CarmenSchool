@@ -1,10 +1,7 @@
 ﻿using CarmenSchool.Core;
 using CarmenSchool.Core.DTOs;
-using CarmenSchool.Core.DTOs.StudentDTO;
-using CarmenSchool.Core.Helpers;
 using CarmenSchool.Core.Interfaces;
 using CarmenSchool.Core.Interfaces.Repositories;
-using CarmenSchool.Core.Models;
 using CarmenSchool.Core.Utils;
 using CarmenSchool.Infrastructure.AppDbContext;
 using Microsoft.EntityFrameworkCore;
@@ -15,8 +12,11 @@ using System.Linq.Expressions;
 
 namespace CarmenSchool.Infrastructure.Repositories
 {
-  internal abstract class BaseRepository<T>(ApplicationDbContext context, ILogger<BaseRepository<T>> logger, IOptions<ConfigurationsOptions> options) : IRepository<T>
-    where T : class, IBaseEntity
+  internal abstract class BaseRepository<T>(
+    ApplicationDbContext context,
+    ILogger<BaseRepository<T>> logger,
+    IOptions<ConfigurationsOptions> options) 
+    : IRepository<T> where T : class, IBaseEntity
   {
     protected readonly ConfigurationsOptions options = options.Value;
     protected readonly ApplicationDbContext context = context;
@@ -136,6 +136,11 @@ namespace CarmenSchool.Infrastructure.Repositories
       return data;
     }
 
+    /// <summary>
+    /// Obtiene el query inicial con los filtros comunes en todas las entidades para continuar aplicando más filtros especificos, ordenamiento y paginación
+    /// </summary>
+    /// <param name="filters"></param>
+    /// <returns></returns>
     public IQueryable<T> GetBaseQueryFilter(BaseQueryFilter filters)
     {
       IQueryable<T> entityQuery = context.Set<T>().AsNoTracking();

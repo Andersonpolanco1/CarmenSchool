@@ -11,7 +11,10 @@ using Microsoft.Extensions.Options;
 
 namespace CarmenSchool.Infrastructure.Repositories
 {
-  internal class StudentRepository(ApplicationDbContext context, ILogger<StudentRepository> logger, IOptions<ConfigurationsOptions> options) 
+  internal class StudentRepository(
+    ApplicationDbContext context, 
+    ILogger<StudentRepository> logger, 
+    IOptions<ConfigurationsOptions> options) 
     : BaseRepository<Student>(context, logger, options), IStudentRepository
   {
     public async Task<Student?> GetByDNIAsync(string dni)

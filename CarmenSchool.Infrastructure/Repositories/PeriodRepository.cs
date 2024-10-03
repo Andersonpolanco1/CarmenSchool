@@ -7,8 +7,11 @@ using Microsoft.Extensions.Options;
 
 namespace CarmenSchool.Infrastructure.Repositories
 {
-  internal class PeriodRepository(ApplicationDbContext context, ILogger<PeriodRepository> logger, IOptions<ConfigurationsOptions> options)
-    : BaseRepository<Period>(context, logger,options), IPeriodRepository
+  internal class PeriodRepository(
+    ApplicationDbContext context,
+    ILogger<PeriodRepository> logger,
+    IOptions<ConfigurationsOptions> options) 
+    : BaseRepository<Period>(context, logger, options), IPeriodRepository
   {
   }
 }

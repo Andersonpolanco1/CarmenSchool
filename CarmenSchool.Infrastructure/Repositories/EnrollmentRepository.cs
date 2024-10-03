@@ -8,7 +8,11 @@ using Microsoft.Extensions.Options;
 
 namespace CarmenSchool.Infrastructure.Repositories
 {
-  internal class EnrollmentRepository(ApplicationDbContext context, ILogger<EnrollmentRepository> logger, IOptions<ConfigurationsOptions> options)
+  internal class EnrollmentRepository
+    (
+      ApplicationDbContext context,
+      ILogger<EnrollmentRepository> logger,
+      IOptions<ConfigurationsOptions> options) 
     : BaseRepository<Enrollment>(context, logger, options), IEnrollmentRepository
   {
     public async Task<Enrollment?> GetByUnikeIdAsync(int studentId, int courseId, int periodId)
