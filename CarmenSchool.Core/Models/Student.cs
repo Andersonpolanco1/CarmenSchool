@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 
 namespace CarmenSchool.Core.Models
 {
-    public class Student : IBaseEntity
+  public class Student : IBaseEntity
   {
     public int Id { get; set; }
     public required string DNI { get; set; }
@@ -18,13 +18,13 @@ namespace CarmenSchool.Core.Models
     public virtual List<Enrollment>? Enrollments { get; set; } = new List<Enrollment>();
     public StudentReadDto ToRead()
     {
-      return new StudentReadDto 
-      { 
-        DNI = DNI, 
+      return new StudentReadDto
+      {
+        DNI = DNI,
         FullName = FullName,
-        Email = Email, 
-        PhoneNumber = PhoneNumber, 
-        Id=Id 
+        Email = Email,
+        PhoneNumber = PhoneNumber,
+        Id = Id
       };
     }
   }
