@@ -1,6 +1,5 @@
 ﻿using CarmenSchool.Core.Utils;
 using System.ComponentModel.DataAnnotations;
-using System.Globalization;
 
 namespace CarmenSchool.Core.DTOs.PeriodDTO
 {
@@ -19,14 +18,14 @@ namespace CarmenSchool.Core.DTOs.PeriodDTO
       if (StartDate == null)
         return null; 
 
-      return DateOnly.ParseExact(StartDate, DateTimeUtils.PERIOD_STRING_DATE_FORMATS, CultureInfo.InvariantCulture);
+      return DateTimeUtils.ToDateOnly(StartDate);
     }
     public DateOnly? GetEndDateAsDateOnly() 
     {
       if (EndDate == null)
         return null;
 
-      return DateOnly.ParseExact(EndDate, DateTimeUtils.PERIOD_STRING_DATE_FORMATS, CultureInfo.InvariantCulture); 
+      return DateTimeUtils.ToDateOnly(EndDate);
     }
   }
 }

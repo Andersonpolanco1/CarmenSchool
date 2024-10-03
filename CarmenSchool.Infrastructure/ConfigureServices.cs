@@ -1,4 +1,5 @@
-﻿using CarmenSchool.Core.Interfaces.Repositories;
+﻿using CarmenSchool.Core;
+using CarmenSchool.Core.Interfaces.Repositories;
 using CarmenSchool.Infrastructure.AppDbContext;
 using CarmenSchool.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -21,6 +22,12 @@ namespace CarmenSchool.Infrastructure
           throw new InvalidOperationException("No se ha configurado la cadena de conexión.");
 
         options.UseSqlServer(connectionString);
+      });
+
+      services.Configure<ConfigurationsOptions>(options =>
+      {
+        var configuration = services.BuildServiceProvider().GetRequiredService<IConfiguration>();
+        configuration.GetSection("Configurations").Bind(options);
       });
 
       services.AddScoped<IStudentRepository, StudentRepository>();

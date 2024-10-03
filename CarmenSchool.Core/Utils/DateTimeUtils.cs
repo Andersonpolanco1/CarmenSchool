@@ -63,5 +63,17 @@ namespace CarmenSchool.Core.Utils
     public static string ToLocalDateString(this DateOnly date) => date.ToString("dd/MM/yyyy");
 
     public static string ToLocalDateTimeString(this DateTime date) => date.ToString("dd/MM/yyyy hh:mm:ss");
+
+    public static DateOnly ToDateOnly(string dateAsString)
+    {
+      try
+      {
+        return DateOnly.ParseExact(dateAsString, PERIOD_STRING_DATE_FORMATS, CultureInfo.InvariantCulture);
+      }
+      catch (Exception)
+      {
+        return DateOnly.MinValue;
+      }
+    }
   }
 }

@@ -90,5 +90,10 @@ namespace CarmenSchool.Services.Internal
           throw new InvalidOperationException($"Ya existe un estudiante registrado con el DNI {dni}");
       }
     }
+
+    public async Task<PaginatedList<Student>> FindAsync(StudentQueryFilters filters)
+    {
+      return await studentRepository.FindAsync(filters);  
+    }
   }
 }
