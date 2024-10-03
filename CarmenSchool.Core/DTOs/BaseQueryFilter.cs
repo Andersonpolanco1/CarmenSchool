@@ -1,6 +1,4 @@
-﻿using CarmenSchool.Core.Interfaces;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 
 namespace CarmenSchool.Core.DTOs
@@ -13,12 +11,12 @@ namespace CarmenSchool.Core.DTOs
     public int? Id { get; set; }
 
     [RegularExpression(@"^(0[1-9]|[12][0-9]|3[01])[-/](0[1-9]|1[0-2])[-/](\d{4})$",
-    ErrorMessage = "El formato de la fecha de creacion inicio debe ser dd-MM-yyyy o dd/MM/yyyy.")]
-    public string? CreatedDateStart { get; set; }
+    ErrorMessage = "El formato de la fecha de creacion desde, debe ser dd-MM-yyyy o dd/MM/yyyy.")]
+    public string? CreatedDateFrom { get; set; }
 
     [RegularExpression(@"^(0[1-9]|[12][0-9]|3[01])[-/](0[1-9]|1[0-2])[-/](\d{4})$",
-    ErrorMessage = "El formato de la fecha de creacion fin debe ser dd-MM-yyyy o dd/MM/yyyy.")]
-    public string? CreatedDateEnd { get; set; }
+    ErrorMessage = "El formato de la fecha de creacion hasta, debe ser dd-MM-yyyy o dd/MM/yyyy.")]
+    public string? CreatedDateTo { get; set; }
 
 
     [Range(1, int.MaxValue, ErrorMessage = "PageIndex debe ser mayor o igual a 1.")]
@@ -28,7 +26,7 @@ namespace CarmenSchool.Core.DTOs
     [Range(1, int.MaxValue, ErrorMessage = "PageSize debe ser mayor o igual a 1")]
     public int PageSize { get; set; }
 
-    public string? OrderByField { get; set; }
+    public string? SortFieldName { get; set; }
 
     public SortOrder? SortOrder { get; set; }
 

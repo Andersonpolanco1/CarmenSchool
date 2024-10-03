@@ -66,6 +66,11 @@ namespace CarmenSchool.Services.Internal
       return courses.OrderByDescending(p => p.StartDate);
     }
 
+    public async Task<PaginatedList<Period>> FindAsync(PeriodQueryFilters filters)
+    {
+      return await periodRepository.FindAsync(filters);
+    }
+
     private async Task ValidatePeriod(DateOnly startDate, DateOnly endDate)
     {
       var period = await periodRepository.FindAsync(p => p.StartDate == startDate && p.EndDate == endDate);

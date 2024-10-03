@@ -5,6 +5,8 @@ namespace CarmenSchool.Core.Utils
 {
   public static class DateTimeUtils
   {
+    public const string MSG_ERROR_FORMATO_FECHA = "El formato del campo {0} debe ser uno de los siguientes: {1}.";
+
     public static string[] PERIOD_STRING_DATE_FORMATS =
     [
       "dd-MM-yyyy",
@@ -74,6 +76,12 @@ namespace CarmenSchool.Core.Utils
       {
         return DateOnly.MinValue;
       }
+    }
+
+    public static string GetDateFormatErrorMessage(string fieldName)
+    {
+      string formatosUnidos = string.Join(" o ", PERIOD_STRING_DATE_FORMATS);
+      return string.Format(MSG_ERROR_FORMATO_FECHA, fieldName, formatosUnidos);
     }
   }
 }

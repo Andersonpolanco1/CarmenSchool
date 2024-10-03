@@ -120,7 +120,7 @@ namespace CarmenSchool.Infrastructure.Repositories
       IQueryable<T> entityQuery = GetBaseQueryFilter(filters);
 
       //Si no pasaron el campo de ordenamiento o si el campo de ordenamiento pasado no existe en la clase, se agrega ordenamiento por Id por defecto
-      if (string.IsNullOrEmpty(filters.OrderByField) || !ValidationUtils.TryGetProperty<BaseQueryFilter>(filters.OrderByField, out string foundProperty))
+      if (string.IsNullOrEmpty(filters.SortFieldName) || !ValidationUtils.TryGetProperty<BaseQueryFilter>(filters.SortFieldName, out string foundProperty))
       {
         entityQuery = entityQuery.OrderBy(u => u.Id);
       }
@@ -148,11 +148,11 @@ namespace CarmenSchool.Infrastructure.Repositories
       if (filters.Id.HasValue)
         entityQuery = entityQuery.Where(s => s.Id == filters.Id);
 
-      if (!string.IsNullOrEmpty(filters.CreatedDateStart))
-        entityQuery = entityQuery.Where(s => DateOnly.FromDateTime(s.CreatedDate) >= DateTimeUtils.ToDateOnly(filters.CreatedDateStart));
+      if (!string.IsNullOrEmpty(filters.CreatedDateFrom))
+        entityQuery = entityQuery.Where(s => DateOnly.FromDateTime(s.CreatedDate) >= DateTimeUtils.ToDateOnly(filters.CreatedDateFrom));
 
-      if (!string.IsNullOrEmpty(filters.CreatedDateEnd))
-        entityQuery = entityQuery.Where(s => DateOnly.FromDateTime(s.CreatedDate) <= DateTimeUtils.ToDateOnly(filters.CreatedDateEnd));
+      if (!string.IsNullOrEmpty(filters.CreatedDateTo))
+        entityQuery = entityQuery.Where(s => DateOnly.FromDateTime(s.CreatedDate) <= DateTimeUtils.ToDateOnly(filters.CreatedDateTo));
 
       return entityQuery;
     }
