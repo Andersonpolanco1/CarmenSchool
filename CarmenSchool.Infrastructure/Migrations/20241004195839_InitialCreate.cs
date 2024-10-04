@@ -93,9 +93,16 @@ namespace CarmenSchool.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_Courses_Name",
+                table: "Courses",
+                column: "Name",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Enrollments_CourseId_StudentId_PeriodId",
                 table: "Enrollments",
-                columns: new[] { "CourseId", "StudentId", "PeriodId" });
+                columns: new[] { "CourseId", "StudentId", "PeriodId" },
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_Enrollments_PeriodId",
@@ -106,6 +113,24 @@ namespace CarmenSchool.Infrastructure.Migrations
                 name: "IX_Enrollments_StudentId",
                 table: "Enrollments",
                 column: "StudentId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Periods_StartDate_EndDate",
+                table: "Periods",
+                columns: new[] { "StartDate", "EndDate" },
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Students_DNI",
+                table: "Students",
+                column: "DNI",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Students_Email",
+                table: "Students",
+                column: "Email",
+                unique: true);
         }
 
         /// <inheritdoc />

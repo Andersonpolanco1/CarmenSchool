@@ -10,6 +10,9 @@ namespace CarmenSchool.Infrastructure.AppDbContext
     {
       builder.HasKey(c => c.Id);
 
+      builder.HasIndex(e => e.Name)
+          .IsUnique();
+
       builder.Property(c => c.Name)
           .IsRequired()
           .HasMaxLength(120);

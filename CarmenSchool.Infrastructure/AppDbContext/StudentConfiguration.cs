@@ -8,6 +8,13 @@ internal class StudentConfiguration : IEntityTypeConfiguration<Student>
   {
     builder.HasKey(s => s.Id);
 
+
+    builder.HasIndex(e => e.DNI)
+        .IsUnique();
+
+    builder.HasIndex(e => e.Email)
+        .IsUnique();
+
     builder.Property(s => s.DNI)
         .IsRequired()
         .HasMaxLength(20);

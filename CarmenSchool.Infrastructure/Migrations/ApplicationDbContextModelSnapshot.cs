@@ -45,6 +45,9 @@ namespace CarmenSchool.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("Name")
+                        .IsUnique();
+
                     b.ToTable("Courses");
                 });
 
@@ -74,7 +77,8 @@ namespace CarmenSchool.Infrastructure.Migrations
 
                     b.HasIndex("StudentId");
 
-                    b.HasIndex("CourseId", "StudentId", "PeriodId");
+                    b.HasIndex("CourseId", "StudentId", "PeriodId")
+                        .IsUnique();
 
                     b.ToTable("Enrollments");
                 });
@@ -97,6 +101,9 @@ namespace CarmenSchool.Infrastructure.Migrations
                         .HasColumnType("date");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("StartDate", "EndDate")
+                        .IsUnique();
 
                     b.ToTable("Periods");
                 });
@@ -132,6 +139,12 @@ namespace CarmenSchool.Infrastructure.Migrations
                         .HasColumnType("nvarchar(15)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("DNI")
+                        .IsUnique();
+
+                    b.HasIndex("Email")
+                        .IsUnique();
 
                     b.ToTable("Students");
                 });

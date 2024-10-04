@@ -9,6 +9,10 @@ internal class PeriodConfiguration : IEntityTypeConfiguration<Period>
 
     builder.HasKey(p => p.Id);
 
+
+    builder.HasIndex(e => new { e.StartDate, e.EndDate})
+        .IsUnique();
+
     builder.Property(p => p.StartDate)
         .IsRequired();
 
