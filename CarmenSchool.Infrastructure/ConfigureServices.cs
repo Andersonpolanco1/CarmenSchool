@@ -9,24 +9,20 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace CarmenSchool.Infrastructure
 {
-    public static class ConfigureServices
+  public static class ConfigureServices
   {
     public static IServiceCollection AddInfrastructureLayer(this IServiceCollection services)
     {
+      var configuration = services.BuildServiceProvider().GetRequiredService<IConfiguration>();
+
       services.AddDbContext<ApplicationDbContext>((serviceProvider, options) =>
       {
-        var configuration = serviceProvider.GetRequiredService<IConfiguration>();
         var connectionString = configuration.GetConnectionString("DefaultConnection");
-
-        if (string.IsNullOrEmpty(connectionString))
-          throw new InvalidOperationException("No se ha configurado la cadena de conexión.");
-
         options.UseSqlServer(connectionString);
       });
 
       services.Configure<ConfigurationsOptions>(options =>
       {
-        var configuration = services.BuildServiceProvider().GetRequiredService<IConfiguration>();
         configuration.GetSection("Configurations").Bind(options);
       });
 
