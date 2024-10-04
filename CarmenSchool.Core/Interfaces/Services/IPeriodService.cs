@@ -13,6 +13,6 @@ namespace CarmenSchool.Core.Interfaces.Services
     Task<Period?> GetByIdAsync(int id);
     Task<bool> UpdateAsync(int id, PeriodUpdateRequest request);
     Task<IEnumerable<Period>> FindAsync(Expression<Func<Period, bool>> expression);
-    Task<PaginatedList<Period>> FindAsync(PeriodQueryFilters filters);
+    Task<PaginatedList<Period>> FindAsync(PeriodQueryFilter filters);
   }
 }

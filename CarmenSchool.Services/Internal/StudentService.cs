@@ -91,7 +91,7 @@ namespace CarmenSchool.Services.Internal
       }
     }
 
-    public async Task<PaginatedList<Student>> FindAsync(StudentQueryFilters filters)
+    public async Task<PaginatedList<Student>> FindAsync(StudentQueryFilter filters)
     {
       return await studentRepository.FindAsync(filters);  
     }

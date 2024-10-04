@@ -76,6 +76,11 @@ namespace CarmenSchool.Services.Internal
       return courses;
     }
 
+    public async Task<PaginatedList<Enrollment>> FindAsync(EnrollmentQueryFilter filters)
+    {
+      return await enrollmentRepository.FindAsync(filters);
+    }
+
     private async Task ValidateEnrollment(int studentId, int courseId, int periodId)
     {
       var studentEnrollments = await enrollmentRepository.GetByUnikeIdAsync(studentId, courseId, periodId);

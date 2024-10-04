@@ -5,6 +5,9 @@ using System.Text.RegularExpressions;
 
 namespace CarmenSchool.Core.Atributes
 {
+  /// <summary>
+  /// Valida que una propiedad almacene un string con una fecha en formato dd/MM/yyyy o dd-MM-yyyy
+  /// </summary>
   public class LocalDateStringAttribute : ValidationAttribute
   {
     protected override ValidationResult? IsValid(object? value, ValidationContext validationContext)

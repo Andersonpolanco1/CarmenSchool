@@ -2,7 +2,7 @@
 
 namespace CarmenSchool.Core.DTOs.PeriodDTO
 {
-  public class PeriodQueryFilters : BaseQueryFilter
+  public class PeriodQueryFilter : BaseQueryFilter
   {
     [LocalDateString]
     public string? StartDateFrom { get; set; }

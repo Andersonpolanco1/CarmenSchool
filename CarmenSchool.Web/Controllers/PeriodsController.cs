@@ -9,7 +9,7 @@ namespace CarmenSchool.Web.Controllers
   public class PeriodsController(IPeriodService periodService) : ControllerBase
   {
     [HttpGet]
-    public async Task<IActionResult> Get([FromQuery] PeriodQueryFilters filters)
+    public async Task<IActionResult> Get([FromQuery] PeriodQueryFilter filters)
     {
       try
       {

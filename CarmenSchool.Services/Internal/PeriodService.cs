@@ -66,7 +66,7 @@ namespace CarmenSchool.Services.Internal
       return courses.OrderByDescending(p => p.StartDate);
     }
 
-    public async Task<PaginatedList<Period>> FindAsync(PeriodQueryFilters filters)
+    public async Task<PaginatedList<Period>> FindAsync(PeriodQueryFilter filters)
     {
       return await periodRepository.FindAsync(filters);
     }

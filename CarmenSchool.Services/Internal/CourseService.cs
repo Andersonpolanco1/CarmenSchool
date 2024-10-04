@@ -76,5 +76,10 @@ namespace CarmenSchool.Services.Internal
       if (course != null && course.Any())
         throw new InvalidOperationException("Ya existe un curso registrado con ese nombre");
     }
+
+    public async Task<PaginatedList<Course>> FindAsync(CourseQueryFilters filters)
+    {
+      return await courseRepository.FindAsync(filters);
+    }
   }
 }

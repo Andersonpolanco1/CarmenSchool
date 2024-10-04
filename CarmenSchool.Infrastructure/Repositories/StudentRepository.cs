@@ -24,7 +24,7 @@ namespace CarmenSchool.Infrastructure.Repositories
 
     public override async Task<PaginatedList<Student>> FindAsync(BaseQueryFilter filters)
     {
-      if (filters is not StudentQueryFilters studentFilter)
+      if (filters is not StudentQueryFilter studentFilter)
         return  await base.FindAsync(filters);
 
       IQueryable<Student> entityQuery = GetBaseQueryFilter(studentFilter);
@@ -41,21 +41,7 @@ namespace CarmenSchool.Infrastructure.Repositories
       if (!string.IsNullOrEmpty(studentFilter.PhoneNumber))
         entityQuery = entityQuery.Where(s => s.PhoneNumber == studentFilter.PhoneNumber);
 
-      //Si no pasaron el campo de ordenamiento o si el campo de ordenamiento pasado no existe en la clase, se agrega ordenamiento por Id por defecto
-      if (string.IsNullOrEmpty(filters.SortFieldName) || !ValidationUtils.TryGetProperty<StudentQueryFilters>(filters.SortFieldName, out string foundPropertyName))
-      {
-        entityQuery = entityQuery.OrderBy(u => u.Id);
-      }
-      else
-      {
-        entityQuery = filters.SortOrder == SortOrder.Ascending
-            ? entityQuery.OrderBy(e => EF.Property<object>(e, foundPropertyName))
-            : entityQuery.OrderByDescending(e => EF.Property<object>(e, foundPropertyName));
-      }
-
-      var data = await PaginatedList<Student>.CreateAsync(entityQuery, filters.PageIndex, filters.PageSize, options.MaxPageSize);
-
-      return data;
+      return await SortAndPaginate(filters, entityQuery);
     }
   }
 }

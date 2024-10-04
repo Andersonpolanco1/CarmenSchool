@@ -10,7 +10,7 @@ namespace CarmenSchool.Web.Controllers
   {
 
     [HttpGet]
-    public async Task<IActionResult> Get([FromQuery] StudentQueryFilters filters)
+    public async Task<IActionResult> Get([FromQuery] StudentQueryFilter filters)
     {
       try
       {

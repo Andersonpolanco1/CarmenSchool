@@ -28,13 +28,13 @@ namespace CarmenSchool.Core.DTOs
 
     public string? SortFieldName { get; set; }
 
-    public SortOrder? SortOrder { get; set; }
+    public SortOrder SortOrder { get; set; }
 
     protected BaseQueryFilter()
     {
       PageIndex = DEFAULT_PAGE_INDEX;
       PageSize = DEFAULT_PAGE_SIZE;
-      SortOrder = DTOs.SortOrder.Ascending;
+      SortOrder = SortOrder.Ascending;
     }
   }
 

@@ -1,5 +1,6 @@
 ﻿using CarmenSchool.Core;
 using CarmenSchool.Core.DTOs;
+using CarmenSchool.Core.Helpers;
 using CarmenSchool.Core.Interfaces;
 using CarmenSchool.Core.Interfaces.Repositories;
 using CarmenSchool.Core.Utils;
@@ -118,22 +119,7 @@ namespace CarmenSchool.Infrastructure.Repositories
     public virtual async Task<PaginatedList<T>> FindAsync(BaseQueryFilter filters)
     {
       IQueryable<T> entityQuery = GetBaseQueryFilter(filters);
-
-      //Si no pasaron el campo de ordenamiento o si el campo de ordenamiento pasado no existe en la clase, se agrega ordenamiento por Id por defecto
-      if (string.IsNullOrEmpty(filters.SortFieldName) || !ValidationUtils.TryGetProperty<BaseQueryFilter>(filters.SortFieldName, out string foundProperty))
-      {
-        entityQuery = entityQuery.OrderBy(u => u.Id);
-      }
-      else
-      {
-        entityQuery = filters.SortOrder == SortOrder.Ascending
-            ? entityQuery.OrderBy(e => EF.Property<object>(e, foundProperty))
-            : entityQuery.OrderByDescending(e => EF.Property<object>(e, foundProperty));
-      }
-
-      var data = await PaginatedList<T>.CreateAsync(entityQuery, filters.PageIndex, filters.PageSize, options.MaxPageSize);
-
-      return data;
+      return await SortAndPaginate(filters, entityQuery);
     }
 
     /// <summary>
@@ -141,9 +127,15 @@ namespace CarmenSchool.Infrastructure.Repositories
     /// </summary>
     /// <param name="filters"></param>
     /// <returns></returns>
-    public IQueryable<T> GetBaseQueryFilter(BaseQueryFilter filters)
+    protected IQueryable<T> GetBaseQueryFilter(BaseQueryFilter filters, params Expression<Func<T, object>>[]? includes)
     {
       IQueryable<T> entityQuery = context.Set<T>().AsNoTracking();
+
+      if (includes != null)
+      {
+        foreach (var include in includes)
+          entityQuery = entityQuery.Include(include);
+      }
 
       if (filters.Id.HasValue)
         entityQuery = entityQuery.Where(s => s.Id == filters.Id);
@@ -155,6 +147,15 @@ namespace CarmenSchool.Infrastructure.Repositories
         entityQuery = entityQuery.Where(s => DateOnly.FromDateTime(s.CreatedDate) <= DateTimeUtils.ToDateOnly(filters.CreatedDateTo));
 
       return entityQuery;
+    }
+
+    protected async Task<PaginatedList<T>> SortAndPaginate(BaseQueryFilter filters, IQueryable<T> entityQuery)
+    {
+      //Si no pasaron el campo de ordenamiento o si el campo de ordenamiento pasado no existe en la clase, se agrega ordenamiento por Id por defecto
+      if (string.IsNullOrEmpty(filters.SortFieldName) || !entityQuery.TrySortQueryByField(filters.SortFieldName, out IQueryable<T> sortedQuery, filters.SortOrder))
+        sortedQuery = entityQuery.OrderBy(u => u.Id);
+
+      return await PaginatedList<T>.CreateAsync(sortedQuery, filters.PageIndex, filters.PageSize, options.MaxPageSize);
     }
   }
 }
