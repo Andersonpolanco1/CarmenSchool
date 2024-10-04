@@ -1,4 +1,4 @@
-﻿using CarmenSchool.Core;
+﻿using CarmenSchool.Core.Configurations;
 using CarmenSchool.Core.Interfaces.Repositories;
 using CarmenSchool.Infrastructure.AppDbContext;
 using CarmenSchool.Infrastructure.Repositories;
@@ -9,7 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace CarmenSchool.Infrastructure
 {
-  public static class ConfigureServices
+    public static class ConfigureServices
   {
     public static IServiceCollection AddInfrastructureLayer(this IServiceCollection services)
     {

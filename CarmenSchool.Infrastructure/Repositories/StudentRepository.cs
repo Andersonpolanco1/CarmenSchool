@@ -1,4 +1,4 @@
-﻿using CarmenSchool.Core;
+﻿using CarmenSchool.Core.Configurations;
 using CarmenSchool.Core.DTOs;
 using CarmenSchool.Core.DTOs.StudentDTO;
 using CarmenSchool.Core.Interfaces.Repositories;
@@ -11,7 +11,7 @@ using Microsoft.Extensions.Options;
 
 namespace CarmenSchool.Infrastructure.Repositories
 {
-  internal class StudentRepository(
+    internal class StudentRepository(
     ApplicationDbContext context, 
     ILogger<StudentRepository> logger, 
     IOptions<ConfigurationsOptions> options) 

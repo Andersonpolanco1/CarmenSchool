@@ -1,4 +1,4 @@
-﻿using CarmenSchool.Core;
+﻿using CarmenSchool.Core.Configurations;
 using CarmenSchool.Core.DTOs;
 using CarmenSchool.Core.Helpers;
 using CarmenSchool.Core.Interfaces;
@@ -13,7 +13,7 @@ using System.Linq.Expressions;
 
 namespace CarmenSchool.Infrastructure.Repositories
 {
-  internal abstract class BaseRepository<T>(
+    internal abstract class BaseRepository<T>(
     ApplicationDbContext context,
     ILogger<BaseRepository<T>> logger,
     IOptions<ConfigurationsOptions> options) 
