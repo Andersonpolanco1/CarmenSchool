@@ -32,9 +32,9 @@ namespace CarmenSchool.Services.Internal
         [] : periods.OrderByDescending(p => p.StartDate).ToList();
     }
 
-    public async Task<Period?> GetByIdAsync(int id)
+    public async Task<Period?> GetByIdAsync(int id, params Expression<Func<Period, object>>[]? includes)
     {
-      var period = await periodRepository.GetByIdAsync(id);
+      var period = await periodRepository.GetByIdAsync(id, includes);
       return period;
     }
 

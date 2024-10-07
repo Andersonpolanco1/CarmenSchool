@@ -40,9 +40,9 @@ namespace CarmenSchool.Services.Internal
         [] : enrollment.ToList();
     }
 
-    public async Task<Enrollment?> GetByIdAsync(int id)
+    public async Task<Enrollment?> GetByIdAsync(int id, params Expression<Func<Enrollment, object>>[]? includes)
     {
-      return await enrollmentRepository.GetByIdAsync(id, e => e.Student, e => e.Period, e => e.Course);
+      return await enrollmentRepository.GetByIdAsync(id, includes);
     }
 
     public async Task<bool> UpdateAsync(int id, EnrollmentUpdateDto request)
@@ -70,10 +70,10 @@ namespace CarmenSchool.Services.Internal
       return true;
     }
 
-    public async Task<IEnumerable<Enrollment>> FindAsync(Expression<Func<Enrollment, bool>> expression)
+    public async Task<IEnumerable<Enrollment>> FindAsync(Expression<Func<Enrollment, bool>> expression, params Expression<Func<Enrollment, object>>[]? includes)
     {
-      var courses = await enrollmentRepository.FindAsync(expression);
-      return courses;
+      var enrollments = await enrollmentRepository.FindAsync(expression, includes);
+      return enrollments;
     }
 
     public async Task<PaginatedList<Enrollment>> FindAsync(EnrollmentQueryFilter filters)

@@ -3,12 +3,15 @@ using CarmenSchool.Core.DTOs;
 using CarmenSchool.Core.Helpers;
 using CarmenSchool.Core.Interfaces;
 using CarmenSchool.Core.Interfaces.Repositories;
+using CarmenSchool.Core.Models;
 using CarmenSchool.Core.Utils;
 using CarmenSchool.Infrastructure.AppDbContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using System.Linq.Expressions;
+using System.Net.WebSockets;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 
 namespace CarmenSchool.Infrastructure.Repositories
@@ -47,9 +50,17 @@ namespace CarmenSchool.Infrastructure.Repositories
       }
     }
 
-    public async Task<IEnumerable<T>> FindAsync(Expression<Func<T, bool>> expression)
+    public async Task<IEnumerable<T>> FindAsync(Expression<Func<T, bool>> expression, params Expression<Func<T, object>>[]? includes)
     {
-      var result = await context.Set<T>().Where(expression).ToListAsync();
+      var query = context.Set<T>().AsNoTracking();
+
+      if (includes != null)
+      {
+        foreach (var include in includes)
+          query = query.Include(include);
+      }
+
+      var result  = await query.Where(expression).ToListAsync();
       return result ?? [];
     }
 

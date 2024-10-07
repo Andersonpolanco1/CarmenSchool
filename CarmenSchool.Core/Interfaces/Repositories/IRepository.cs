@@ -11,7 +11,7 @@ namespace CarmenSchool.Core.Interfaces.Repositories
     Task<T> AddAsync(T entity);
     Task<bool> UpdateAsync(T entity);
     Task<bool> DeleteAsync(T entity);
-    Task<IEnumerable<T>> FindAsync(Expression<Func<T, bool>> expression);
+    Task<IEnumerable<T>> FindAsync(Expression<Func<T, bool>> expression, params Expression<Func<T, object>>[]? includes);
     Task<PaginatedList<T>> FindAsync(BaseQueryFilter filters);
     bool IsModified(T entity);
   }

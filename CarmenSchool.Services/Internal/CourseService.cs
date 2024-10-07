@@ -32,9 +32,9 @@ namespace CarmenSchool.Services.Internal
         [] : courses.ToList();
     }
 
-    public async Task<Course?> GetByIdAsync(int id)
+    public async Task<Course?> GetByIdAsync(int id, params Expression<Func<Course, object>>[]? includes)
     {
-      var course = await courseRepository.GetByIdAsync(id);
+      var course = await courseRepository.GetByIdAsync(id, includes);
       return course ?? null;
     }
 

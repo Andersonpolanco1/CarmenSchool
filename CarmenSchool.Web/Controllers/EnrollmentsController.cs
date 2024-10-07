@@ -27,7 +27,7 @@ namespace CarmenSchool.Web.Controllers
     {
       try
       {
-        var enrollment = await enrollmentService.GetByIdAsync(id);
+        var enrollment = await enrollmentService.GetByIdAsync(id, e=>e.Period, e => e.Course, e => e.Student);
         return enrollment == null ? NotFound() : Ok(enrollment.ToRead());
       }
       catch (Exception ex)
