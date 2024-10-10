@@ -10,12 +10,12 @@ namespace CarmenSchool.Web.Controllers
   {
 
     [HttpGet]
-    public async Task<IActionResult> Get()
+    public async Task<IActionResult> Get([FromQuery] CourseQueryFilters filters)
     {
       try
       {
-        var courses = await CourseService.GetAllAsync();
-        return Ok(courses.Select(c => c.ToRead()));
+        var courses = await CourseService.FindAsync(filters);
+        return Ok(courses.Map(c => c.ToRead()));
       }
       catch (Exception ex)
       {

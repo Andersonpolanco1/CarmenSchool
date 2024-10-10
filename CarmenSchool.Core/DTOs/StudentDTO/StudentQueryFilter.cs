@@ -1,6 +1,6 @@
 ﻿namespace CarmenSchool.Core.DTOs.StudentDTO
 {
-  public class StudentQueryFilters : BaseQueryFilter
+  public class StudentQueryFilter : BaseQueryFilter
   {
     public string? DNI { get; set; }
     public string? FullName { get; set; }

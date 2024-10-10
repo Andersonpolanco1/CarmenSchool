@@ -31,9 +31,9 @@ namespace CarmenSchool.Services.Internal
         [] :  students.OrderBy(s => s.FullName).ToList();
     }
 
-    public async Task<Student?> GetByIdAsync(int id)
+    public async Task<Student?> GetByIdAsync(int id, params Expression<Func<Student, object>>[]? includes)
     {
-      var student = await studentRepository.GetByIdAsync(id);
+      var student = await studentRepository.GetByIdAsync(id,includes);
       return student;
     }
 
@@ -91,7 +91,7 @@ namespace CarmenSchool.Services.Internal
       }
     }
 
-    public async Task<PaginatedList<Student>> FindAsync(StudentQueryFilters filters)
+    public async Task<PaginatedList<Student>> FindAsync(StudentQueryFilter filters)
     {
       return await studentRepository.FindAsync(filters);  
     }

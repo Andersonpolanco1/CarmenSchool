@@ -9,12 +9,12 @@ namespace CarmenSchool.Web.Controllers
   public class PeriodsController(IPeriodService periodService) : ControllerBase
   {
     [HttpGet]
-    public async Task<IActionResult> Get()
+    public async Task<IActionResult> Get([FromQuery] PeriodQueryFilter filters)
     {
       try
       {
-        var periods = await periodService.GetAllAsync();
-        return Ok(periods.Select(p => p.ToRead()));
+        var periods = await periodService.FindAsync(filters);
+        return Ok(periods.Map(p => p.ToRead()));
       }
       catch (Exception ex)
       {

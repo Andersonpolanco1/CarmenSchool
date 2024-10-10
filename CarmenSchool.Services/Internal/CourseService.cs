@@ -32,9 +32,9 @@ namespace CarmenSchool.Services.Internal
         [] : courses.ToList();
     }
 
-    public async Task<Course?> GetByIdAsync(int id)
+    public async Task<Course?> GetByIdAsync(int id, params Expression<Func<Course, object>>[]? includes)
     {
-      var course = await courseRepository.GetByIdAsync(id);
+      var course = await courseRepository.GetByIdAsync(id, includes);
       return course ?? null;
     }
 
@@ -75,6 +75,11 @@ namespace CarmenSchool.Services.Internal
 
       if (course != null && course.Any())
         throw new InvalidOperationException("Ya existe un curso registrado con ese nombre");
+    }
+
+    public async Task<PaginatedList<Course>> FindAsync(CourseQueryFilters filters)
+    {
+      return await courseRepository.FindAsync(filters);
     }
   }
 }

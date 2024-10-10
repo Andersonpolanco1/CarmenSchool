@@ -9,12 +9,12 @@ namespace CarmenSchool.Web.Controllers
   public class EnrollmentsController(IEnrollmentService enrollmentService) : ControllerBase
   {
     [HttpGet]
-    public async Task<IActionResult> Get()
+    public async Task<IActionResult> Get([FromQuery] EnrollmentQueryFilter filters)
     {
       try
       {
-        var enrollments = await enrollmentService.GetAllAsync();
-        return Ok(enrollments.Select(e => e.ToRead()));
+        var enrollments = await enrollmentService.FindAsync(filters);
+        return Ok(enrollments.Map(e => e.ToRead()));
       }
       catch (Exception ex)
       {
@@ -27,7 +27,7 @@ namespace CarmenSchool.Web.Controllers
     {
       try
       {
-        var enrollment = await enrollmentService.GetByIdAsync(id);
+        var enrollment = await enrollmentService.GetByIdAsync(id, e=>e.Period, e => e.Course, e => e.Student);
         return enrollment == null ? NotFound() : Ok(enrollment.ToRead());
       }
       catch (Exception ex)

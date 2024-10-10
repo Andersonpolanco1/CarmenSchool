@@ -8,7 +8,8 @@ internal class EnrollmentConfiguration : IEntityTypeConfiguration<Enrollment>
   {
     builder.HasKey(e => e.Id); 
 
-    builder.HasIndex(e => new { e.CourseId, e.StudentId, e.PeriodId });
+    builder.HasIndex(e => new { e.CourseId, e.StudentId, e.PeriodId })
+      .IsUnique();
 
     builder.HasOne(e => e.Course)
         .WithMany(c => c.Enrollments)

@@ -32,9 +32,9 @@ namespace CarmenSchool.Services.Internal
         [] : periods.OrderByDescending(p => p.StartDate).ToList();
     }
 
-    public async Task<Period?> GetByIdAsync(int id)
+    public async Task<Period?> GetByIdAsync(int id, params Expression<Func<Period, object>>[]? includes)
     {
-      var period = await periodRepository.GetByIdAsync(id);
+      var period = await periodRepository.GetByIdAsync(id, includes);
       return period;
     }
 
@@ -64,6 +64,11 @@ namespace CarmenSchool.Services.Internal
     {
       var courses = await periodRepository.FindAsync(expression);
       return courses.OrderByDescending(p => p.StartDate);
+    }
+
+    public async Task<PaginatedList<Period>> FindAsync(PeriodQueryFilter filters)
+    {
+      return await periodRepository.FindAsync(filters);
     }
 
     private async Task ValidatePeriod(DateOnly startDate, DateOnly endDate)

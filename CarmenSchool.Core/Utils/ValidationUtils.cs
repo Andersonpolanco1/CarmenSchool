@@ -1,6 +1,4 @@
-﻿using System.Reflection;
-
-namespace CarmenSchool.Core.Utils
+﻿namespace CarmenSchool.Core.Utils
 {
   public static class ValidationUtils
   {
@@ -17,20 +15,5 @@ namespace CarmenSchool.Core.Utils
 
       return !Equals(requestValue, currentValue);
     }
-
-    public static bool TryGetProperty<T>(string propertyName, out string foundPropertyName)
-    {
-      var property = typeof(T).GetProperty(propertyName, BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance);
-
-      if (property != null)
-      {
-        foundPropertyName = property.Name;
-        return true;
-      }
-
-      foundPropertyName = null;
-      return false;
-    }
-
   }
 }

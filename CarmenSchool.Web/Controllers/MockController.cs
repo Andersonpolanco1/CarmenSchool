@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
 using System.Text;
 using CarmenSchool.Core.DTOs.EnrollmentsDTO;
+using CarmenSchool.Core.Configurations;
+using Microsoft.Extensions.Options;
 
 namespace CarmenSchool.Web.Controllers
 {
@@ -15,17 +17,18 @@ namespace CarmenSchool.Web.Controllers
       ICourseService courseService, 
       IPeriodService periodService, 
       IEnrollmentService enrollmentService, 
-      IHostEnvironment hostEnvironment, 
-      IConfiguration configuration
+      IHostEnvironment hostEnvironment,
+      IOptions<ConfigurationsOptions> options
       ) : ControllerBase
   {
+    private readonly MockJsonFilePathsOptions mockJsonFilePaths = options.Value.MockJsonFilePaths;
+
     [HttpGet]
     public async Task<IActionResult> Students()
     {
       try
       {
-        var configurationKey = "MockJsonFilePaths:Students";
-        var result = await LoadDataFromJsonAsync<StudentCreateRequest>(configurationKey, studentService.AddAsync);
+        var result = await LoadDataFromJsonAsync<StudentCreateRequest>(mockJsonFilePaths.Students, studentService.AddAsync);
         return Ok(result);
       }
       catch (Exception ex)
@@ -39,8 +42,7 @@ namespace CarmenSchool.Web.Controllers
     {
       try
       {
-        var configurationKey = "MockJsonFilePaths:Courses";
-        var result = await LoadDataFromJsonAsync<CourseCreateRequest>(configurationKey, courseService.AddAsync);
+        var result = await LoadDataFromJsonAsync<CourseCreateRequest>(mockJsonFilePaths.Courses, courseService.AddAsync);
         return Ok(result);
       }
       catch (Exception ex)
@@ -54,8 +56,7 @@ namespace CarmenSchool.Web.Controllers
     {
       try
       {
-        var configurationKey = "MockJsonFilePaths:Periods";
-        var result = await LoadDataFromJsonAsync<PeriodCreateRequest>(configurationKey, periodService.AddAsync);
+        var result = await LoadDataFromJsonAsync<PeriodCreateRequest>(mockJsonFilePaths.Periods, periodService.AddAsync);
         return Ok(result);
       }
       catch (Exception ex)
@@ -69,8 +70,7 @@ namespace CarmenSchool.Web.Controllers
     {
       try
       {
-        var configurationKey = "MockJsonFilePaths:Enrollments";
-        var result = await LoadDataFromJsonAsync<EnrollmentCreateRequest>(configurationKey, enrollmentService.AddAsync);
+        var result = await LoadDataFromJsonAsync<EnrollmentCreateRequest>(mockJsonFilePaths.Enrollments, enrollmentService.AddAsync);
         return Ok(result);
       }
       catch (Exception ex)
@@ -79,14 +79,13 @@ namespace CarmenSchool.Web.Controllers
       }
     }
 
-    private async Task<object> LoadDataFromJsonAsync<T>(string configKey, Func<T, Task> addAsyncMethod)
+    private async Task<object> LoadDataFromJsonAsync<T>(string relativeFilePath, Func<T, Task> addAsyncMethod)
     {
       List<T>? data;
 
       try
       {
-        var MockJsonFileRelativePath = configuration.GetValue<string>(configKey);
-        var MockJsonFileFullPath = GetFullPath(MockJsonFileRelativePath);
+        var MockJsonFileFullPath = GetFullPath(relativeFilePath);
         var json = await System.IO.File.ReadAllTextAsync(MockJsonFileFullPath, Encoding.UTF8);
         data = JsonSerializer.Deserialize<List<T>>(json);
       }

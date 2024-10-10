@@ -11,10 +11,10 @@ namespace CarmenSchool.Core.Interfaces.Services
     Task<Student> AddAsync(StudentCreateRequest request);
     Task<bool> DeleteByIdAsync(int id);
     Task<IEnumerable<Student>> GetAllAsync();
-    Task<Student?> GetByIdAsync(int id);
+    Task<Student?> GetByIdAsync(int id, params Expression<Func<Student, object>>[]? includes);
     Task<Student?> GetByDNIAsync(string dni);
     Task<bool> UpdateAsync(int id, StudentUpdateRequest request);
     Task<IEnumerable<Student>> FindAsync(Expression<Func<Student, bool>> expression);
-    Task<PaginatedList<Student>> FindAsync(StudentQueryFilters filters);
+    Task<PaginatedList<Student>> FindAsync(StudentQueryFilter filters);
   }
 }
